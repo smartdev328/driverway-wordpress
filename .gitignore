@@ -4,4 +4,6 @@ license.txt
 readme.html
 sitemap.xml
 sitemap.xml.gz
-  
+wp-content/uploads/
+wp-content/themes/drivewyze/dist/
+wp-content/themes/drivewyze/assets/config.json

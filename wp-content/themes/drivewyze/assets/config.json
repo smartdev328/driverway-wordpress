@@ -8,7 +8,7 @@
     "customizer": ["./scripts/wp-dashboard/customizer.js"]
   },
   "publicPath": "/wp-content/themes/drivewyze",
-  "devUrl": "http://overhaul-media-drivewyze.local",
+  "devUrl": "http://localhost:8888/overhaul-media-drivewyze",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
   "watch": ["*.php", "**/*.php"]
