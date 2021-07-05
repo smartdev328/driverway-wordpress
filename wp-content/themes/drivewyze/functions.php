@@ -104,3 +104,10 @@ add_filter( 'rest_authentication_errors', 'rest_authentication_require' );
 
 // Disable the theme / plugin text editor in Admin
 define( 'DISALLOW_FILE_EDIT', true );
+
+/**
+ * Add Options page
+ */
+if ( function_exists( 'acf_add_options_page' ) ) {
+	acf_add_options_page();
+}

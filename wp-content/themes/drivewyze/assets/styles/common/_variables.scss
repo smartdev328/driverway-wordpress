@@ -1,11 +1,32 @@
-/** Import Bootstrap functions */
-/* stylelint-disable */
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 
-$theme-colors: (
-  primary: #27ae60
-);
-$navbar-dark-toggler-icon-bg: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{str-replace(str-replace(#{$navbar-dark-color}, "(", "%28"), ")", "%29")}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-$navbar-light-toggler-icon-bg: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{str-replace(str-replace(#{$navbar-light-color}, "(", "%28"), ")", "%29")}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+//Responsive
+$bp-MS:  375px;
+$bp-S:   425px;
+$bp-SM:  550px;
+$bp-M:   768px;
+$bp-ML:  834px;
+$bp-L:   992px;
+$bp-XL:  1200px;
+$bp-2XL: 1366px;
+$bp-3XL: 1440px;
+$bp-4XL: 1600px;
+$bp-5XL: 1920px;
 
+//Colors
+$color-1:   #000;
+$color-2:   #fff;
+$color-3:   #636363;
+$color-4:   #9d9fa2;
+$color-5:   #ebebeb;
+$color-6:   #0066a4;
+$color-7:   #1589d4;
+$color-8:   #86cffe;
+
+//Font Size
+$font-size: 16px;
+
+//Transition
+$transition-linear: all 0.3s linear;
+$transition-ease: all 0.3s ease-in-out;
