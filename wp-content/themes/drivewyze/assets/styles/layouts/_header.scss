@@ -1,18 +1,46 @@
 .header {
-  &__container {
-    @include make-container();
-    @include make-container-max-widths();
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 9;
+
+  @media (max-width: $bp-L - 1px) {
+    max-height: 100vh;
+    overflow-y: auto;
   }
 
-  &__row {
-    @include make-row();
+  &__container {
+    padding: 0 15px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__top {
+    padding: 14px 0 15px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 
   &__brand {
-    @include make-col(3);
+    max-width: 130px;
+    height: auto;
   }
 
   &__nav {
-    @include make-col(9);
+    @media (max-width: $bp-L - 1px) {
+      margin: 0 -15px;
+      width: calc(100% + 30px);
+      max-height: 100vh;
+      background-color: $color-2;
+      align-items: flex-start;
+      overflow-y: auto;
+    }
   }
 }
