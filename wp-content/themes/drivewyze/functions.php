@@ -28,6 +28,7 @@ $theme_includes = [
 	'/lib/acf_field_groups_type.php',          // ACF Field Groups Organizer
 	'/lib/acf_blocks_loader.php',              // ACF Blocks Loader
 	'/lib/wp_dashboard_customizer.php',        // WP Dashboard customizer
+	'/lib/gravityforms-filter.php',        	   // GF plugin filter for simple select forms
 ];
 
 foreach ( $theme_includes as $file ) {
