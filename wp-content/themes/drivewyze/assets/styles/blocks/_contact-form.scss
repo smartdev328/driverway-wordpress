@@ -1,0 +1,205 @@
+.contact-form-section {
+  background-color: $color-2;
+
+  @media (min-width: $bp-M) {
+    padding: 30px;
+  }
+
+  @media (min-width: $bp-5XL) {
+    padding: 30px 0;
+  }
+
+  &-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    width: 100%;
+    padding: 25px 15px;
+    margin: auto;
+    background-color: $color-6;
+
+    @media (min-width: $bp-M) {
+      padding: 44px 61px;
+    }
+
+    @media (min-width: $bp-L) {
+      justify-content: space-between;
+      padding: 46px 80px 52px 87px;
+    }
+
+    @media (min-width: $bp-2XL) {
+      padding: 65px 110px;
+    }
+
+    @media (min-width: $bp-5XL) {
+      padding: 65px 158px;
+      max-width: 1860px;
+      width: 100%;
+      margin: auto;
+    }
+
+    &__column {
+      flex-basis: 100%;
+
+      @media (min-width: $bp-L) {
+        &:first-child {
+          flex-basis: 21.24%;
+        }
+
+        &:last-child {
+          flex-basis: 48.28%;
+        }
+      }
+
+      @media (min-width: $bp-2XL) {
+        &:first-child {
+          flex-basis: 28.55%;
+        }
+
+        &:last-child {
+          flex-basis: 58.8%;
+        }
+      }
+
+      @media (min-width: $bp-5XL) {
+        &:first-child {
+          flex-basis: 28.63%;
+        }
+
+        &:last-child {
+          flex-basis: 59.3%;
+        }
+      }
+
+      & > h2 {
+        margin-bottom: 67px;
+        color: $color-2;
+
+        @media (min-width: $bp-M) {
+          margin-bottom: 33px;
+        }
+      }
+
+      & > .gform_wrapper {
+        &.gform_validation_error {
+          & > .gform_validation_errors {
+            display: none;
+          }
+        }
+
+        & > form {
+          & > .gform_body {
+            margin-bottom: 28px;
+
+            .gform_fields {
+              .gfield {
+                &_error {
+                  position: relative;
+
+                  .gfield_validation_message {
+                    position: absolute;
+                    top: 0;
+                    border: 0;
+                    border-bottom: 1px solid $color-12;
+                    background: $color-6;
+                    color: $color-12;
+                    padding: 21px 0 12px 0;
+                    height: 58px;
+                    margin: 0;
+                    pointer-events: none;
+                  }
+                }
+
+                .ginput_container {
+                  margin-bottom: 10px;
+
+                  span {
+                    margin-bottom: 0;
+                  }
+
+                  input,
+                  textarea,
+                  select {
+                    font-family: $f-base;
+                    font-weight: 400;
+                    color: $color-2;
+                    padding: 21px 0 12px 0;
+                    height: 58px;
+                    background-color: transparent;
+                    border: 0;
+                    outline: 0;
+                    border-bottom: 1px solid $color-7;
+                    overflow: hidden;
+
+                    &::placeholder {
+                      color: $color-7;
+                    }
+                  }
+
+                  textarea {
+                    resize: none;
+                  }
+
+                  select {
+                    color: $color-7;
+                  }
+                }
+              }
+            }
+          }
+
+          & > .gform_footer {
+            position: relative;
+            max-width: 156px;
+            width: 100%;
+            height: 36px;
+            padding: 0;
+            margin: 0;
+
+            @media (min-width: $bp-M) {
+              max-width: 162px;
+              height: 46px;
+            }
+
+            @media (min-width: $bp-2XL) {
+              max-width: 205px;
+              height: 50px;
+            }
+
+            &::after {
+              position: absolute;
+              content: "";
+              right: 22px;
+              top: 50%;
+              transform: translateY(-50%);
+              bottom: 12px;
+              width: 14px;
+              height: 12px;
+              background-image: url("../images/arrow-right.svg");
+            }
+
+            & > .gform_button {
+              font-family: $f-base;
+              font-size: rem(11.5);
+              font-weight: 900;
+              border: 0;
+              outline: 0;
+              color: $color-2;
+              background-color: $color-11;
+              text-transform: uppercase;
+              text-align: left;
+              max-width: 100%;
+              width: 100%;
+              height: 100%;
+              padding-left: 20px;
+
+              @media (min-width: $bp-2XL) {
+                font-size: rem(16);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
