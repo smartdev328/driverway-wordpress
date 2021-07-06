@@ -1,8 +1,11 @@
-@import "common/calc-em-rem";
 @import "common/variables";
+@import "common/calc-em-rem";
 
 /** Import everything from autoload */
 @import "./autoload/**/*";
+@import "common/font";
+@import "common/mixins";
+@import "common/typo";
 @import "common/global";
 @import "layouts/header";
 @import "layouts/footer";

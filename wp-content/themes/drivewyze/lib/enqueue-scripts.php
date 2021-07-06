@@ -15,6 +15,9 @@ if ( ! function_exists( 'drivewyze_scripts' ) ) :
 	 * @return void
 	 */
 	function drivewyze_scripts() {
+		//Lato font
+		wp_enqueue_style( 'lato', 'https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap' );
+
 		// Enqueue the main Stylesheet.
 		wp_enqueue_style( 'main-stylesheet', asset_path( 'styles/main.css' ), false, '1.0.0', 'all' );
 

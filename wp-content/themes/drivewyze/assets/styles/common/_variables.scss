@@ -23,9 +23,19 @@ $color-5:   #ebebeb;
 $color-6:   #0066a4;
 $color-7:   #1589d4;
 $color-8:   #86cffe;
+$color-9:   #40b2f3;
+$color-10:   #408cbb;
 
 //Font Size
 $font-size: 16px;
+
+//Fonts
+$f-base:   "Lato", sans-serif; //Lato 100, 300, 400, 700, 900
+$f-medium: "Lato Medium", sans-serif; //Lato 500
+$f-semi:   "Lato Semibold", sans-serif; //Lato 600
+
+//Container
+$c-width: 934px; // + 30px paddings
 
 //Transition
 $transition-linear: all 0.3s linear;

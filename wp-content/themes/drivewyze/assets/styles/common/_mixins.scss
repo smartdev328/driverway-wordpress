@@ -1,0 +1,40 @@
+@mixin absolute-el() {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@mixin bg-el() {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin link-el() {
+  display: inline-block;
+  position: relative;
+  color: $color-9;
+  text-decoration: none;
+  transition: $transition-linear;
+
+  &::after {
+    content: '';
+    width: 0;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    background-color: $color-10;
+    transition: $transition-linear;
+  }
+
+  &:hover {
+    color: $color-10;
+
+    &::after {
+      width: 100%;
+    }
+  }
+}

@@ -1,4 +1,5 @@
 // Calculate em values
+$font-size: 16;
 
 @function em($target, $base: $font-size) {
   @if not unitless($target) {
