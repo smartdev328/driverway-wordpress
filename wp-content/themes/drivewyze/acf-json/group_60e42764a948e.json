@@ -22,6 +22,33 @@
             "maxlength": ""
         },
         {
+            "key": "field_60e46a4a29458",
+            "label": "Section subtitle",
+            "name": "section_subtitle",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60e44748a7bd8",
+                        "operator": "==",
+                        "value": "white"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_60e433b6f6d3c",
             "label": "Select form",
             "name": "choices",
@@ -89,5 +116,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1625573360
+    "modified": 1625582189
 }
