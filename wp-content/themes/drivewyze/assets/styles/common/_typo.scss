@@ -93,7 +93,7 @@ h5 {
 
 /* stylelint-disable */
 
-ul {
+ul.custom {
   list-style: none;
 
   li {
@@ -114,7 +114,7 @@ ul {
   }
 }
 
-ol {
+ol.custom {
   counter-reset: numb-counter;
   list-style: none;
 
@@ -139,8 +139,8 @@ ol {
   }
 }
 
-ul,
-ol {
+ul.custom,
+ol.custom {
 
   li {
     margin-bottom: 30px;
