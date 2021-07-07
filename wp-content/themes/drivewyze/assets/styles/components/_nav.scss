@@ -1,7 +1,7 @@
 /* stylelint-disable */
 
 .navbar {
-  padding: 0;
+  padding: 7px 15px 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -15,11 +15,63 @@
       justify-content: center;
     }
 
+    .dropdown-menu {
+      padding: 0;
+      margin: 0;
+      border: none;
+      border-radius: 0;
+      background-clip: unset;
+
+      @media (min-width: $bp-L) {
+        padding: 0 0 8px;
+        margin-top: 0;
+        min-width: 230px;
+        display: block;
+        opacity: 0;
+        pointer-events: none;
+        left: 0;
+        transition: $transition-ease;
+      }
+
+      a {
+        font-family: $f-base;
+        font-size: rem(14);
+        font-weight: 400;
+      }
+
+      &.first {
+        & > li {
+          &:not(:first-of-type) {
+            & > a {
+              margin-top: 26px;
+              position: relative;
+
+              &::before {
+                @media (max-width: $bp-L - 1px) {
+                  content: '';
+                  width: calc(100% - 30px);
+                  height: 1px;
+                  position: absolute;
+                  top: -12px;
+                  left: 15px;
+                  background-color: $color-5;
+                }
+              }
+
+              @media (min-width: $bp-L) {
+                margin-top: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
     .menu-item {
       a { //all
-        padding: 6px 26px;
+        padding: 4px 15px;
         font-family: $f-semi;
-        font-size: rem(16);
+        font-size: rem(14);
         line-height: rem(22);
         letter-spacing: 0.25px;
         color: $color-4;
@@ -58,33 +110,42 @@
         &-back {
           @extend .caret;
 
+          margin-bottom: 10px;
+          padding: 0 12px;
+          width: auto;
+          font-size: rem(13);
+          font-weight: 400;
+          top: 5px;
           height: 32px;
           position: relative;
+          justify-content: flex-start;
+          color: $color-4;
+
+          svg {
+            margin-right: 8px;
+            transform: rotate(90deg);
+          }
         }
       }
 
-      .dropdown-menu {
-        padding: 0;
-        margin: 0;
-        border: none;
-        border-radius: 0;
-        background-clip: unset;
+      .sub-title {
+        margin-bottom: 22px;
+        padding: 5px 15px;
+        font-size: rem(16);
+        font-family: $f-semi;
+        color: $color-6;
+        position: relative;
 
-        @media (min-width: $bp-L) {
-          padding: 0 0 8px;
-          margin-top: 0;
-          min-width: 230px;
-          display: block;
-          opacity: 0;
-          pointer-events: none;
-          left: 0;
-          transition: $transition-ease;
-        }
-
-        a {
-          font-family: $f-base;
-          font-size: rem(14);
-          font-weight: 400;
+        &::after {
+          @media (max-width: $bp-L - 1px) {
+            content: '';
+            width: 36px;
+            height: 2px;
+            position: absolute;
+            bottom: -11px;
+            left: 15px;
+            background-color: $color-5;
+          }
         }
       }
 
@@ -92,13 +153,6 @@
         & > a {
           position: relative;
         }
-
-        //.menu-item-has-children {
-        //
-        //  &.show {
-        //    border: none;
-        //  }
-        //}
 
         &:hover,
         &:focus {
@@ -113,22 +167,11 @@
             }
           }
 
-          //& > .dropdown-menu {
           & .dropdown-menu {
             @media (min-width: $bp-L) {
               opacity: 1;
               pointer-events: auto;
             }
-
-            //& > .menu-item-has-children:hover {
-            //  & > .dropdown-menu {
-            //
-            //    @media (min-width: $bp-L) {
-            //      opacity: 1;
-            //      pointer-events: auto;
-            //    }
-            //  }
-            //}
           }
         }
 
@@ -152,7 +195,7 @@
       & > a { //main
         padding: 10px 15px 9px;
         position: relative;
-        color: $color-6;
+        font-size: rem(16);
 
         &:hover,
         &:focus {
@@ -192,24 +235,6 @@
         & > .menu-item-has-children {
           & > a {
             position: relative;
-            //
-            //&::after {
-            //  @media (min-width: $bp-L) {
-            //    content: "";
-            //    color: $color-5;
-            //    position: absolute;
-            //    top: 0;
-            //    right: 20px;
-            //    bottom: 0;
-            //    margin: auto;
-            //    line-height: 36px;
-            //    mask: url("../images/arrow.svg")0 0/12px 12px;
-            //    mask-repeat: no-repeat;
-            //    background-color: $color-5;
-            //    width: 12px;
-            //    height: 12px;
-            //  }
-            //}
           }
         }
 

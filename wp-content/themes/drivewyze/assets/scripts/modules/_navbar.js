@@ -26,8 +26,13 @@ function extraUrlCondition() {
 		if ($(window).width() < 992) {
 			event.preventDefault();
 
+			const linkEl = $(this).closest('.menu-item').children('a').text();
+			const containerEl = $(this).siblings('.dropdown-menu');
+			const targetEl = containerEl.find('.caret-back');
+
 			$(this).closest('.menu-item').children('a').toggleClass('show-sub');
 			$(this).siblings('.dropdown-menu').toggleClass('show');
+			$( `<p class='sub-title'>${linkEl}</p>` ).insertAfter( targetEl );
 		}
 	});
 
@@ -35,6 +40,7 @@ function extraUrlCondition() {
 		if ($(window).width() < 992) {
 			event.preventDefault();
 
+			$(this).siblings('.sub-title').remove();
 			$(this).closest('.menu-item').children('a').toggleClass('show-sub');
 			$(this).closest('.dropdown-menu').toggleClass('show');
 		}

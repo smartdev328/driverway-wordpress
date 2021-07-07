@@ -40,7 +40,8 @@ class Drivewyze_Navwalker extends Walker_Nav_Menu {
 
 		if( $depth == 0 ){
 			$output .= "\n$indent<ul role=\"menu\" class=\" dropdown-menu first\">\n";
-			$output .= '<span class="caret-back"><svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 0.5L4 3.5L7 0.5" stroke="#9D9FA2"/></svg></span>';
+			$output .= '<span class="caret-back"><svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 0.5L4 3.5L7 0.5" stroke="#9D9FA2"/></svg>';
+			$output .= '<span>Back</span></span>';
 		} else {
 			$output .= "\n$indent<ul role=\"menu\" class=\" dropdown-menu\">\n";
 		}
