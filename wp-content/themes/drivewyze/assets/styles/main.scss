@@ -7,10 +7,10 @@
 @import "common/mixins";
 @import "common/typo";
 @import "common/global";
-@import "layouts/header";
-@import "layouts/footer";
+@import "layouts/*";
 @import "components/nav";
 @import "components/forms";
+@import "blocks/contact-form";
 
 /**
  * Import npm dependencies
