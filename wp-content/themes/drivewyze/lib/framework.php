@@ -122,9 +122,12 @@ class Drivewyze_Navwalker extends Walker_Nav_Menu {
 			 */
 			if ( ! empty( $item->attr_title ) ) {
 				$item_output .= '<a' . $attributes . '><span class="glyphicon ' . esc_attr( $item->attr_title ) . '"></span>&nbsp;';
-			} else {              $item_output .= '<a' . $attributes . '>';
+			} else {
+				$item_output .= '<a' . $attributes . '>';
 			}
+			$item_output .= '<span class="nav-text">';
 			$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+			$item_output .= '</span>';
 			$item_output .= ( $args->has_children && 0 === $depth ) ? ' </a><span class="caret"><svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 0.5L4 3.5L7 0.5" stroke="#9D9FA2"/></svg></span>' : '</a>';
 			$item_output .= $args->after;
 			$output      .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );

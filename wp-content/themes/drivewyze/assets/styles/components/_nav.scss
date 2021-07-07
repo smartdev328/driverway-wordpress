@@ -1,10 +1,19 @@
 /* stylelint-disable */
 
 .navbar {
-  padding: 7px 15px 0;
+  margin-top: 7px;
+  padding: 0 15px 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  order: 2;
+
+  @media (min-width: $bp-L) {
+    padding-left: 18px;
+    margin: 0;
+    order: 0;
+    flex-grow: 1;
+  }
 
   &-nav {
     padding: 0;
@@ -12,7 +21,6 @@
 
     @media (min-width: $bp-L) {
       display: flex;
-      justify-content: center;
     }
 
     .dropdown-menu {
@@ -41,9 +49,9 @@
 
       &.first {
         & > li {
-          &:not(:first-of-type) {
-            & > a {
-              margin-top: 26px;
+          &:not(:last-of-type) {
+            & > .dropdown-menu {
+              margin-bottom: 26px;
               position: relative;
 
               &::before {
@@ -52,7 +60,7 @@
                   width: calc(100% - 30px);
                   height: 1px;
                   position: absolute;
-                  top: -12px;
+                  bottom: -15px;
                   left: 15px;
                   background-color: $color-5;
                 }
@@ -68,7 +76,8 @@
     }
 
     .menu-item {
-      a { //all
+      a {
+        //all
         padding: 4px 15px;
         font-family: $f-semi;
         font-size: rem(14);
@@ -80,6 +89,11 @@
         text-decoration: none;
         text-transform: capitalize;
         white-space: nowrap;
+
+        @media (min-width: $bp-L) {
+          font-family: $f-base;
+          font-weight: 400;
+        }
       }
 
       &.title {
@@ -103,8 +117,18 @@
         justify-content: center;
         z-index: 9;
 
+        @media (min-width: $bp-L) {
+          height: 17px;
+          top: 13px;
+          right: 5px;
+        }
+
         svg {
           transform: rotate(-90deg);
+
+          @media (min-width: $bp-L) {
+            transform: rotate(0);
+          }
         }
 
         &-back {
@@ -125,6 +149,16 @@
             margin-right: 8px;
             transform: rotate(90deg);
           }
+
+          @media (min-width: $bp-L) {
+            display: none;
+          }
+        }
+      }
+
+      .nav-text {
+        @media (min-width: $bp-L) {
+          padding-right: 16px;
         }
       }
 
@@ -146,6 +180,10 @@
             left: 15px;
             background-color: $color-5;
           }
+        }
+
+        @media (min-width: $bp-L) {
+          display: none;
         }
       }
 
@@ -192,10 +230,16 @@
     }
 
     & > .menu-item {
-      & > a { //main
+      & > a {
+        //main
         padding: 10px 15px 9px;
         position: relative;
         font-size: rem(16);
+
+        @media (min-width: $bp-L) {
+          padding: 10px 16px 9px 12px;
+          font-size: rem(14);
+        }
 
         &:hover,
         &:focus {
@@ -266,14 +310,24 @@
     width: 14px;
     height: 15px;
     position: relative;
-    right: 4px;
+    right: 0;
     margin: 0;
     transform: rotate(0deg);
     transition: $transition-ease;
     cursor: pointer;
 
-    @media (min-width: $bp-L) {
-      display: none;
+    &-wrap {
+      padding-right: 4px;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-left: 1px solid $color-5;
+
+      @media (min-width: $bp-L) {
+        display: none;
+      }
     }
 
     span {
@@ -281,7 +335,7 @@
       position: absolute;
       height: 2px;
       width: 14px;
-      background-color: $color-3;
+      background-color: $color-4;
       opacity: 1;
       left: 0;
       transform: rotate(0deg);
