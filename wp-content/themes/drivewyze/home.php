@@ -36,7 +36,9 @@ get_header(); ?>
                     <?php foreach ( $categories as $cat ) :
                         $selected = $cat === $post->post_name ? 'selected' : '';
                     ?>
-                        <option value="<?php echo get_category_link($cat->cat_ID); ?>" <?php echo $selected; ?>><?php echo $cat->name; ?></option>
+                        <option value="<?php echo get_category_link($cat->cat_ID); ?>" <?php echo $selected; ?>>
+                            <?php echo $cat->name; ?>
+                        </option>
                     <?php endforeach; ?>
                 </select>
 			</div>
@@ -47,17 +49,14 @@ get_header(); ?>
 					$args  = array(
 						'post_type'      => 'post',
 						'posts_per_page' => $posts_per_page,
-						'category_name' => $posts_per_page,
+						'category_name' => get_queried_object()->slug,
 					);
 					$posts = new WP_Query( $args );
-					if ( $posts->have_posts() ) :
-						?>
+					if ( $posts->have_posts() ) : ?>
 						<?php
 						while ( $posts->have_posts() ) :
 							$posts->the_post();
-							?>
-							<?php get_template_part( 'template-parts/blog-post-template', '' ); ?>
-							<?php
+                            get_template_part( 'template-parts/blog-post-template', '' );
 						endwhile;
 					endif;
 					wp_reset_postdata();
