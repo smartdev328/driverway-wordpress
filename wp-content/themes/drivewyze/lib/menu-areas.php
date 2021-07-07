@@ -16,8 +16,9 @@ add_action( 'after_setup_theme', 'register_theme_menus' );
 function register_theme_menus() {
 	register_nav_menus(
 		array(
-			'primary'     => __( 'Primary Menu', 'wp_dev' ),
-			'footer_menu' => __( 'Footer Menu', 'wp_dev' ),
+			'primary'     => __( 'Primary Menu', 'drivewyze' ),
+			'product'     => __( 'Product Menu', 'drivewyze' ),
+			'partners'    => __( 'Partners Menu', 'drivewyze' ),
 		)
 	);
 }

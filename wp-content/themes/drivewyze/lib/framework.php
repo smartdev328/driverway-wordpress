@@ -37,7 +37,14 @@ class Drivewyze_Navwalker extends Walker_Nav_Menu {
 	 */
 	public function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent  = str_repeat( "\t", $depth );
-		$output .= "\n$indent<ul role=\"menu\" class=\" dropdown-menu\">\n";
+
+		if( $depth == 0 ){
+			$output .= "\n$indent<ul role=\"menu\" class=\" dropdown-menu first\">\n";
+			$output .= '<span class="caret-back"><svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 0.5L4 3.5L7 0.5" stroke="#9D9FA2"/></svg>';
+			$output .= '<span>Back</span></span>';
+		} else {
+			$output .= "\n$indent<ul role=\"menu\" class=\" dropdown-menu\">\n";
+		}
 	}
 	/**
 	 * Walker::start_el()
@@ -85,15 +92,14 @@ class Drivewyze_Navwalker extends Walker_Nav_Menu {
 			$id             = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 			$output        .= $indent . '<li' . $id . $value . $class_names . '>';
 			$atts           = array();
-			$atts['title']  = ! empty( $item->title ) ? $item->title : '';
 			$atts['target'] = ! empty( $item->target ) ? $item->target : '';
 			$atts['rel']    = ! empty( $item->xfn ) ? $item->xfn : '';
 			// If item has_children add atts to a.
 			if ( $args->has_children && $depth === 0 ) {
-				$atts['href']          = '#';
-				$atts['data-toggle']   = 'dropdown';
-				$atts['class']         = 'dropdown-toggle';
-				$atts['aria-haspopup'] = 'true';
+//				$atts['href']          = '#';
+//				$atts['data-toggle']   = 'dropdown';
+//				$atts['class']         = 'dropdown-toggle';
+				$atts['href'] = ! empty( $item->url ) ? $item->url : '';
 			} else {
 				$atts['href'] = ! empty( $item->url ) ? $item->url : '';
 			}
@@ -116,10 +122,13 @@ class Drivewyze_Navwalker extends Walker_Nav_Menu {
 			 */
 			if ( ! empty( $item->attr_title ) ) {
 				$item_output .= '<a' . $attributes . '><span class="glyphicon ' . esc_attr( $item->attr_title ) . '"></span>&nbsp;';
-			} else {              $item_output .= '<a' . $attributes . '>';
+			} else {
+				$item_output .= '<a' . $attributes . '>';
 			}
+			$item_output .= '<span class="nav-text">';
 			$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-			$item_output .= ( $args->has_children && 0 === $depth ) ? ' <span class="caret"></span></a>' : '</a>';
+			$item_output .= '</span>';
+			$item_output .= ( $args->has_children && 0 === $depth ) ? ' </a><span class="caret"><svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 0.5L4 3.5L7 0.5" stroke="#9D9FA2"/></svg></span>' : '</a>';
 			$item_output .= $args->after;
 			$output      .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 		}

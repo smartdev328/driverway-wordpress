@@ -112,3 +112,17 @@ define( 'DISALLOW_FILE_EDIT', true );
 if ( function_exists( 'acf_add_options_page' ) ) {
 	acf_add_options_page();
 }
+
+/**
+ * Customize search form.
+ */
+function om_search_form( $form ) {
+	$form = '<form role="search" method="get" id="searchform" class="search-form" action="' . home_url( '/' ) . '" >
+    <label class="screen-reader-text" for="s">' . __( 'Search…', 'drivewyze' ) . '</label>
+    <input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' . __( 'Search…', 'drivewyze' ) . '" />
+    <input type="submit" class="search-submit" id="searchsubmit" value="' . esc_attr__( 'Search' ) . '" />
+    </form>';
+
+	return $form;
+}
+add_filter( 'get_search_form', 'om_search_form' );
