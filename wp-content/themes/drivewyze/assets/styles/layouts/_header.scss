@@ -11,7 +11,7 @@
 
   &__container {
     margin: 0 auto;
-    padding: 0 0 0 15px;
+    padding: 0;
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -42,11 +42,28 @@
     flex-direction: row;
   }
 
+  &__bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+
+    @media (min-width: $bp-L) {
+      display: none;
+    }
+  }
+
   &__brand {
+    margin-left: 15px;
     width: 100%;
     max-width: 130px;
     max-height: 27px;
     object-fit: contain;
+
+    @media (min-width: $bp-L) {
+      margin: 0;
+    }
 
     img {
       width: 100%;
@@ -64,6 +81,16 @@
       align-items: flex-start;
       overflow-y: auto;
     }
+
+    &.nav-show {
+      .header__bottom {
+        display: block;
+
+        @media (min-width: $bp-L) {
+          display: none;
+        }
+      }
+    }
   }
 
   &__btns {
@@ -79,5 +106,20 @@
 
   &__search {
     border-left: 1px solid $color-5;
+  }
+
+  &__link {
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-family: $f-base;
+    font-weight: 400;
+    font-size: rem(14);
+    line-height: rem(22);
+    letter-spacing: 0.25px;
+    color: $color-6;
+    background-color: $color-17;
   }
 }
