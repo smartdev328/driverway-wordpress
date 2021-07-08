@@ -11,10 +11,7 @@
 @import "layouts/footer";
 
 /** Import styles for ACF blocks */
-@import "blocks/contact-form";
-@import "blocks/hero-product";
-@import "blocks/two-columns-product";
-@import "blocks/available-on";
+@import "blocks/**/*";
 
 /**
  * Import npm dependencies
