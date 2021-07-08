@@ -9,7 +9,10 @@
 @import "common/global";
 @import "layouts/header";
 @import "layouts/footer";
+
+/** Import styles for ACF blocks */
 @import "blocks/contact-form";
+@import "blocks/hero-product";
 
 /**
  * Import npm dependencies
