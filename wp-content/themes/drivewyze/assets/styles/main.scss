@@ -12,6 +12,9 @@
 @import "components/forms";
 @import "blocks/contact-form";
 
+/** Import styles for ACF blocks */
+@import "blocks/*";
+
 /**
  * Import npm dependencies
  *

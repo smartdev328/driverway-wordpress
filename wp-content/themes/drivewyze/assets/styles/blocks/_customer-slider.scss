@@ -1,0 +1,320 @@
+@import "~swiper/swiper-bundle.min.css";
+
+.customer-slider {
+  position: relative;
+  background-color: $color-16;
+  padding-top: 90px;
+  padding-bottom: 60px;
+
+  @media (min-width: $bp-M) {
+    padding-top: 40px;
+    padding-bottom: 70px;
+  }
+
+  @media (min-width: $bp-L) {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+
+  @media (min-width: $bp-2XL) {
+    padding-top: 60px;
+    padding-bottom: 65px;
+  }
+
+  @media (min-width: $bp-5XL) {
+    padding-top: 130px;
+    padding-bottom: 145px;
+  }
+
+  & > .dot-pattern {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    right: 0;
+    max-width: 100%;
+    width: 100%;
+    height: 64px;
+
+    @media (min-width: $bp-L) {
+      top: 85px;
+      right: 52px;
+      left: unset;
+      max-width: 268px;
+      height: 90px;
+    }
+
+    @media (min-width: $bp-2XL) {
+      top: unset;
+      right: 80px;
+      bottom: 6px;
+      height: 94px;
+      max-width: 368px;
+    }
+
+    @media (min-width: $bp-5XL) {
+      bottom: 0;
+      right: 194px;
+      height: 140px;
+    }
+
+    @media (min-width: 2000px) {
+      display: none;
+    }
+
+    img {
+      max-width: 100%;
+      width: 100%;
+      height: 100%;
+
+      @media (min-width: $bp-L) {
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-family: $f-base;
+    font-size: rem(24);
+    font-weight: 400;
+    line-height: 35px;
+    color: $color-6;
+    margin-bottom: 25px;
+
+    @media (min-width: $bp-M) {
+      margin-bottom: 60px;
+    }
+
+    @media (min-width: $bp-L) {
+      margin-bottom: 80px;
+    }
+
+    @media (min-width: $bp-2XL) {
+      font-size: rem(36);
+      line-height: 42px;
+      margin-bottom: 66px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 184px;
+    height: 36px;
+    font-family: $f-base;
+    font-size: rem(11);
+    font-weight: 900;
+    line-height: 16px;
+    text-transform: uppercase;
+    background-color: $color-9;
+    color: $color-2;
+    margin: auto;
+    padding: 0 15px;
+
+    @media (min-width: $bp-2XL) {
+      max-width: 240px;
+      height: 40px;
+      font-size: rem(16);
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 15px;
+      height: 11px;
+      background-image: url("../images/arrow-right.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+
+  &-container {
+    margin-bottom: 25px;
+
+    @media (min-width: $bp-M) {
+      margin-bottom: 50px;
+    }
+
+    @media (min-width: $bp-L) {
+      margin-bottom: 70px;
+    }
+
+    @media (min-width: $bp-5XL) {
+      max-width: 2100px;
+      width: 100%;
+      margin: 0 auto 50px auto;
+    }
+
+    .swiper-container {
+      margin: 0 auto;
+      overflow: unset;
+      width: 290px;
+
+      @media (min-width: $bp-L) {
+        width: 660px;
+      }
+
+      .swiper-wrapper {
+        .swiper-slide {
+          background-color: $color-2;
+          opacity: 0.3;
+
+          &-active {
+            opacity: 1;
+          }
+
+          &-top {
+            padding: 50px 25px;
+            border-bottom: 1px solid $color-5;
+
+            h3 {
+              font-family: $f-base;
+              font-size: rem(12);
+              font-weight: 900;
+              line-height: 22px;
+              margin-bottom: 20px;
+              color: $color-8;
+              text-transform: uppercase;
+              text-align: center;
+
+              @media (min-width: $bp-2XL) {
+                font-size: rem(16);
+                line-height: 26px;
+                margin-bottom: 50px;
+              }
+            }
+
+            h2 {
+              font-family: $f-base;
+              font-size: rem(24);
+              font-weight: 300;
+              line-height: 32px;
+              color: $color-6;
+              text-align: center;
+
+              @media (min-width: $bp-2XL) {
+                font-size: rem(36);
+                line-height: 42px;
+              }
+            }
+          }
+
+          &-bottom {
+            display: flex;
+            flex-wrap: nowrap;
+
+            .customer-image {
+              max-width: 87px;
+              width: 100%;
+              height: 87px;
+              background-size: cover;
+              background-repeat: no-repeat;
+
+              @media (min-width: $bp-L) {
+                max-width: 125px;
+                height: 125px;
+              }
+            }
+
+            .customer-desc {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              padding: 10px 10px 10px 15px;
+
+              h4 {
+                font-family: $f-base;
+                font-size: rem(13);
+                font-weight: 700;
+                line-height: 22px;
+                color: $color-3;
+                margin: 0;
+              }
+
+              p {
+                font-family: $f-base;
+                font-weight: 400;
+                font-size: rem(13);
+                line-height: 22px;
+                color: $color-3;
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        width: 30px;
+        height: 30px;
+        background-color: $color-2;
+        box-shadow: 2px 2px 15px rgba($color-1, 0.1);
+        border-radius: 100%;
+
+        @media (min-width: $bp-M) {
+          width: 60px;
+          height: 60px;
+        }
+
+        &::after {
+          content: "";
+        }
+
+        & > .arrow {
+          position: relative;
+          width: 100%;
+          height: 100%;
+
+          &::after {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            content: "";
+            background-image: url("../images/arrow-carousel.svg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: block;
+            width: 9px;
+            height: 8px;
+
+            @media (min-width: $bp-M) {
+              width: 15px;
+              height: 12px;
+            }
+          }
+        }
+      }
+
+      .swiper-button-prev {
+        left: 5px;
+
+        @media (min-width: $bp-M) {
+          left: -22.5%;
+        }
+
+        @media (min-width: $bp-L) {
+          left: -12.5%;
+        }
+
+        & > .arrow {
+          transform: rotate(180deg);
+        }
+      }
+
+      .swiper-button-next {
+        right: 5px;
+
+        @media (min-width: $bp-M) {
+          right: -22.5%;
+        }
+
+        @media (min-width: $bp-L) {
+          right: -12.5%;
+        }
+      }
+    }
+  }
+}

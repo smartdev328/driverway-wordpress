@@ -1,0 +1,155 @@
+.two-columns-product-section {
+  background-color: $color-16;
+
+  &-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 28px 11px 68px 15px;
+
+    @media (min-width: $bp-M) {
+      padding: 25px 30px;
+    }
+
+    @media (min-width: $bp-L) {
+      justify-content: space-between;
+      padding: 80px 80px 80px 110px;
+    }
+
+    @media (min-width: $bp-2XL) {
+      padding: 135px 110px 80px 140px;
+    }
+
+    @media (min-width: $bp-5XL) {
+      max-width: 1500px;
+      width: 100%;
+      margin: auto;
+      padding: 135px 0 80px 0;
+    }
+
+    &__column {
+      flex-basis: 100%;
+      margin-bottom: 75px;
+
+      @media (min-width: $bp-L) {
+        flex-basis: 49%;
+        margin-bottom: 120px;
+
+        &_left {
+          max-width: 370px;
+        }
+
+        &_right {
+          max-width: 400px;
+        }
+      }
+
+      @media (min-width: $bp-2XL) {
+        &_left {
+          max-width: 528px;
+        }
+
+        &_right {
+          max-width: 557px;
+        }
+      }
+
+      @media (min-width: $bp-5XL) {
+        &_left {
+          max-width: 603px;
+        }
+
+        &_right {
+          max-width: 760px;
+        }
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: $color-6;
+        margin-bottom: 23px;
+      }
+
+      p {
+        font-size: rem(18);
+        line-height: 24px;
+      }
+
+      ul {
+        padding: 0 0 0 33px;
+        margin: 0 0 60px 0;
+        list-style: none;
+
+        li {
+          position: relative;
+          font-size: rem(24);
+          font-weight: 300;
+          line-height: 32px;
+          color: $color-6;
+          margin-bottom: 30px;
+
+          @media (min-width: $bp-2XL) {
+            font-size: rem(36);
+            line-height: 42px;
+          }
+
+          &::before {
+            position: absolute;
+            top: 12px;
+            left: -28px;
+            content: "";
+            width: 10px;
+            height: 10px;
+            background-color: $color-6;
+
+            @media (min-width: $bp-2XL) {
+              top: 15px;
+              left: -50px;
+              width: 15px;
+              height: 15px;
+            }
+          }
+        }
+      }
+
+      ol {
+        padding: 0 0 0 33px;
+        margin: 0 0 60px 0;
+        list-style: none;
+
+        li {
+          position: relative;
+          font-size: rem(24);
+          font-weight: 300;
+          line-height: 32px;
+          color: $color-6;
+          margin-bottom: 30px;
+          counter-increment: list;
+
+          @media (min-width: $bp-2XL) {
+            font-size: rem(36);
+            line-height: 42px;
+          }
+
+          &::before {
+            position: absolute;
+            top: 0;
+            left: -32px;
+            content: counter(list) " ";
+            font-family: $f-base;
+            font-size: rem(28);
+            font-weight: 400;
+
+            @media (min-width: $bp-2XL) {
+              font-size: rem(48);
+              left: -60px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
