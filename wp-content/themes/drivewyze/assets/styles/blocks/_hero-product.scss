@@ -15,8 +15,8 @@
     width: 100%;
     height: 50px;
     background-color: $color-2;
-    border-top: 1px solid $color-16;
-    border-bottom: 1px solid $color-16;
+    border-top: 1px solid $color-15;
+    border-bottom: 1px solid $color-15;
 
     &__title {
       display: none;
@@ -28,7 +28,7 @@
       justify-content: center;
       color: $color-3;
       padding: 15px;
-      border-right: 1px solid $color-16;
+      border-right: 1px solid $color-15;
 
       @media (min-width: $bp-M) {
         max-width: 196px;
@@ -78,7 +78,7 @@
       }
 
       &.active {
-        background-color: $color-16;
+        background-color: $color-15;
 
         &::after {
           position: absolute;
@@ -228,13 +228,13 @@
         flex-direction: column;
         justify-content: flex-end;
         padding: 20px 15px;
-        background-color: rgba($color-14, 0.6);
+        background-color: rgba($color-7, 0.6);
         z-index: 3;
 
         @media (min-width: $bp-M) {
           align-items: center;
           justify-content: center;
-          background-color: rgba($color-15, 0.6);
+          background-color: rgba($color-14, 0.6);
         }
       }
 
@@ -321,7 +321,7 @@
       display: none;
       padding: 52px 17px 83px;
       height: 100%;
-      background-color: $color-16;
+      background-color: $color-15;
 
       .hero-product-section-tabs-content__item-container {
         overflow-y: hidden;
