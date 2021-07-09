@@ -22,7 +22,7 @@
       .post-content {
         .post-info {
           &__category {
-            font-weight: 600;
+            font-weight: 500;
             font-size: rem(11);
             line-height: rem(23);
             letter-spacing: 0.05em;
@@ -32,6 +32,7 @@
             display: inline-block;
             padding: 4px 10px;
             margin-bottom: 5px;
+            font-family: $f-stevie-sans;
           }
 
           .post-date {
@@ -39,7 +40,8 @@
             line-height: 23px;
             color: $color-4;
             letter-spacing: 0.02em;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
+            font-family: $f-aileron;
           }
         }
 
@@ -49,6 +51,47 @@
           color: $color-6;
           letter-spacing: 0.25px;
           margin-bottom: 21px;
+        }
+      }
+
+      .post-image {
+        margin-bottom: 16px;
+      }
+
+      .read-more {
+        font-weight: 900;
+        font-size: rem(16);
+        line-height: rem(20);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: $color-11;
+        position: relative;
+        margin-bottom: 30px;
+        display: inline-block;
+
+        &::after {
+          position: absolute;
+          content: '';
+          width: 15px;
+          height: 12px;
+          background: url("../../images/arrow.svg");
+          right: -26px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+
+      &:not(:first-of-type) {
+        .post-info__category {
+          margin-bottom: 8px;
+        }
+
+        .post-date {
+          margin-bottom: 11px;
+        }
+
+        .post-image {
+          display: none;
         }
       }
     }

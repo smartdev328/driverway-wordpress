@@ -12,6 +12,7 @@
   "stylelint": {
     "extends": "stylelint-config-standard",
     "rules": {
+      "no-descending-specificity": null,
       "no-empty-source": null,
       "max-line-length": [
         120,
