@@ -35,14 +35,40 @@
     width: 100%;
     height: 64px;
 
+    @media (min-width: $bp-L) {
+      top: 85px;
+      right: 52px;
+      left: unset;
+      max-width: 268px;
+      height: 90px;
+    }
+
+    @media (min-width: $bp-2XL) {
+      top: unset;
+      right: 80px;
+      bottom: 6px;
+      height: 94px;
+      max-width: 368px;
+    }
+
+    @media (min-width: $bp-5XL) {
+      bottom: 0;
+      right: 194px;
+      height: 140px;
+    }
+
+    @media (min-width: 2000px) {
+      display: none;
+    }
+
     img {
       max-width: 100%;
       width: 100%;
       height: 100%;
-    }
 
-    @media (min-width: $bp-M) {
-      display: none;
+      @media (min-width: $bp-L) {
+        object-fit: cover;
+      }
     }
   }
 
@@ -115,40 +141,24 @@
     }
 
     @media (min-width: $bp-5XL) {
-      margin-bottom: 50px;
+      max-width: 2100px;
+      width: 100%;
+      margin: 0 auto 50px auto;
     }
 
     .swiper-container {
+      margin: 0 auto;
+      overflow: unset;
+      width: 290px;
+
+      @media (min-width: $bp-L) {
+        width: 660px;
+      }
+
       .swiper-wrapper {
-        @media (min-width: $bp-M) {
-          margin-left: 27%;
-        }
-
-        @media (min-width: $bp-L) {
-          margin-left: 17%;
-        }
-
-        @media (min-width: $bp-2XL) {
-          margin-left: 24%;
-        }
-
-        @media (min-width: $bp-5XL) {
-          margin-left: 31%;
-        }
-
         .swiper-slide {
-          width: 290px;
           background-color: $color-2;
           opacity: 0.3;
-          margin: 0 7.5px;
-
-          @media (min-width: $bp-M) {
-            margin: 0 27.5px;
-          }
-
-          @media (min-width: $bp-L) {
-            width: 660px;
-          }
 
           &-active {
             opacity: 1;
@@ -282,19 +292,11 @@
         left: 5px;
 
         @media (min-width: $bp-M) {
-          left: 21.5%;
+          left: -22.5%;
         }
 
         @media (min-width: $bp-L) {
-          left: 12.5%;
-        }
-
-        @media (min-width: $bp-2XL) {
-          left: 20.5%;
-        }
-
-        @media (min-width: $bp-2XL) {
-          left: 29%;
+          left: -12.5%;
         }
 
         & > .arrow {
@@ -306,19 +308,11 @@
         right: 5px;
 
         @media (min-width: $bp-M) {
-          right: 21.5%;
+          right: -22.5%;
         }
 
         @media (min-width: $bp-L) {
-          right: 12.5%;
-        }
-
-        @media (min-width: $bp-2XL) {
-          right: 20.5%;
-        }
-
-        @media (min-width: $bp-2XL) {
-          right: 29%;
+          right: -12.5%;
         }
       }
     }

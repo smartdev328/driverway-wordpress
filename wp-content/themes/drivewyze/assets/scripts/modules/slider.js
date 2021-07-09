@@ -5,17 +5,23 @@ const
 	sliders = {
 		init: function () {
 			let customerSlider = $('.customer-slider .swiper-container');
-			let slidesQuantity = $('.customer-slider .swiper-container .swiper-wrapper').data('slides')
 
 			if (customerSlider.length > 0) {
 				customerSlider.each(function () {
 					let customerSwiper = new Swiper(this, {
 						loop: true,
-						slidesPerView: "auto",
-						loopedSlides: slidesQuantity,
+						slidesPerView: 1,
 						navigation: {
 							nextEl: '.swiper-button-next',
 							prevEl: '.swiper-button-prev',
+						},
+						breakpoints: {
+							320: {
+								spaceBetween: 15,
+							},
+							768: {
+								spaceBetween: 50,
+							},
 						},
 					});
 					customerSwiper.init()
