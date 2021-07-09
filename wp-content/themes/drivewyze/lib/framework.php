@@ -39,13 +39,26 @@ class Drivewyze_Navwalker extends Walker_Nav_Menu {
 		$indent  = str_repeat( "\t", $depth );
 
 		if( $depth == 0 ){
+//			$output .= "\n$indent<ul role=\"menu\" class=\" dropdown-menu first\"><div class='sub-menu-wrap'>\n";
 			$output .= "\n$indent<ul role=\"menu\" class=\" dropdown-menu first\">\n";
 			$output .= '<span class="caret-back"><svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 0.5L4 3.5L7 0.5" stroke="#9D9FA2"/></svg>';
 			$output .= '<span>Back</span></span>';
+		} elseif ($depth == 1) {
+			$output .= "\n$indent<ul role=\"menu\" class=\" dropdown-menu nested\">\n";
 		} else {
 			$output .= "\n$indent<ul role=\"menu\" class=\" dropdown-menu\">\n";
 		}
 	}
+
+//	public function end_lvl( &$output, $depth = 0, $args = array() ) {
+//		$indent = str_repeat("\t", $depth);
+//
+//		if( $depth == 0 ){
+//			$output .= "$indent</div></ul>\n";
+//		} else {
+//			$output .= "$indent</ul>\n";
+//		}
+//	}
 	/**
 	 * Walker::start_el()
 	 *

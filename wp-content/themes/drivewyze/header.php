@@ -7,8 +7,10 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  * @package Drivewyze
  */
-
-?><!DOCTYPE html>
+$socials 	   = get_field('socials', 'option');
+$external_link = get_field('external_link', 'option');
+?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
 <head>
@@ -45,6 +47,24 @@
 					);
 				endif;
 				?>
+				<?php if ($socials || $external_link) : ?>
+					<div class="header__bottom">
+						<?php if ($socials && is_array($socials)) :
+							get_template_part( 'template-parts/socials' );
+						endif; ?>
+
+						<?php if ($external_link && is_array($external_link)) : ?>
+							<a class="header__link" href="<?php echo $external_link['url']; ?>" target="<?php echo $external_link['target']; ?>">
+								<span><?php echo $external_link['title']; ?></span>
+								<svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M6 0.5H1V10.5H11V5.5" stroke="#0066A4"/>
+									<path d="M11 3.70001L11 0.500012L7.8 0.500012" stroke="#0066A4"/>
+									<path d="M11 0.5L7.8 3.7" stroke="#0066A4"/>
+								</svg>
+							</a>
+						<?php endif; ?>
+					</div>
+				<?php endif; ?>
 			</nav>
 			<div class="header__btns">
 				<div class="header__search">

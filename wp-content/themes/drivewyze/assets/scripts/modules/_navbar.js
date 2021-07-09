@@ -6,7 +6,8 @@ $(document).on('click', '.dropdown-menu', function (e) {
 function extraUrlCondition() {
 
 	const disableLink = $('#primary-menu .menu-item a[href*="#"]');
-	const disabledForClick = disableLink.closest('li');
+	// const disabledForClick = disableLink.closest('li');
+	const disabledForClick = disableLink.closest('li').children('a');
 
 	disabledForClick.addClass("disabled");
 
@@ -48,7 +49,21 @@ function extraUrlCondition() {
 
 }
 
+function extraNavClasses() {
+
+	$('.dropdown-menu.nested').each(function () {
+		$(this).closest('.dropdown-menu.first').addClass('first--row');
+	});
+
+	// $('.dropdown-menu.first').each(function () {
+	// 	const content = $(this).html();
+	// 	$(this).html('');
+	// 	$(this).append('<div class="wrapper"></div>').html(content);
+	// });
+}
+
 extraUrlCondition();
+extraNavClasses();
 
 $('.navbar-toggler').click(function () {
 	let previousScrollY = 0;
