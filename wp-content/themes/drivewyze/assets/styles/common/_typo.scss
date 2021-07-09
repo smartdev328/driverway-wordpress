@@ -96,16 +96,28 @@ h4 {
 }
 
 h5 {
+  margin-bottom: 13px;
   font-family: $f-base;
   font-weight: 700;
   font-size: 0.71875rem; //11.5px
   line-height: rem(24);
-  letter-spacing: 0.25px;
+  letter-spacing: 0.7px; //0.25
 
   @media (min-width: $bp-L) {
     font-size: rem(16);
     line-height: rem(26);
     letter-spacing: 1.28px;
+  }
+}
+
+.subtitle {
+  p,
+  a {
+    font-family: $f-base;
+    font-weight: 400;
+    font-size: rem(13);
+    line-height: rem(22);
+    letter-spacing: 0.13px;
   }
 }
 
