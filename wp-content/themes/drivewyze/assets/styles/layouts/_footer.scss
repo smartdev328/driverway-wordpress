@@ -84,8 +84,11 @@
 
     &--socials,
     &:last-of-type {
-      margin-bottom: 0;
       margin-right: 0;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
     }
   }
 

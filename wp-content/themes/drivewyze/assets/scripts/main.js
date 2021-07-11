@@ -4,7 +4,8 @@ import "jquery"
 
 // Import everything from autoload
 import "./autoload/**/*"
-import "./modules/_navbar";
+import "./modules/navbar";
+import "./modules/toggle-header";
 import toggleSearch from './modules/search-form';
 import posts from "./modules/blog"
 

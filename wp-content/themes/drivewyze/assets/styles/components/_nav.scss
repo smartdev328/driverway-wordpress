@@ -1,7 +1,6 @@
 /* stylelint-disable */
 
 .navbar {
-  margin-top: 7px;
   padding: 0 15px 0;
   display: flex;
   flex-direction: row;
@@ -13,6 +12,16 @@
     margin: 0;
     order: 0;
     flex-grow: 1;
+  }
+
+  &-collapse {
+    &.show {
+      @media (max-width: $bp-L - 1px) {
+        padding-top: 7px;
+        max-height: calc(100vh - 210px);
+        overflow-y: scroll;
+      }
+    }
   }
 
   &-nav {
@@ -361,6 +370,8 @@
         &.show {
           @media (max-width: $bp-L - 1px) {
             transform: translateX(0);
+            overflow-y: scroll;
+            max-height: calc(100vh - 100px);
           }
         }
 

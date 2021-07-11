@@ -18,7 +18,6 @@
 
 .search-form {
   &-wrap {
-    //padding-left: 15px;
     width: 100%;
     height: 51px;
     max-height: 0;
@@ -31,6 +30,7 @@
     z-index: 9;
     display: flex;
     justify-content: space-between;
+    visibility: hidden;
 
     @media (min-width: $bp-L) {
       max-width: 0;
@@ -52,6 +52,7 @@
 
     &.open {
       max-height: 51px;
+      visibility: visible;
 
       @media (min-width: $bp-L) {
         max-width: 250px;
