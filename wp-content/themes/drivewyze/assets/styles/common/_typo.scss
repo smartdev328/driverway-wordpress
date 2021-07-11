@@ -104,6 +104,11 @@ h5 {
   letter-spacing: 0.7px; //0.25
 
   @media (min-width: $bp-L) {
+    margin-bottom: 9px;
+  }
+
+  @media (min-width: $bp-2XL) {
+    margin-bottom: 7px;
     font-size: rem(16);
     line-height: rem(26);
     letter-spacing: 1.28px;
@@ -118,6 +123,16 @@ h5 {
     font-size: rem(13);
     line-height: rem(22);
     letter-spacing: 0.13px;
+
+    @media (min-width: $bp-L) {
+      font-size: 0.71875rem; //11.5px
+      letter-spacing: 0.11px;
+    }
+
+    @media (min-width: $bp-2XL) {
+      font-size: rem(13);
+      letter-spacing: 0.13px;
+    }
   }
 }
 

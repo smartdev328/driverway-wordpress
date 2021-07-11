@@ -3,15 +3,45 @@
   padding-bottom: 12px;
   background-color: $color-6;
 
+  @media (min-width: $bp-L) {
+    padding-top: 35px;
+    padding-bottom: 18px;
+  }
+
   &-container {
     margin: 0 auto;
     padding: 0 15px;
     width: 100%;
-    max-width: 1910px;
+    max-width: 1920px;
 
     @media (min-width: $bp-M) {
       padding-left: 25px;
       padding-right: 25px;
+    }
+
+    @media (min-width: $bp-L) {
+      padding-left: 33px;
+      padding-right: 30px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    @media (min-width: $bp-5XL) {
+      padding-left: 30px;
+    }
+  }
+
+  &-col {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $bp-L) {
+      min-width: 208px;
+    }
+
+    @media (min-width: $bp-5XL) {
+      min-width: 300px;
     }
   }
 
@@ -23,18 +53,39 @@
     @media (min-width: $bp-M) {
       grid-gap: 100px;
     }
-  }
 
-  &-col {
-    display: flex;
-    flex-direction: column;
+    @media (min-width: $bp-L) {
+      grid-gap: 0;
+    }
+
+    .footer-col {
+      &:first-of-type {
+        @media (min-width: $bp-L) {
+          margin-right: 32px;
+        }
+
+        @media (min-width: $bp-2XL) {
+          margin-right: 16px;
+        }
+      }
+    }
   }
 
   &-group {
     margin-bottom: 16px;
 
+    @media (min-width: $bp-L) {
+      margin-right: 30px;
+    }
+
+    @media (min-width: $bp-2XL) {
+      margin-right: 15px;
+    }
+
+    &--socials,
     &:last-of-type {
       margin-bottom: 0;
+      margin-right: 0;
     }
   }
 
@@ -52,9 +103,39 @@
     }
 
     &.copyright {
+      &--mobile {
+        @media (min-width: $bp-L) {
+          display: none;
+        }
+      }
+
+      &--desktop {
+        display: none;
+
+        @media (min-width: $bp-L) {
+          padding-top: 23px;
+          display: block;
+        }
+      }
+
       p {
         color: $color-8;
       }
+    }
+  }
+
+  .desktop-el {
+    display: none;
+
+    @media (min-width: $bp-L) {
+      margin-top: 28px;
+      display: inline-block;
+      font-family: $f-base;
+      font-weight: 400;
+      font-size: rem(11);
+      line-height: rem(18);
+      letter-spacing: 0.22px;
+      color: $color-8;
     }
   }
 

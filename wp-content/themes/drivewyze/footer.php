@@ -46,6 +46,10 @@ $external_link   = ( !empty($external) && is_array($external) ) ? $external['lin
 							<?php endforeach; ?>
 						</div>
 					<?php endif; ?>
+					<div class="footer-group copyright copyright--desktop subtitle">
+						<?php $site_name = get_bloginfo('name'); ?>
+						<p><?php echo sprintf('&#169;&nbsp;%04d&nbsp;%s&nbsp;', date('Y'), $site_name); ?></p>
+					</div>
 				</div>
 			</div>
 		<?php endif; ?>
@@ -77,7 +81,7 @@ $external_link   = ( !empty($external) && is_array($external) ) ? $external['lin
 			</div>
 		<?php endif; ?>
 		<?php if ($socials && is_array($socials)) : ?>
-			<div class="footer-group">
+			<div class="footer-group footer-group--socials">
 				<div class="footer-col">
 					<?php if ( $socials_title ) : ?>
 						<h5><?php echo $socials_title; ?></h5>
@@ -86,7 +90,7 @@ $external_link   = ( !empty($external) && is_array($external) ) ? $external['lin
 				</div>
 			</div>
 		<?php endif; ?>
-		<div class="footer-group copyright subtitle">
+		<div class="footer-group copyright copyright--mobile subtitle">
 			<?php $site_name = get_bloginfo('name'); ?>
 			<p><?php echo sprintf('&#169;&nbsp;%04d&nbsp;%s&nbsp;', date('Y'), $site_name); ?></p>
 		</div>
