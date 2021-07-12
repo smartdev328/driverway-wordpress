@@ -14,6 +14,7 @@ defined( 'THEME_TD' ) ? THEME_TD : define( 'THEME_TD', 'drivewyze' );
 // Load modules
 $theme_includes = [
 	'/lib/helpers.php',
+	'/lib/posts-ajax.php',                     // Ajax posts load
 	'/lib/cleanup.php',                        // Clean up default theme includes
 	'/lib/enqueue-scripts.php',                // Enqueue styles and scripts
 	'/lib/protocol-relative-theme-assets.php', // Protocol (http/https) relative assets path
