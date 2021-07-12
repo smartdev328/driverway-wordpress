@@ -34,5 +34,5 @@ $category = get_the_category()[0]->name;
         <?php echo get_the_post_thumbnail(  get_the_ID(), 'full' );?>
     </div>
 
-    <a href="<?php echo get_permalink(); ?>"> Read More</a>
+    <a class="read-more" href="<?php echo get_permalink(); ?>"> Read More</a>
 </div>

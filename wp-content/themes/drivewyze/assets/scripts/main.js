@@ -8,8 +8,10 @@ import "./modules/navbar";
 import "./modules/toggle-header";
 import toggleSearch from './modules/search-form';
 import posts from "./modules/blog"
+import sliders from "./modules/slider"
 
 jQuery(document).ready(() => {
-	toggleSearch();
+    toggleSearch();
     posts.select()
-});
+	sliders.init()
+})
