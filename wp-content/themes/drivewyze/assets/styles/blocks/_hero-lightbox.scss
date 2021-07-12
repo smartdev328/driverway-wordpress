@@ -1,14 +1,10 @@
 .hero-lightbox {
   padding: 90px 15px 25px;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
   z-index: 1;
-
-  @media (min-width: $bp-M) {
-    min-height: 521px;
-  }
 
   @media (min-width: $bp-2XL) {
     padding-top: 140px;
