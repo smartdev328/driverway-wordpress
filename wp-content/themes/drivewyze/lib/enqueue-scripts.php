@@ -27,6 +27,10 @@ if ( ! function_exists( 'drivewyze_scripts' ) ) :
 		// CDN hosted jQuery placed in the header, as some plugins require that jQuery is loaded in the header.
 		wp_enqueue_script( 'jquery', 'https://code.jquery.com/jquery-2.2.4.min.js', [], '2.2.4', false );
 
+		// Fancybox
+		wp_enqueue_script('fancybox_js', '//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js', false, null);
+		wp_enqueue_style('fancybox', '//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css');
+
 		// Enqueue the main JS file.
 		wp_enqueue_script( 'main-javascript', asset_path( 'scripts/main.js' ), [ 'jquery' ], '1.0.0', true );
 

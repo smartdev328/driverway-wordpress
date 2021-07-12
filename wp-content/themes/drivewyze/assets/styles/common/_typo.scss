@@ -31,17 +31,43 @@ body {
 }
 
 h1 {
+  margin-bottom: 35px;
   font-family: $f-medium;
   font-weight: normal;
   font-size: rem(32);
   line-height: rem(36);
+  letter-spacing: 0;
+
+  @media (min-width: $bp-M) {
+    margin-bottom: 26px;
+  }
 
   @media (min-width: $bp-L) {
+    margin-bottom: 24px;
+    letter-spacing: 0.1px;
+  }
+
+  @media (min-width: $bp-2XL) {
     font-family: $f-base;
     font-weight: 400;
     font-size: rem(65);
     line-height: rem(72);
     letter-spacing: -0.65px;
+  }
+
+  sup {
+    top: -8px;
+
+    @media (min-width: $bp-M) {
+      font-size: 33px;
+      top: 0;
+    }
+
+    @media (min-width: $bp-2XL) {
+      font-size: 46px;
+      top: -20px;
+      left: -2px;
+    }
   }
 }
 
@@ -101,7 +127,8 @@ h5 {
   font-weight: 700;
   font-size: 0.71875rem; //11.5px
   line-height: rem(24);
-  letter-spacing: 0.7px; //0.25
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
 
   @media (min-width: $bp-L) {
     margin-bottom: 9px;
@@ -111,7 +138,7 @@ h5 {
     margin-bottom: 7px;
     font-size: rem(16);
     line-height: rem(26);
-    letter-spacing: 1.28px;
+    letter-spacing: 1.4px;
   }
 }
 
@@ -312,7 +339,7 @@ ol.custom {
 
   .wp-block-calendar {
     a {
-      @include link-el();
+      @include link-el($color-11, $color-14);
     }
   }
 
@@ -342,6 +369,64 @@ ol.custom {
         font-size: rem(16);
         line-height: rem(26);
         letter-spacing: 1.28px;
+      }
+    }
+  }
+}
+
+a.btn-play {
+  @include secondary-btn($color-2);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .btn-icon {
+    margin: 0 0 0 10px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: $color-11;
+    position: relative;
+    transition: $transition-ease;
+
+    &::before {
+      content: '';
+      width: 36px;
+      height: 36px;
+      background-color: rgba($color-11, 0.3);
+      position: absolute;
+      z-index: -1;
+      border-radius: 50%;
+      transition: $transition-ease;
+    }
+
+    span {
+      margin-left: 4px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 6px 0 6px 8.5px;
+      border-color: transparent transparent transparent $color-2;
+      transition: $transition-ease;
+    }
+  }
+
+  &:hover {
+    .btn-icon {
+      background-color: $color-2;
+
+      &::before {
+        content: '';
+        width: 44px;
+        height: 44px;
+      }
+
+      span {
+        border-color: transparent transparent transparent $color-11;
       }
     }
   }
