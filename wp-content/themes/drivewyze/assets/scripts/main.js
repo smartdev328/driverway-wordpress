@@ -6,6 +6,8 @@ import "jquery"
 import "./autoload/**/*"
 import "./modules/navbar";
 import "./modules/toggle-header";
+import "./modules/fancybox";
+import "./modules/scroll-down";
 import toggleSearch from './modules/search-form';
 import posts from "./modules/blog"
 import sliders from "./modules/slider"
