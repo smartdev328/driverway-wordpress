@@ -8,7 +8,8 @@
  * @package Drivewyze
  */
 $socials 	   = get_field('socials', 'option');
-$external_link = get_field('external_link', 'option');
+$external      = get_field('external_link', 'option');
+$external_link = ( !empty($external) && is_array($external) ) ? $external['link'] : '' ;
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>

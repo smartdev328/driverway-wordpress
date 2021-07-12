@@ -1,12 +1,19 @@
 .header {
-  position: sticky;
+  position: fixed;
   width: 100%;
   top: 0;
+  left: 0;
   z-index: 9;
+  background-color: $color-2;
+  transition: $transition-ease;
 
   @media (max-width: $bp-L - 1px) {
     max-height: 100vh;
     overflow-y: auto;
+  }
+
+  &.move-up {
+    transform: translateY(-100%);
   }
 
   &__container {
@@ -43,11 +50,13 @@
   }
 
   &__bottom {
+    padding-top: 10px;
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     display: none;
+    background-color: $color-2;
 
     @media (min-width: $bp-L) {
       display: none;
@@ -121,5 +130,19 @@
     letter-spacing: 0.25px;
     color: $color-6;
     background-color: $color-15;
+  }
+}
+
+body {
+  &.logged-in.admin-bar {
+    .header {
+      @media (min-width: 601px) {
+        top: 46px;
+      }
+
+      @media (min-width: 783px) {
+        top: 32px;
+      }
+    }
   }
 }
