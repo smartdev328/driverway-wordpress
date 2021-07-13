@@ -54,3 +54,15 @@ a {
   color: $color-2;
   text-shadow: none;
 }
+
+body {
+  &.logged-in.admin-bar {
+    main {
+      margin-top: 0;
+
+      @media (min-width: 601px) {
+        margin-top: 50px;
+      }
+    }
+  }
+}

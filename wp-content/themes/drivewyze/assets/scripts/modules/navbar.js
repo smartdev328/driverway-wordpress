@@ -64,6 +64,7 @@ $('.navbar-toggler').click(function () {
 	if (!$('#primaryNavBar').hasClass('show')) {
 		$('#primaryNavBar').closest('.nav-primary').addClass('nav-show');
 		$('.navbar-toggler').addClass('close-menu');
+		$('.header').addClass('open');
 		previousScrollY = window.scrollY;
 		$('html').css({
 			marginTop: -previousScrollY,
@@ -77,6 +78,7 @@ $('.navbar-toggler').click(function () {
 	} else {
 		$('#primaryNavBar').closest('.nav-primary').removeClass('nav-show');
 		$('.navbar-toggler').removeClass('close-menu');
+		$('.header').removeClass('open');
 		$('html').css({
 			marginTop: 0,
 			overflow: 'visible',
@@ -99,6 +101,7 @@ $(window).resize(function () {
 		$('.dropdown-menu').removeClass('show').removeAttr('style');
 		$('.caret').removeClass('active');
 		$('.navbar-toggler').removeClass('close-menu');
+		$('.header').removeClass('open');
 		$('html').css({
 			marginTop: 0,
 			overflow: 'visible',
