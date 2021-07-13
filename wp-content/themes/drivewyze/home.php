@@ -56,7 +56,7 @@ get_header(); ?>
 			</div>
 
 			<div class="blog-posts__container">
-				<div class="blog-posts__block">
+				<div class="blog-posts__block load-posts-block">
 					<?php
 					$args  = array(
 						'post_type'      => 'post',
