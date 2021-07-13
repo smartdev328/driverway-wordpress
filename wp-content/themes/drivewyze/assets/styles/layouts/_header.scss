@@ -12,6 +12,12 @@
     overflow-y: auto;
   }
 
+  &.open {
+    @media (max-width: $bp-L - 1px) {
+      height: 100vh;
+    }
+  }
+
   &.move-up {
     transform: translateY(-100%);
   }

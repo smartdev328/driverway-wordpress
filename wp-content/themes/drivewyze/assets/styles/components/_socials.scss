@@ -15,6 +15,7 @@
     min-width: 34px;
     color: $color-6;
     text-align: center;
+    border-radius: 50%;
     transition: $transition-ease;
 
     &:last-child {
@@ -39,11 +40,12 @@
     }
 
     &:hover {
-      color: $color-3;
+      color: $color-2;
+      background-color: $color-6;
       text-decoration: none;
 
       &::before {
-        border-color: $color-3;
+        border-color: $color-6;
       }
     }
   }
@@ -65,11 +67,11 @@
       }
 
       &:hover {
-        color: $color-4;
-        text-decoration: none;
+        color: $color-6;
+        background-color: $color-2;
 
         &::before {
-          border-color: $color-4;
+          border-color: $color-2;
         }
       }
     }
