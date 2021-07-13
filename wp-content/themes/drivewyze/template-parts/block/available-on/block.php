@@ -13,7 +13,7 @@
  */
 
 $slug         		= str_replace( 'acf/', '', $block['name'] );
-$block_id     		= $slug . '-' . $block['id'];
+$block_id          = !empty($block['anchor']) ? $block['anchor'] : $slug . '-' . $block['id'];
 $block_class  		= $slug . '-' . 'section';
 $section_title		= get_field( 'section_title' );
 $logotypes			= get_field( 'logotypes' );

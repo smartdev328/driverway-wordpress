@@ -13,7 +13,7 @@
  */
 
 $slug         		= str_replace( 'acf/', '', $block['name'] );
-$block_id     		= $slug . '-' . $block['id'];
+$block_id           = !empty($block['anchor']) ? $block['anchor'] : $slug . '-' . $block['id'];
 $block_class  		= $slug;
 $block_container	= $block_class . '-container';
 $slider				= get_field( 'slider' );

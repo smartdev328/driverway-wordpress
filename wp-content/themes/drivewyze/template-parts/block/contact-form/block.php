@@ -13,7 +13,7 @@
  */
 
 $slug         		= str_replace( 'acf/', '', $block['name'] );
-$block_id     		= $slug . '-' . $block['id'];
+$block_id           = !empty($block['anchor']) ? $block['anchor'] : $slug . '-' . $block['id'];
 $block_class  		= $slug . '-' . 'section';
 $form_id	  		= get_field( 'choices' );
 $section_title		= get_field( 'section_title' );
