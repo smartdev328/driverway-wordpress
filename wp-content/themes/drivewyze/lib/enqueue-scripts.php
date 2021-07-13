@@ -38,6 +38,7 @@ if ( ! function_exists( 'drivewyze_scripts' ) ) :
 		$theme_vars = array(
 			'home'   => get_home_url(),
 			'isHome' => is_front_page(),
+            'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php',
 		);
 		wp_localize_script( 'main-javascript', 'themeVars', $theme_vars );
 

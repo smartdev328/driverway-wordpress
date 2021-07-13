@@ -14,6 +14,7 @@ import sliders from "./modules/slider"
 
 jQuery(document).ready(() => {
     toggleSearch();
-    posts.select()
-	sliders.init()
+    posts.select();
+    posts.load_more();
+	sliders.init();
 })

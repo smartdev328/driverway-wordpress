@@ -16,11 +16,15 @@ get_header(); ?>
             yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
         }
         ?>
-        <?php if ( $title ) : ?>
-            <div class="content-title">
-                <h1><?php echo $title; ?></h1>
-            </div>
+        <?php if ( $prefix ) : ?>
+            <ul class="custom blog-prefix">
+                <li><?php echo $prefix; ?></li>
+            </ul>
         <?php endif; ?>
+
+        <div class="content-title">
+            <h1><?php echo get_queried_object()->name; ?></h1>
+        </div>
 
         <section class="blog-posts"
         <div class="blog-posts__categories">
@@ -32,17 +36,26 @@ get_header(); ?>
             );
             $categories = get_categories( $args );?>
 
-            <select class="blog-select" name="name" data-isopen="false">
-                <?php foreach ( $categories as $cat ) :
-                    $selected = $cat === $post->post_name ? 'selected' : '';
-                    ?>
-                    <option value="<?php echo get_category_link($cat->cat_ID); ?>" <?php echo $selected; ?>><?php echo $cat->name; ?></option>
-                <?php endforeach; ?>
-            </select>
+            <p class="categories-title"><?php esc_html_e( 'categories', 'wp_dev' ); ?></p>
+
+            <div class="select-blog">
+                <select class="blog-select" name="name" data-isopen="false">
+                    <?php foreach ( $categories as $cat ) :
+                        $selected = $cat === $post->post_name ? 'selected' : '';
+                        ?>
+                        <option value="<?php echo get_category_link($cat->cat_ID); ?>" <?php echo $selected; ?>
+                        <?php echo $cat->name == get_queried_object()->name ? 'selected' : '' ?>>
+                            <?php echo $prefix ? ''. $prefix .' /' : '' ?> <?php echo $cat->name; ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+
+            <a href="<?php echo get_search_link() ?>" class="posts-search"></a>
         </div>
 
         <div class="blog-posts__container">
-            <div class="blog-posts__block">
+            <div class="blog-posts__block load-posts-block">
                 <?php
                 $args  = array(
                     'post_type'      => 'post',
@@ -50,27 +63,24 @@ get_header(); ?>
                     'category_name' => get_queried_object()->slug,
                 );
                 $posts = new WP_Query( $args );
-                if ( $posts->have_posts() ) :
-                    ?>
+                if ( $posts->have_posts() ) : ?>
                     <?php
                     while ( $posts->have_posts() ) :
                         $posts->the_post();
-                        ?>
-                        <?php get_template_part( 'template-parts/blog-post-template', '' ); ?>
-                    <?php
+                        get_template_part( 'template-parts/blog-post-template', '' );
                     endwhile;
                 endif;
                 wp_reset_postdata();
                 ?>
             </div>
-            <?php $published_posts = wp_count_posts( 'post' )->publish; ?>
+            <?php $published_posts = get_queried_object()->category_count; ?>
 
             <?php if ( $published_posts > $posts_per_page ) : ?>
                 <div class="load-more">
                     <button id="load-post" title="" data-count="<?php echo $posts_per_page; ?>"
-                            data-post="<?php echo $published_posts; ?>"
-                            data-type="<?php echo $args['post_type']; ?>" href="#"
-                    >+</button>
+                            data-post="<?php echo $published_posts; ?>" data-category="<?php echo get_queried_object()->slug; ?>"
+                            data-type="<?php echo $args['post_type']; ?>"
+                    ><?php esc_html_e( 'Load More', 'wp_dev' ); ?></button>
                 </div>
             <?php endif; ?>
             <div class="ajax-preloader">

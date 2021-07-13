@@ -1,0 +1,90 @@
+.error404 {
+  #breadcrumbs {
+    padding: 58px 10px 10px;
+    font-size: rem(11);
+    line-height: rem(20);
+    letter-spacing: 0.02em;
+    margin: 0;
+
+    @media (min-width: $bp-L) {
+      padding: 67px 25px 10px;
+    }
+
+    a {
+      color: $color-4;
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+
+    strong {
+      margin-left: 5px;
+    }
+  }
+
+  .site-content {
+    margin: 0;
+
+    .content-area,
+    .site-main {
+      height: 100%;
+    }
+
+    .page-title {
+      color: $color-6;
+      padding: 0 15px;
+      text-align: center;
+    }
+
+    .error-404 {
+      height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: calc(100vh - 395px);
+      padding: 40px 0;
+
+      @media (min-width: $bp-L) {
+        min-height: calc(100vh - 235px);
+      }
+    }
+  }
+
+  .back-button {
+    border: 1px solid $color-11;
+    background: transparent;
+    text-transform: uppercase;
+    color: $color-11;
+    font-family: $f-stevie-sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: rem(11);
+    line-height: rem(28);
+    letter-spacing: 0.05em;
+    padding: 4px 35px;
+    margin-top: -7px;
+    transition: $transition-ease;
+
+    @media (min-width: $bp-M) {
+      margin-top: 22px;
+    }
+
+    @media (min-width: $bp-L) {
+      font-size: rem(16);
+      line-height: rem(26);
+
+      &:hover {
+        color: $color-2;
+        background: $color-11;
+      }
+    }
+
+    @media (min-width: $bp-2XL) {
+      padding: 7px 37px;
+      margin-top: 27px;
+    }
+  }
+}

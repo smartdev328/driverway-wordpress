@@ -5,7 +5,7 @@
  * @package Drivewyze
  */
 
-$title          = get_field( 'blog_page_title', 'options' );
+$title          = get_field( 'blog_title', 'options' );
 $prefix         = get_field( 'page_prefix', 'options' );
 $posts_per_page = get_field( 'posts_per_page', 'options' );
 
@@ -16,6 +16,12 @@ get_header(); ?>
             yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
         }
         ?>
+        <?php if ( $prefix ) : ?>
+            <ul class="custom blog-prefix">
+                <li><?php echo $prefix; ?></li>
+            </ul>
+        <?php endif; ?>
+
 		<?php if ( $title ) : ?>
 			<div class="content-title">
 				<h1><?php echo $title; ?></h1>
@@ -32,19 +38,25 @@ get_header(); ?>
 				);
 				$categories = get_categories( $args );?>
 
-                <select class="blog-select" name="name" data-isopen="false">
-                    <?php foreach ( $categories as $cat ) :
-                        $selected = $cat === $post->post_name ? 'selected' : '';
-                    ?>
-                        <option value="<?php echo get_category_link($cat->cat_ID); ?>" <?php echo $selected; ?>>
-                            <?php echo $cat->name; ?>
-                        </option>
-                    <?php endforeach; ?>
-                </select>
+                <p class="categories-title"><?php esc_html_e( 'categories', 'wp_dev' ); ?></p>
+
+                <div class="select-blog">
+                    <select class="blog-select" name="name" data-isopen="false">
+                        <?php foreach ( $categories as $cat ) :
+                            $selected = $cat === $post->post_name ? 'selected' : '';
+                            ?>
+                            <option value="<?php echo get_category_link($cat->cat_ID); ?>" <?php echo $selected; ?>>
+                                <?php echo $prefix ? ''. $prefix .' /' : '' ?> <?php echo $cat->name; ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+
+                <a href="<?php echo get_search_link() ?>" class="posts-search"></a>
 			</div>
 
 			<div class="blog-posts__container">
-				<div class="blog-posts__block">
+				<div class="blog-posts__block load-posts-block">
 					<?php
 					$args  = array(
 						'post_type'      => 'post',
@@ -69,7 +81,7 @@ get_header(); ?>
 						<button id="load-post" title="" data-count="<?php echo $posts_per_page; ?>"
 								data-post="<?php echo $published_posts; ?>"
 								data-type="<?php echo $args['post_type']; ?>" href="#"
-						>+</button>
+						><?php esc_html_e( 'Load More', 'wp_dev' ); ?></button>
 					</div>
 				<?php endif; ?>
 				<div class="ajax-preloader">

@@ -1,0 +1,78 @@
+.our-team {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 40px 7.5px 15px;
+
+  @media (min-width: $bp-L) {
+    padding: 100px 15px 15px;
+  }
+
+  &__title {
+    color: $color-6;
+    text-align: center;
+  }
+
+  &__team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 33px;
+
+    @media (min-width: $bp-XL) {
+      margin-top: 53px;
+    }
+
+    .team-item {
+      flex-basis: 50%;
+      padding: 7.5px;
+
+      @media (min-width: $bp-M) {
+        flex-basis: 33.33%;
+        padding: 15px;
+      }
+
+      @media (min-width: $bp-L) {
+        flex-basis: 25%;
+        padding: 15px;
+      }
+
+      &__info {
+        background: $color-15;
+        padding: 14px 3px 11px;
+
+        @media (min-width: $bp-S) {
+          padding: 14px 10px 11px;
+        }
+
+        @media (min-width: $bp-XL) {
+          padding: 30px 20px;
+        }
+      }
+
+      &__name {
+        color: $color-6;
+        margin-bottom: -2px;
+
+        @media (min-width: $bp-XL) {
+          font-size: rem(22);
+          line-height: rem(34);
+          letter-spacing: 0.025em;
+        }
+      }
+
+      &__position {
+        font-size: rem(13);
+        line-height: rem(22);
+        margin: 0;
+
+        @media (min-width: $bp-XL) {
+          font-size: rem(15);
+          line-height: rem(25);
+          letter-spacing: 0.025em;
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+}

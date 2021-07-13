@@ -78,6 +78,62 @@
             "maxlength": ""
         },
         {
+            "key": "field_60ec4d27452ed",
+            "label": "Testimonials Archive",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_60ec4d57452ef",
+            "label": "Title",
+            "name": "testimonials_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_60ec4d39452ee",
+            "label": "Posts Per Page",
+            "name": "testimonials_posts_per_page",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 7,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": 1,
+            "max": "",
+            "step": 1
+        },
+        {
             "key": "field_60e6b7126d747",
             "label": "Socials",
             "name": "",
@@ -425,5 +481,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1625765457
+    "modified": 1626099129
 }
