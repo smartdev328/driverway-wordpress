@@ -31,7 +31,11 @@ function filters_ajax() {
 		while ( $posts->have_posts() ) :
 			$posts->the_post();
 
-            get_template_part( 'template-parts/blog-post-template' );
+			if ( $type == 'post' ) {
+				get_template_part( 'template-parts/blog-post-template' );
+			} else {
+				get_template_part( 'template-parts/testimonials-post-template' );
+			}
 
 		endwhile;
 	endif; ?>

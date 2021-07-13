@@ -15,7 +15,7 @@ const posts = {
             post_category = btn_load_post.attr('data-category'),
             post_count = btn_load_post.attr('data-post'),
             post_count_per_page = btn_load_post.attr('data-count'),
-            list = $('.blog-posts__block'),
+            list = $('.load-posts-block'),
             page = 1;
 
         function toggle_load_more(response) {

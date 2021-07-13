@@ -374,7 +374,8 @@ ol.custom {
   }
 }
 
-a.btn-play {
+a.btn-play,
+div.btn-play {
   @include secondary-btn($color-2);
 
   display: flex;
