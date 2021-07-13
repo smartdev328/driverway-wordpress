@@ -4,7 +4,8 @@ Swiper.use([Navigation, Autoplay, EffectFade])
 const
 	sliders = {
 		init: function () {
-			let customerSlider = $('.customer-slider .swiper-container');
+			let customerSlider = $('.customer-slider .swiper-container')
+			let fleetSlider = $('.fleet-slider .swiper-container')
 
 			if (customerSlider.length > 0) {
 				customerSlider.each(function () {
@@ -23,8 +24,24 @@ const
 								spaceBetween: 50,
 							},
 						},
-					});
+					})
 					customerSwiper.init()
+				})
+			}
+
+			if(fleetSlider.length > 0) {
+				fleetSlider.each(function (){
+					let fleetSwiper = new Swiper(this, {
+						loop: false,
+						autoplay: false,
+						slidesPerView: 1,
+						pagination: {
+							el: '.swiper-pagination',
+							type: 'custom',
+						},
+						navigation: false,
+					})
+					fleetSwiper.init()
 				})
 			}
 		},
