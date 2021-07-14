@@ -130,6 +130,8 @@
       }
 
       &__wrap {
+        position: relative;
+
         @media (min-width: $bp-L) {
           max-width: 270px;
         }
@@ -350,10 +352,9 @@
     }
 
     a {
-      @include btn-arrow($color-11, $color-6, $color-2);
+      @include btn-arrow($color-11, $color-6, transparent);
 
       padding: 8px 40px 8px 0;
-      background-color: transparent;
 
       @media (min-width: $bp-M) {
         padding-left: 0;

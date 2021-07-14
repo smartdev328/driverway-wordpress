@@ -1,6 +1,6 @@
 {
     "key": "group_60ec5c724eb2a",
-    "title": "Block: Leaders in Connected Truck",
+    "title": "Block: Intro",
     "fields": [
         {
             "key": "field_60ec5c8d5a480",
@@ -212,5 +212,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1626158445
+    "modified": 1626183689
 }
