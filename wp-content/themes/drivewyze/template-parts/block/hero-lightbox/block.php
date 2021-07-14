@@ -30,6 +30,10 @@ $add_scroll_btn    = get_field( 'add_scroll_btn' );
 $scroll_to_id      = get_field( 'scroll_to_id' );
 ?>
 <section id="<?php echo $block_id; ?>" class="hero-lightbox">
+	<?php
+	if ( function_exists('yoast_breadcrumb') && !is_front_page() ) :
+		yoast_breadcrumb( '<div class="page-breadcrumbs"><p id="breadcrumbs" class="light">','</p></div>' );
+	endif; ?>
 	<?php if ( ( ! empty( $bg_image ) && is_array( $bg_image ) ) && $background === 'image' ) : ?>
 		<div class="hero-lightbox-bg"
 			 style="background-image: url(<?php echo wp_get_attachment_image_url( $bg_image['ID'], 'full' ); ?>)"></div>

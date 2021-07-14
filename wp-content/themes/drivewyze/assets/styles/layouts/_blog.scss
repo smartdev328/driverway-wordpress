@@ -3,35 +3,9 @@
 .category {
   #breadcrumbs {
     padding: 7px 15px;
-    font-size: rem(11);
-    line-height: rem(16);
-    letter-spacing: 0.02em;
-    margin: 0;
 
     @media (min-width: $bp-M) {
       padding: 17px 30px;
-    }
-
-    a {
-      color: $color-4;
-      margin-right: 5px;
-    }
-
-    strong {
-      margin-left: 5px;
-    }
-
-    span {
-      display: flex;
-      flex-direction: row;
-    }
-
-    i {
-      margin-left: 6px;
-      margin-right: 8px;
-      font-size: rem(6);
-      line-height: rem(18);
-      color: $color-4;
     }
   }
 

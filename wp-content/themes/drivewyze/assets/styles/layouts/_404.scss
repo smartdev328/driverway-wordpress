@@ -1,23 +1,9 @@
 .error404 {
   #breadcrumbs {
-    padding: 58px 10px 10px;
-    font-size: rem(11);
-    line-height: rem(20);
-    letter-spacing: 0.02em;
-    margin: 0;
+    padding: 10px 15px 10px;
 
-    @media (min-width: $bp-L) {
-      padding: 67px 25px 10px;
-    }
-
-    a {
-      color: $color-4;
-      margin-right: 5px;
-      margin-left: 5px;
-    }
-
-    strong {
-      margin-left: 5px;
+    @media (min-width: $bp-M) {
+      padding: 30px 30px 10px;
     }
   }
 
