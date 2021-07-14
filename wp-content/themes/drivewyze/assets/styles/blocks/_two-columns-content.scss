@@ -1,0 +1,122 @@
+.two-columns-content {
+  background-color: $color-2;
+  padding: 0 15px;
+  max-width: 1860px;
+  margin: 0 auto;
+
+  @media (min-width: $bp-M) {
+    padding: 0 30px;
+  }
+
+  @media (min-width: $bp-5XL) {
+    padding: 0;
+  }
+
+  &_left {
+    .column-item {
+      @media (min-width: $bp-2XL) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row-reverse;
+      }
+
+      &:nth-of-type(odd) {
+        flex-direction: row;
+      }
+    }
+  }
+
+  &_right {
+    .column-item {
+      @media (min-width: $bp-2XL) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+      }
+
+      &:nth-of-type(odd) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  .column-item {
+    &:nth-of-type(odd) {
+      .column-item__info {
+        @media (min-width: $bp-2XL) {
+          padding: 0 116px 0 111px;
+        }
+
+        @media (min-width: $bp-5XL) {
+          padding: 0 183px 0 156px;
+        }
+      }
+    }
+
+    &__image {
+      margin-bottom: 15px;
+
+      @media (min-width: $bp-M) {
+        margin-bottom: 40px;
+      }
+
+      @media (min-width: $bp-2XL) {
+        flex-basis: 48.8%;
+        margin-bottom: 30px;
+      }
+
+      @media (min-width: $bp-5XL) {
+        flex-basis: 49.1%;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &__info {
+      margin-bottom: 50px;
+
+      @media (min-width: $bp-2XL) {
+        flex-basis: 50%;
+        padding: 0 100px 0 127px;
+      }
+
+      @media (min-width: $bp-5XL) {
+        padding: 0 164px 0 176px;
+      }
+
+      a {
+        @include btn-arrow($color-11, $color-6, $color-2);
+
+        display: table;
+        margin-top: -20px;
+        padding-left: 0;
+
+        @media (min-width: $bp-M) {
+          padding-left: 0;
+        }
+
+        @media (min-width: $bp-2XL) {
+          margin-top: 4px;
+        }
+
+        @media (min-width: $bp-5XL) {
+          padding-left: 0;
+        }
+      }
+    }
+
+    &:last-of-type {
+      .column-item__info {
+        margin-bottom: 0;
+      }
+
+      .column-item__image {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

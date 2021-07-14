@@ -129,3 +129,4 @@ function om_search_form( $form ) {
 add_filter( 'get_search_form', 'om_search_form' );
 
 add_image_size( 'team-image', 443, 443, true );
+add_image_size( 'two-columns', 915, 450, true );
