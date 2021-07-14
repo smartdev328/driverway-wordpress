@@ -13,7 +13,7 @@
  */
 
 $slug         = str_replace( 'acf/', '', $block['name'] );
-$block_id     = $slug . '-' . $block['id'];
+$block_id     = !empty($block['anchor']) ? $block['anchor'] : $slug . '-' . $block['id'];
 $align_class  = $block['align'] ? 'align' . $block['align'] : '';
 $custom_class = isset( $block['className'] ) ? $block['className'] : '';
 $cards        = get_field( 'cards' );

@@ -1,0 +1,179 @@
+.image-info-block {
+  position: relative;
+  z-index: 2;
+  min-height: 568px;
+  background-size: cover;
+  background-position-x: 56%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: $bp-M) {
+    min-height: 545px;
+    background-position-x: 36%;
+    background-size: cover;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  @media (min-width: $bp-L) {
+    min-height: 545px;
+    background-position-x: 0;
+    background-position-y: 44%;
+    background-size: auto 620px;
+  }
+
+  @media (min-width: 1000px) {
+    background-size: cover;
+  }
+
+  @media (min-width: $bp-2XL) {
+    min-height: 750px;
+    background-position-x: 0;
+    background-position-y: 30%;
+    background-size: auto 111%;
+    justify-content: center;
+  }
+
+  @media (min-width: $bp-3XL) {
+    background-size: cover;
+  }
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba($color-6, 0.1);
+  }
+
+  &__container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 940px;
+
+    @media (min-width: $bp-5XL) {
+      max-width: 1710px;
+      position: relative;
+    }
+  }
+
+  &-info {
+    margin: 0 auto;
+    padding: 120px 34px 0;
+    max-width: 320px;
+    text-align: center;
+
+    @media (min-width: $bp-M) {
+      padding: 0;
+      width: 68%;
+      height: 530px;
+      max-width: 100%;
+      transform: translateX(-26%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      top: 10px;
+      align-items: center;
+      position: relative;
+    }
+
+    @media (min-width: $bp-L) {
+      height: 520px;
+      transform: translateX(-16%);
+      top: 12px;
+    }
+
+    @media (min-width: $bp-2XL) {
+      height: 630px;
+      top: 0;
+      transform: translateX(-13%);
+    }
+
+    h5 {
+      margin-bottom: 11px;
+      color: $color-2;
+
+      @media (min-width: $bp-2XL) {
+        margin-bottom: 14px;
+      }
+    }
+
+    p {
+      margin-bottom: 10px;
+      color: $color-2;
+
+      @media (min-width: $bp-M) {
+        font-size: rem(15);
+        line-height: rem(25);
+      }
+    }
+
+    a {
+      @include btn-arrow($color-2, $color-11, transparent);
+
+      padding: 8px 36px 8px 14px;
+
+      @media (min-width: $bp-M) {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &-decor {
+    position: absolute;
+    width: 100%;
+    height: 445px;
+    top: -83px;
+    left: 0;
+
+    @media (min-width: $bp-M) {
+      width: 100%;
+      height: 100%;
+      top: 0;
+    }
+
+    &__img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-size: auto 100%;
+      background-position-x: center;
+      background-repeat: no-repeat;
+      background-position-y: top;
+      background-image: url("../../images/loc-v.png");
+
+      @media (min-width: $bp-M) {
+        background-image: url("../../images/loc-h.svg");
+        background-size: contain;
+      }
+    }
+  }
+
+  &__wrap {
+    position: relative;
+
+    @media (min-width: $bp-M) {
+      max-width: 242px;
+      padding-top: 0;
+      padding-bottom: 18px;
+      left: 80px;
+    }
+
+    @media (min-width: $bp-L) {
+      padding-bottom: 4px;
+      left: 73px;
+    }
+
+    @media (min-width: $bp-2XL) {
+      padding: 14px 0 0;
+      max-width: 290px;
+      left: 82px;
+    }
+  }
+}
