@@ -131,3 +131,10 @@ add_filter( 'get_search_form', 'om_search_form' );
 add_image_size( 'team-image', 443, 443, true );
 
 add_filter( 'big_image_size_threshold', '__return_false' );
+
+function filter_wpseo_breadcrumb_separator($this_options_breadcrumbs_sep) {
+	return '<i class="fa fas fa-chevron-right"></i>';
+};
+
+// add the filter
+add_filter('wpseo_breadcrumb_separator', 'filter_wpseo_breadcrumb_separator', 10, 1);
