@@ -33,6 +33,7 @@ $category = get_the_category()[0]->name;
 				<p class="post-date">
 					<?php echo get_the_date() ?>
 				</p>
+				<?php get_template_part('template-parts/share-buttons'); ?>
 			</div>
 		</div>
 	</div>
