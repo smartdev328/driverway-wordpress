@@ -74,6 +74,14 @@ if ( ! class_exists( 'ACF_Blocks_Loader' ) && function_exists( 'acf_register_blo
 							'category'        => $file_headers['category'] ?: 'formatting',
 							'icon'            => $file_headers['icon'],
 							'keywords'        => explode( ' ', $file_headers['keywords'] ),
+                            'example'  => array(
+                                'attributes' => array(
+                                    'mode' => 'preview',
+                                    'data' => array(
+                                        'preview_image_help' => get_template_directory_uri() . '/' . $this->get_block_dir_path( $slug ) . 'preview.png',
+                                    )
+                                )
+                            ),
 							'supports'        => json_decode( $file_headers['supports'], true ),
 							'render_callback' => [ $this, 'block_render_callback' ],
 							'enqueue_style'   => get_template_directory_uri() . '/' . $this->get_block_dir_path( $slug ) . 'style.css',
