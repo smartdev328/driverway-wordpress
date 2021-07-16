@@ -8,6 +8,7 @@ import "./modules/navbar";
 import "./modules/toggle-header";
 import "./modules/fancybox";
 import "./modules/scroll-down";
+import "./modules/share-buttons";
 import toggleSearch from './modules/search-form';
 import posts from "./modules/blog"
 import sliders from "./modules/slider"

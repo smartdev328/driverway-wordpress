@@ -16,6 +16,7 @@
   display: inline-block;
   position: relative;
   color: $color;
+  font-weight: 700;
   text-decoration: none;
   transition: $transition-linear;
 
@@ -25,7 +26,7 @@
     height: 1px;
     position: absolute;
     left: 0;
-    bottom: -2px;
+    bottom: 2px;
     background-color: $hover;
     transition: $transition-linear;
   }

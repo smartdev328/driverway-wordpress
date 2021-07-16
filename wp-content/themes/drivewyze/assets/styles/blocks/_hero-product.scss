@@ -125,9 +125,15 @@
     &__column {
       flex-basis: 100%;
       max-width: 100%;
+      position: relative;
 
       &:first-child {
         padding: 54px 15px 38px 15px;
+
+        @media (min-width: $bp-M) {
+          padding-left: 30px;
+          padding-right: 30px;
+        }
 
         @media (min-width: $bp-L) {
           flex-basis: 51.5%;

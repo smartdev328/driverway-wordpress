@@ -34,6 +34,7 @@ $tabs				= get_field( 'hero_tabs' );
 $active_tab			= str_replace(' ', '', strtolower( get_field( 'active_tab' ) ) );
 ?>
 <section id="<?php echo $block_id; ?>" class="<?php echo $block_class; ?>">
+
 	<div class="<?php echo $block_class . '-container'; ?>">
 
 		<?php if( $tabs ) : ?>
@@ -63,6 +64,10 @@ $active_tab			= str_replace(' ', '', strtolower( get_field( 'active_tab' ) ) );
 		<div class="<?php echo $block_class . '-hero'; ?>">
 
 			<div class="<?php echo $block_class . '-hero__column'; ?>">
+				<?php
+				if ( function_exists('yoast_breadcrumb') ) :
+					yoast_breadcrumb( '<div class="page-breadcrumbs page-breadcrumbs--product"><p id="breadcrumbs">','</p></div>' );
+				endif; ?>
 
 				<?php if( $page_logo ) : ?>
 					<img class="<?php echo $block_class . '-hero__logo'; ?>"

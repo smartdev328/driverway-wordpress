@@ -1,5 +1,5 @@
 .hero-lightbox {
-  padding: 90px 15px 25px;
+  padding: 90px 0 25px;
   min-height: 568px;
   display: flex;
   flex-direction: column;
@@ -28,18 +28,21 @@
   }
 
   &__container {
+    padding: 0 15px;
     margin: 0 auto 20px;
     width: 100%;
     max-width: 632px;
 
     @media (min-width: $bp-M) {
+      padding-left: 30px;
+      padding-right: 30px;
       margin-bottom: 85px;
-      max-width: 584px;
+      max-width: 646px;
     }
 
     @media (min-width: $bp-L) {
       width: 100%;
-      max-width: 81%;
+      max-width: calc(80% + 35px);
       margin-bottom: 40px;
     }
 
@@ -49,6 +52,7 @@
 
     @media (min-width: $bp-5XL) {
       margin-bottom: 80px;
+      max-width: 1920px;
     }
 
     .header-content {

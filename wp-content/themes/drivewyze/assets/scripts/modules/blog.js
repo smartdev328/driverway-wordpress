@@ -12,6 +12,8 @@ const posts = {
     load_more: function () {
         let btn_load_post = $('#load-post'),
             post_type = btn_load_post.attr('data-type'),
+            post_orderby = btn_load_post.attr('data-orderby'),
+            post_order = btn_load_post.attr('data-order'),
             post_category = btn_load_post.attr('data-category'),
             post_count = btn_load_post.attr('data-post'),
             post_count_per_page = btn_load_post.attr('data-count'),
@@ -38,6 +40,8 @@ const posts = {
                 data: {
                     paged: page,
                     type: post_type,
+					orderby: post_orderby,
+					order: post_order,
                     category: post_category,
                     posts_per_page: post_count_per_page,
                     action: 'filters_ajax',
@@ -56,7 +60,7 @@ const posts = {
                     $('.ajax-preloader').hide();
                 },
             });
-        }
+		}
 
         btn_load_post.on('click', function () {
             ajax_load();
