@@ -15,10 +15,14 @@ function filters_ajax() {
 	$paged          = ( isset( $_POST['paged'] ) ) ? $_POST['paged'] : 0;
 	$posts_per_page = ( isset( $_POST['posts_per_page'] ) ) ? $_POST['posts_per_page'] : 0;
 	$type           = $_POST['type'];
+	$orderby        = ( isset( $_POST['orderby'] ) ) ? $_POST['orderby'] : 'date';
+	$order          = ( isset( $_POST['order'] ) ) ? $_POST['order'] : 'DESC';
 	$category       = $_POST['category'];
 
 	$args = array(
 		'post_type'      => $type,
+		'orderby'        => $orderby,
+		'order'          => $order,
 		'post_status'    => 'publish',
 		'posts_per_page' => $posts_per_page,
 		'paged'          => $paged,
@@ -33,6 +37,8 @@ function filters_ajax() {
 
 			if ( $type == 'post' ) {
 				get_template_part( 'template-parts/blog-post-template' );
+			} elseif ( $type == 'partners' )  {
+				get_template_part( 'template-parts/partners-post-template' );
 			} else {
 				get_template_part( 'template-parts/testimonials-post-template' );
 			}
