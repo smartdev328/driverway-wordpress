@@ -40,6 +40,14 @@
     background-size: cover;
   }
 
+  @media (min-width: $bp-5XL) {
+    background-position-y: 50%;
+  }
+
+  @media (min-width: 2400px) {
+    background-size: cover;
+  }
+
   &::before {
     content: '';
     width: 100%;
@@ -50,14 +58,107 @@
     background-color: rgba($color-6, 0.1);
   }
 
+  &::after {
+    @media (min-width: $bp-M) {
+      content: '';
+      width: 163px;
+      height: 167px;
+      position: absolute;
+      right: 0;
+      top: -5px;
+      margin: auto;
+      background-size: auto;
+      background-repeat: no-repeat;
+      background-image: url("../../images/hero-right.svg");
+      transform: translateY(-50%);
+    }
+
+    @media (min-width: $bp-2XL) {
+      width: 232px;
+      height: 238px;
+    }
+
+    @media (min-width: $bp-5XL) {
+      top: -97px;
+    }
+  }
+
   &__container {
     margin: 0 auto;
     width: 100%;
     max-width: 940px;
+    position: relative;
 
     @media (min-width: $bp-5XL) {
       max-width: 1710px;
       position: relative;
+    }
+
+    &::before {
+      @media (min-width: $bp-M) {
+        content: '';
+        width: 122px;
+        height: 209px;
+        position: absolute;
+        left: 32px;
+        top: -33px;
+        margin: auto;
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-image: url("../../images/hero-right.svg");
+      }
+
+      @media (min-width: $bp-L) {
+        height: 258px;
+        left: 82px;
+        top: -50px;
+      }
+
+      @media (min-width: $bp-2XL) {
+        width: 200px;
+        height: 370px;
+        left: -75px;
+        top: -130px;
+        background-repeat: repeat;
+      }
+
+      @media (min-width: $bp-5XL) {
+        left: 85px;
+        top: -173px;
+      }
+    }
+
+    &::after {
+      @media (min-width: $bp-M) {
+        content: '';
+        width: 156px;
+        height: 53px;
+        position: absolute;
+        right: 91px;
+        bottom: -15px;
+        margin: auto;
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-image: url("../../images/info-bottom.svg");
+      }
+
+      @media (min-width: $bp-L) {
+        width: 212px;
+        height: 90px;
+        right: 85px;
+        bottom: -40px;
+      }
+
+      @media (min-width: $bp-2XL) {
+        width: 330px;
+        height: 90px;
+        right: -72px;
+        bottom: -55px;
+      }
+
+      @media (min-width: $bp-5XL) {
+        right: 38px;
+      }
     }
   }
 
@@ -90,7 +191,11 @@
     @media (min-width: $bp-2XL) {
       height: 630px;
       top: 0;
-      transform: translateX(-13%);
+      transform: translateX(-19%);
+    }
+
+    @media (min-width: $bp-5XL) {
+      transform: translateX(-15%);
     }
 
     h5 {
@@ -171,7 +276,7 @@
     }
 
     @media (min-width: $bp-2XL) {
-      padding: 14px 0 0;
+      padding: 14px 0 0 6px;
       max-width: 290px;
       left: 82px;
     }
