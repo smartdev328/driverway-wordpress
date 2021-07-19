@@ -1,6 +1,9 @@
 .intro {
   position: relative;
-  z-index: 2;
+
+  @media (min-width: $bp-5XL) {
+    z-index: 2;
+  }
 
   &-wrap {
     @media (min-width: $bp-L) {
