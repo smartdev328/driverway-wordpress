@@ -54,6 +54,38 @@
       max-width: 1256px;
       top: -50px;
     }
+
+    &::before {
+      z-index: -1;
+
+      @media (min-width: $bp-M) {
+        content: '';
+        width: 223px;
+        height: 233px;
+        position: absolute;
+        left: 0;
+        top: -72px;
+        margin: auto;
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-image: url("../../images/hero-right.svg");
+      }
+
+      @media (min-width: $bp-L) {
+        transform: translateX(-76px);
+      }
+
+      @media (min-width: $bp-2XL) {
+        top: -66px;
+        transform: translateX(-130px);
+      }
+
+      @media (min-width: $bp-5XL) {
+        top: -50px;
+        transform: translateX(-255px);
+        width: 352px;
+      }
+    }
   }
 
   .card {

@@ -1,35 +1,11 @@
 {
-    "key": "group_60f081a2e5810",
-    "title": "CPT: Partners",
+    "key": "group_60f19599583b0",
+    "title": "Block: Devices",
     "fields": [
         {
-            "key": "field_60f081f643b47",
-            "label": "Icon",
-            "name": "icon",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "preview_size": "medium",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_60f1920ae3bec",
-            "label": "Secondary Title",
-            "name": "secondary_title",
+            "key": "field_60f32051c8b4c",
+            "label": "Block Title",
+            "name": "block_title",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -46,9 +22,9 @@
             "maxlength": ""
         },
         {
-            "key": "field_60f1921ce3bed",
-            "label": "Description",
-            "name": "description",
+            "key": "field_60f3205ec8b4d",
+            "label": "Block Description",
+            "name": "block_desc",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -62,25 +38,44 @@
             "placeholder": "",
             "maxlength": "",
             "rows": 2,
-            "new_lines": ""
+            "new_lines": "br"
+        },
+        {
+            "key": "field_60f32075c8b4e",
+            "label": "Icon Text",
+            "name": "icon_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "block",
                 "operator": "==",
-                "value": "partners"
+                "value": "acf\/devices-block"
             }
         ]
     ],
     "menu_order": 0,
-    "position": "side",
+    "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1626444337
+    "modified": 1626546695
 }

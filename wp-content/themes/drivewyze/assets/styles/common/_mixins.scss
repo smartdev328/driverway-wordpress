@@ -132,6 +132,51 @@
   }
 }
 
+@mixin btn-arrow-bg($color, $hover, $bg-col : transparent) {
+  @include secondary-btn($color);
+
+  padding: 10px 37px 10px 12px;
+  position: relative;
+  display: inline-block;
+  background-color: $bg-col;
+  transition: $transition-ease;
+
+  @media (min-width: $bp-M) {
+    padding: 10px 41px 10px 15px;
+  }
+
+  &::after {
+    content: '';
+    background-color: $color;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    bottom: 0;
+    margin: auto;
+    mask: url('../../images/arrow.svg') 0 0/16px 12px;
+    mask-repeat: no-repeat;
+    width: 16px;
+    height: 12px;
+    transition: $transition-ease;
+
+    @media (min-width: $bp-M) {
+      right: 14px;
+    }
+  }
+
+  &:hover {
+    color: $hover;
+
+    &::before {
+      max-width: 100%;
+    }
+
+    &::after {
+      background-color: $hover;
+    }
+  }
+}
+
 @mixin primary-btn-arrow($color, $bg-col, $hover : transparent) {
   @include secondary-btn($color);
 

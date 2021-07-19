@@ -12,7 +12,12 @@
  * @var array $block
  */
 
+if( isset( $block['data']['preview_image_help'] )  ) :
+	echo '<img src="'. $block['data']['preview_image_help'] .'" style="width:100%; height:auto;">';
+endif;
+
 $slug              = str_replace( 'acf/', '', $block['name'] );
+$hero_class        = is_front_page() ? 'front' : 'interior';
 $block_id          = !empty($block['anchor']) ? $block['anchor'] : $slug . '-' . $block['id'];
 $title             = get_field( 'hero_title' );
 $subtitle          = get_field( 'hero_subtitle' );
@@ -50,7 +55,7 @@ $scroll_to_id      = get_field( 'scroll_to_id' );
 		</div>
 	<?php endif; ?>
 
-	<div class="hero-lightbox__container">
+	<div class="hero-lightbox__container <?php echo $hero_class; ?>">
 		<?php if ( $subtitle ) : ?>
 			<h5><?php echo $subtitle; ?></h5>
 		<?php endif; ?>
@@ -77,13 +82,12 @@ $scroll_to_id      = get_field( 'scroll_to_id' );
 				</a>
 			<?php endif; ?>
 		</div>
+		<?php if ( $add_scroll_btn && $scroll_to_id ) : ?>
+			<div class="hero-lightbox__scroll">
+				<a class="js-scroll-down" href="#<?php echo $scroll_to_id; ?>">
+					<?php get_template_part( 'template-parts/scroll-down' ); ?>
+				</a>
+			</div>
+		<?php endif; ?>
 	</div>
-
-	<?php if ( $add_scroll_btn && $scroll_to_id ) : ?>
-		<div class="hero-lightbox__scroll">
-			<a class="js-scroll-down" href="#<?php echo $scroll_to_id; ?>">
-				<?php get_template_part( 'template-parts/scroll-down' ); ?>
-			</a>
-		</div>
-	<?php endif; ?>
 </section>

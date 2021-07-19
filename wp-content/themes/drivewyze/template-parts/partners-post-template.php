@@ -10,12 +10,8 @@ $post_icon = get_field( 'icon', $id );
 ?>
 
 <div class="pt-block__item post-block">
-	<div class="post-content">
-		<h3>
-			<a href="<?php echo get_permalink(); ?>">
-				<?php echo get_the_title(); ?>
-			</a>
-		</h3>
+	<div class="pt-block-content post-content">
+		<h3><?php echo get_the_title(); ?></h3>
 		<?php if( has_excerpt()) : ?>
 			<div class="subtitle"><?php the_excerpt(); ?></div>
 		<?php endif; ?>

@@ -1,57 +1,36 @@
 .hero-lightbox {
-  padding: 90px 0 25px;
-  min-height: 568px;
-  display: flex;
-  flex-direction: column;
   position: relative;
   z-index: 1;
 
-  @media (min-width: $bp-M) {
-    min-height: 521px;
-  }
-
-  @media (min-width: $bp-2XL) {
-    padding-top: 140px;
-    min-height: 718px;
-  }
-
-  @media (min-width: $bp-4XL) {
-    min-height: 1030px;
-  }
-
-  @media (min-width: $bp-5XL) {
-    justify-content: center;
-  }
-
-  @media (min-width: $bp-6XL) {
-    min-height: 100vh;
-  }
-
   &__container {
-    padding: 0 15px;
-    margin: 0 auto 20px;
+    padding: 90px 15px;
+    margin: 0 auto;
     width: 100%;
     max-width: 632px;
+    min-height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
 
     @media (min-width: $bp-M) {
       padding-left: 30px;
       padding-right: 30px;
-      margin-bottom: 85px;
       max-width: 646px;
     }
 
     @media (min-width: $bp-L) {
       width: 100%;
       max-width: calc(80% + 35px);
-      margin-bottom: 40px;
     }
 
     @media (min-width: $bp-2XL) {
-      margin-bottom: 26px;
+      padding-left: 22px;
+      padding-right: 22px;
     }
 
     @media (min-width: $bp-5XL) {
-      margin-bottom: 80px;
+      padding-left: 192px;
       max-width: 1920px;
     }
 
@@ -74,6 +53,68 @@
 
       @media (min-width: $bp-5XL) {
         max-width: 60%;
+      }
+
+      h1 {
+        @media (min-width: $bp-2XL) {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &.front {
+      @media (min-width: $bp-5XL) {
+        padding-top: 170px;
+      }
+
+      &::before {
+        content: '';
+        width: 320px;
+        height: 64px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 10px;
+        margin: auto;
+        background-size: 120%;
+        background-repeat: no-repeat;
+        background-image: url("../../images/hero-right.svg");
+
+        @media (min-width: $bp-M) {
+          display: none;
+        }
+      }
+
+      &::after {
+        @media (min-width: $bp-L) {
+          content: '';
+          width: 111px;
+          height: 302px;
+          position: absolute;
+          right: 0;
+          top: 0;
+          margin: auto;
+          background-size: auto;
+          background-repeat: no-repeat;
+          background-image: url("../../images/hero-left.svg");
+          transform: translateX(82px);
+        }
+
+        @media (min-width: $bp-L) {
+          width: 111px;
+          height: 302px;
+          transform: translateX(80px);
+        }
+
+        @media (min-width: $bp-2XL) {
+          width: 185px;
+          height: 461px;
+          transform: translateX(160px);
+        }
+
+        @media (min-width: $bp-5XL) {
+          transform: translateX(0);
+        }
       }
     }
   }
@@ -123,11 +164,25 @@
   }
 
   &__btns {
+    margin-bottom: 14px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 
+    @media (min-width: $bp-M) {
+      margin-bottom: 55px;
+    }
+
+    @media (min-width: $bp-L) {
+      margin-bottom: 80px;
+    }
+
+    @media (min-width: $bp-2XL) {
+      margin-bottom: 20px;
+    }
+
     @media (min-width: $bp-5XL) {
+      margin-bottom: 0;
       flex-direction: row;
       align-items: center;
     }
@@ -165,10 +220,17 @@
   }
 
   &__scroll {
+    position: absolute;
+    bottom: 60px;
+    left: 0;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
+
+    @media (min-width: $bp-L) {
+      bottom: 102px;
+    }
 
     a {
       width: 30px;
