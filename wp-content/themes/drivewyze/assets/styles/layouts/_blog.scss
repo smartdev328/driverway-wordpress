@@ -718,7 +718,7 @@
 
     @media (min-width: $bp-2XL) {
       position: relative;
-      left: 15px;
+      left: 30px;
     }
 
     &__img {
@@ -737,6 +737,14 @@
 
     &__icon {
       max-height: 25px;
+      width: auto;
+    }
+  }
+
+  &-content {
+    @media (min-width: $bp-2XL) {
+      position: relative;
+      left: 30px;
     }
   }
 
@@ -797,12 +805,12 @@
       margin-right: 30px;
       flex-basis: calc(50% - 60px);
       display: grid;
-      grid-template-columns: 45% 55%;
+      grid-template-columns: 50% 50%;
       align-items: center;
     }
 
     @media (min-width: $bp-4XL) {
-      padding: 40px 0 40px 30px;
+      padding: 40px 0;
       flex-basis: calc(33.33% - 60px);
     }
   }
@@ -824,14 +832,11 @@
   }
 
   h3 {
-    a {
-      @include link-el($color-6, $color-14);
-
-      font-weight: 400;
-    }
+    color: $color-6;
+    font-weight: 400;
 
     @media (min-width: $bp-2XL) {
-      margin-bottom: 16px;
+      margin-bottom: 6px;
     }
   }
 
@@ -854,6 +859,10 @@
 
   p {
     margin-bottom: 4px;
+
+    @media (min-width: $bp-2XL) {
+      margin-bottom: 24px;
+    }
   }
 
   .load-more {
