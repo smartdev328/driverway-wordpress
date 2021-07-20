@@ -7,7 +7,7 @@
   }
 
   @media (min-width: $bp-L) {
-    padding: 70px 30px;
+    padding: 70px 30px 14px;
   }
 
   @media (min-width: $bp-2XL) {
@@ -17,7 +17,7 @@
 
   @media (min-width: $bp-5XL) {
     padding-top: 135px;
-    padding-bottom: 175px;
+    padding-bottom: 46px;
   }
 
   &__title {
@@ -43,15 +43,20 @@
     display: block;
     max-width: 43.75%;
     width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: 12px;
     object-fit: contain;
 
     @media (min-width: $bp-M) {
-      max-width: 38.62%;
+      max-width: 47.62%;
     }
 
     @media (min-width: $bp-L) {
       max-width: 285px;
+      margin-bottom: 60px;
+    }
+
+    @media (min-width: $bp-5XL) {
+      margin-bottom: 127px;
     }
   }
 
@@ -59,14 +64,19 @@
     display: block;
     max-width: 43.75%;
     width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: 12px;
 
     @media (min-width: $bp-M) {
-      max-width: 38.62%;
+      max-width: 47.62%;
     }
 
     @media (min-width: $bp-L) {
       max-width: 285px;
+      margin-bottom: 60px;
+    }
+
+    @media (min-width: $bp-5XL) {
+      margin-bottom: 127px;
     }
 
     & > .available-on-section-logo {
@@ -86,7 +96,7 @@
     margin: auto;
 
     @media (min-width: $bp-M) {
-      gap: 75px;
+      gap: 12px 25px;
     }
 
     @media (min-width: $bp-L) {
