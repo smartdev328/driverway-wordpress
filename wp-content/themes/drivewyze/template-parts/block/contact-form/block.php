@@ -41,13 +41,7 @@ $block_class_mod	= $bg_color ? ' ' . $block_class . '-container_white' : '';
 			<div class="<?php echo $block_class . '-container__column'; ?>">
 
 				<?php if( $form_id ) :
-					gravity_form
-					(
-						$form_id,
-						$display_title = false,
-						$display_description = false,
-						$ajax = true
-					);
+					echo do_shortcode('[gravityform id="' . $form_id . '" title="false" description="false" ajax="true"]');
 				endif; ?>
 
 			</div>
