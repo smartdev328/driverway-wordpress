@@ -1,6 +1,6 @@
 <?php
 /**
- * Block Name: Hero section for interior product page
+ * Block Name: Hero Product
  * Description: Hero banner block managed with ACF.
  * Category: common
  * Icon: align-right
@@ -32,6 +32,10 @@ $tabs_title_desk	= get_field( 'tabs_title_desktop' );
 $tabs_title_mob		= get_field( 'tabs_title_mobile' );
 $tabs				= get_field( 'hero_tabs' );
 $active_tab			= str_replace(' ', '', strtolower( get_field( 'active_tab' ) ) );
+
+if( isset( $block['data']['preview_image_help'] )  ) :
+    echo '<img src="'. $block['data']['preview_image_help'] .'" style="width:100%; height:auto;">';
+endif;
 ?>
 <section id="<?php echo $block_id; ?>" class="<?php echo $block_class; ?>">
 

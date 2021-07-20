@@ -1,15 +1,15 @@
-import Swiper, {Navigation, Autoplay, EffectFade} from 'swiper'
-Swiper.use([Navigation, Autoplay, EffectFade])
+import Swiper, {Navigation, Autoplay, EffectFade, Pagination} from 'swiper'
+Swiper.use([Navigation, Autoplay, EffectFade, Pagination])
 
 const
 	sliders = {
 		init: function () {
 			let customerSlider = $('.customer-slider .swiper-container');
-			let fleetSlider = $('.fleet-slider .swiper-container');
+			let fleetSlider = $('.fleet-multiple .swiper-container');
 			let resourcesLinkSlider = $('.resources_link .swiper-container');
 			let resourcesFileSlider = $('.resources_file .swiper-container');
 
-			if (customerSlider.length > 0) {
+			if (customerSlider.length) {
 				customerSlider.each(function () {
 					let customerSwiper = new Swiper(this, {
 						loop: true,
@@ -31,18 +31,31 @@ const
 				})
 			}
 
-			if(fleetSlider.length > 0) {
+			if(fleetSlider.length) {
+				let slideNames = []
 				fleetSlider.each(function (){
+					$(this).children('.swiper-wrapper').children('.swiper-slide').each(function (){
+						slideNames.push($(this).data('name'))
+					})
 					let fleetSwiper = new Swiper(this, {
+						effect: 'fade',
 						loop: false,
 						autoplay: false,
 						slidesPerView: 1,
 						pagination: {
-							el: '.swiper-pagination',
-							type: 'custom',
+							el: '.swiper-pagination-container',
+							bulletClass: 'swiper-pagination-el',
+							bulletActiveClass: 'active',
+							clickable: true,
+								renderBullet(index, className) {
+								let pagEl = '<span class="'+ className +'">' + slideNames[index] + '</span>'
+								return pagEl
+							},
 						},
-						navigation: false,
-					});
+						fadeEffect: {
+							crossFade: true,
+						},
+					})
 					fleetSwiper.init()
 				})
 			}
