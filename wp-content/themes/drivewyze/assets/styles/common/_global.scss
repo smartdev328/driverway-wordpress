@@ -56,6 +56,9 @@ a {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+
   &.logged-in.admin-bar {
     main {
       margin-top: 0;
