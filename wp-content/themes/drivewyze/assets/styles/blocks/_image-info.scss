@@ -218,7 +218,7 @@
     }
 
     a {
-      @include btn-arrow($color-2, $color-11, transparent);
+      @include btn-arrow($color-2, $color-2, transparent);
 
       padding: 8px 36px 8px 14px;
 

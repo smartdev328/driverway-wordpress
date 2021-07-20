@@ -189,7 +189,7 @@
   }
 
   &__btn {
-    @include btn-arrow($color-11, $color-6, $color-2);
+    @include primary-btn-arrow($color-11, $color-2, $color-2);
 
     margin-bottom: 23px;
 

@@ -14,7 +14,7 @@
     flex-wrap: wrap;
     max-width: 100%;
     width: 100%;
-    padding: 25px 15px;
+    padding: 25px 15px 20px;
     margin: auto;
     background-color: $color-6;
 
@@ -29,20 +29,20 @@
     }
 
     @media (min-width: $bp-M) {
-      padding: 44px 61px;
+      padding: 44px 61px 34px;
     }
 
     @media (min-width: $bp-L) {
       justify-content: space-between;
-      padding: 46px 80px 52px 87px;
+      padding: 46px 80px 42px 87px;
     }
 
     @media (min-width: $bp-2XL) {
-      padding: 65px 110px;
+      padding: 65px 110px 58px;
     }
 
     @media (min-width: $bp-5XL) {
-      padding: 65px 158px;
+      padding: 65px 158px 58px;
       max-width: 1860px;
       width: 100%;
       margin: auto;
@@ -57,6 +57,7 @@
         }
 
         &:last-child {
+          padding-top: 4px;
           flex-basis: 59%;
         }
       }
@@ -101,7 +102,11 @@
 
         & > form {
           & > .gform_body {
-            margin-bottom: 28px;
+            margin-bottom: 20px;
+
+            @media (min-width: $bp-M) {
+              margin-bottom: 28px;
+            }
 
             @media (min-width: $bp-2XL) {
               margin-bottom: 46px;
@@ -211,49 +216,45 @@
             position: relative;
             max-width: 156px;
             width: 100%;
-            height: 36px;
             padding: 0;
             margin: 0;
 
             @media (min-width: $bp-M) {
               max-width: 162px;
-              height: 46px;
             }
 
             @media (min-width: $bp-2XL) {
               max-width: 205px;
-              height: 50px;
-            }
-
-            &::after {
-              position: absolute;
-              content: "";
-              right: 22px;
-              top: 50%;
-              transform: translateY(-50%);
-              bottom: 12px;
-              width: 14px;
-              height: 12px;
-              background-image: url("../images/arrow-right.svg");
             }
 
             & > .gform_button {
-              font-family: $f-base;
-              font-size: rem(11.5);
-              font-weight: 900;
-              border: 0;
-              outline: 0;
-              color: $color-2;
-              background-color: $color-11;
-              text-transform: uppercase;
-              text-align: left;
-              max-width: 100%;
+              @include primary-btn-arrow($color-2, $color-11, $color-6);
+
+              padding-left: 11px;
               width: 100%;
-              height: 100%;
-              padding-left: 20px;
+              height: 36px;
+              letter-spacing: 1.4px;
+
+              @media (min-width: $bp-M) {
+                height: 46px;
+              }
 
               @media (min-width: $bp-2XL) {
-                font-size: rem(16);
+                height: 50px;
+              }
+
+              &::after {
+                right: 15px;
+                top: 50%;
+                bottom: 16px;
+                width: 14px;
+                height: 12px;
+
+                @media (min-width: $bp-M) {
+                  right: 20px;
+                  top: 0;
+                  bottom: 0;
+                }
               }
             }
           }

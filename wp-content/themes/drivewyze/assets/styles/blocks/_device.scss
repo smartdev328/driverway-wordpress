@@ -229,7 +229,7 @@
       }
 
       a {
-        @include btn-arrow($color-2, $color-4, $color-11);
+        @include primary-btn-arrow($color-2, $color-11, $color-6);
 
         padding-right: 40px;
         padding-left: 15px;
