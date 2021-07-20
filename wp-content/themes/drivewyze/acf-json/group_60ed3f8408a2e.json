@@ -27,6 +27,87 @@
             "save_other_choice": 0
         },
         {
+            "key": "field_60f0565ad0b2b",
+            "label": "Fleet hero subtitle",
+            "name": "fleet_hero_subtitle",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60ed4fd81a059",
+                        "operator": "==",
+                        "value": "single"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_60f003601baa4",
+            "label": "Fleet hero title mobile",
+            "name": "title_mobile",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60ed4fd81a059",
+                        "operator": "==",
+                        "value": "multiple"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_60f003047fa6e",
+            "label": "Fleet hero nav title desktop",
+            "name": "title_desktop",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60ed4fd81a059",
+                        "operator": "==",
+                        "value": "multiple"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_60ed4087126f7",
             "label": "Fleet slider",
             "name": "fleet_slider",
@@ -234,6 +315,25 @@
             "layout": "block",
             "sub_fields": [
                 {
+                    "key": "field_60f57d5285b4f",
+                    "label": "Hero name",
+                    "name": "hero_name",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
                     "key": "field_60ed50a11a066",
                     "label": "Hero title",
                     "name": "hero_title",
@@ -356,9 +456,9 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "",
+                            "return_format": "array",
                             "preview_size": "medium",
-                            "library": "",
+                            "library": "all",
                             "min_width": "",
                             "min_height": "",
                             "min_size": "",
@@ -389,5 +489,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1626165869
+    "modified": 1626701202
 }

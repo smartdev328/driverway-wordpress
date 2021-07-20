@@ -18,14 +18,15 @@ $block_class  			= $slug;
 $hero_type				= get_field( 'type_of_hero' );
 $fleet_slider			= get_field( 'fleet_slider' );
 $fleet_single			= get_field( 'fleet_hero' );
-$fleet_section_class 	= $hero_type === 'multiple' ? 'fleet-multiple' : 'fleet-single'
+$fleet_section_class 	= $hero_type === 'multiple' ? 'fleet-multiple' : 'fleet-single';
+$fleet_title_mob		= get_field( 'title_mobile' );
+$fleet_title_desk		= get_field( 'title_desktop' );
 ?>
 <section id="<?php echo $block_id; ?>" class="<?php echo $block_class . ' ' . $fleet_section_class; ?>">
 	<?php
-	if( $hero_type === 'single' )  {
+	if( $hero_type === 'multiple' )  {
 	 	if( $fleet_slider ) { ?>
 			<div class="swiper-container">
-				<div class="swiper-pagination"></div>
 				<div class="swiper-wrapper">
 					<?php
 						foreach ( $fleet_slider as $fleet_slide) {
@@ -38,7 +39,12 @@ $fleet_section_class 	= $hero_type === 'multiple' ? 'fleet-multiple' : 'fleet-si
 							$customer_desc	= $customer_group['customer_desc'];
 							$customer_img	= $customer_group['customer_image']; ?>
 
-							<div class="swiper-slide">
+							<div class="swiper-slide" data-name="<?php echo strtolower( $nav_name ); ?>">
+
+								<?php if( $nav_name ) : ?>
+									<span><?php echo $nav_name; ?></span>
+								<?php endif; ?>
+
 								<?php if( $title ) : ?>
 									<h2><?php echo $title; ?></h2>
 								<?php endif; ?>
@@ -55,7 +61,7 @@ $fleet_section_class 	= $hero_type === 'multiple' ? 'fleet-multiple' : 'fleet-si
 									<?php endif; ?>
 
 									<?php if( $customer_name ) : ?>
-										<p><?php echo $customer_name; ?></p>
+										<p class="bold"><?php echo $customer_name; ?></p>
 									<?php endif; ?>
 
 									<?php if( $customer_desc ) : ?>
@@ -80,58 +86,68 @@ $fleet_section_class 	= $hero_type === 'multiple' ? 'fleet-multiple' : 'fleet-si
 						}
 					?>
 				</div>
+				<div class="swiper-pagination"
+					 data-titlemob="<?php echo strtolower( $fleet_title_mob ); ?>"
+					 data-titledesk="<?php echo strtolower( $fleet_title_desk ); ?>">
+					<div class="swiper-pagination-container"></div>
+				</div>
 			</div>
 		<?php }
-	} elseif( $hero_type === 'multiple' ) {
-		if( have_rows( $fleet_single ) ) :
-			while ( have_rows( $fleet_single ) ) : the_row();
-				$title 			 = get_sub_field( 'hero_title' );
-				$desc 			 = get_sub_field( 'hero_description' );
-				$customer_group  = get_sub_field( 'customer_group' );
-				$customer_title	= $customer_group['customer_title'];
-				$customer_name	= $customer_group['customer_name'];
-				$customer_desc	= $customer_group['customer_desc'];
-				$customer_img	= $customer_group['customer_image'];
-				?>
+	} elseif( $hero_type === 'single' ) {
+		if( $fleet_single ) :
+			$name			 = $fleet_single['hero_name'];
+			$title 			 = $fleet_single['hero_title'];
+			$desc 			 = $fleet_single['hero_description'];
+			$customer_group  = $fleet_single['customer_group'];
+			$customer_title	 = $customer_group['customer_title'];
+			$customer_name   = $customer_group['customer_name'];
+			$customer_desc	 = $customer_group['customer_desc'];
+			$customer_img	 = $customer_group['customer_image'];
+			?>
 				<div class="fleet-hero">
-					<?php if( $title ) : ?>
-						<h2><?php echo $title; ?></h2>
-					<?php endif; ?>
+					<div class="fleet-hero__container">
+						<?php if( $name ) : ?>
+							<span><?php echo $name; ?></span>
+						<?php endif; ?>
 
-					<?php if( $desc ) : ?>
-						<p><?php echo $desc; ?></p>
-					<?php endif; ?>
+						<?php if( $title ) : ?>
+							<h2><?php echo $title; ?></h2>
+						<?php endif; ?>
 
-					<?php if( $customer_title || $customer_name || $customer_desc ) : ?>
-						<div class="customer-group customer-group-text">
+						<?php if( $desc ) : ?>
+							<p><?php echo $desc; ?></p>
+						<?php endif; ?>
 
-							<?php if( $customer_title ) : ?>
-								<h3><?php echo $customer_title; ?></h3>
-							<?php endif; ?>
+						<?php if( $customer_title || $customer_name || $customer_desc ) : ?>
+							<div class="customer-group customer-group-text">
 
-							<?php if( $customer_name ) : ?>
-								<p><?php echo $customer_name; ?></p>
-							<?php endif; ?>
+								<?php if( $customer_title ) : ?>
+									<h3><?php echo $customer_title; ?></h3>
+								<?php endif; ?>
 
-							<?php if( $customer_desc ) : ?>
-								<p><?php echo $customer_desc; ?></p>
-							<?php endif; ?>
+								<?php if( $customer_name ) : ?>
+									<p><?php echo $customer_name; ?></p>
+								<?php endif; ?>
 
-						</div>
-					<?php endif; ?>
+								<?php if( $customer_desc ) : ?>
+									<p><?php echo $customer_desc; ?></p>
+								<?php endif; ?>
 
-					<?php if( is_array( $customer_img ) ) : ?>
-						<div class="customer-group customer-group-image">
-							<div class="customer-group-image__dot-pattern-top"></div>
-							<img src="<?php echo $customer_img['url']; ?>"
-								 alt="<?php echo $customer_img['alt']; ?>">
-							<div class="customer-group-image__dot-pattern-bottom"></div>
-						</div>
-					<?php endif; ?>
+							</div>
+						<?php endif; ?>
+
+						<?php if( $customer_img ) : ?>
+							<div class="customer-group customer-group-image">
+								<div class="customer-group-image__dot-pattern-top"></div>
+								<img src="<?php echo $customer_img['url']; ?>"
+									 alt="<?php echo $customer_img['alt']; ?>">
+								<div class="customer-group-image__dot-pattern-bottom"></div>
+							</div>
+						<?php endif; ?>
+					</div>
 				</div>
 			<?php
-			endwhile;
-		endif;
-	}
+			endif;
+		}
 	?>
 </section>
