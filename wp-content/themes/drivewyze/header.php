@@ -10,6 +10,9 @@
 $socials 	   = get_field('socials', 'option');
 $external      = get_field('external_link', 'option');
 $external_link = ( !empty($external) && is_array($external) ) ? $external['link'] : '' ;
+$select_nav    = get_field('select_nav');
+$selected      = $select_nav ?? 'primary';
+$nav_area      = is_singular('partners') ? 'partners' : $selected;
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -34,10 +37,10 @@ $external_link = ( !empty($external) && is_array($external) ) ? $external['link'
 			</a>
 			<nav class="nav-primary header__nav navbar navbar-expand-lg">
 				<?php
-				if (has_nav_menu('primary')) :
+				if (has_nav_menu($nav_area)) :
 					wp_nav_menu(
 						[
-							'theme_location' => 'primary',
+							'theme_location' => $nav_area,
 							'menu_id' => 'primary-menu',
 							'container_class' => 'collapse navbar-collapse',
 							'container_id' => 'primaryNavBar',
