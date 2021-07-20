@@ -14,11 +14,6 @@ $prefix   = get_field( 'page_prefix', 'options' );
 <div  class="post-block">
     <a href="<?php echo get_permalink(); ?>" class="post-image">
         <?php echo get_the_post_thumbnail(  get_the_ID(), 'full' );?>
-
-        <div class="btn-play">
-            <p class="btn-play__text"><?php esc_html_e( 'Play Testimonial', 'wp_dev' ); ?></p>
-            <?php get_template_part( 'template-parts/play-button' ); ?>
-        </div>
     </a>
 
     <div class="post-content">
@@ -30,7 +25,9 @@ $prefix   = get_field( 'page_prefix', 'options' );
         <?php endif; ?>
     </div>
 
-    <a class="read-more" href="<?php echo get_permalink(); ?>">
-        <?php esc_html_e( 'Read More', 'wp_dev' ); ?>
-    </a>
+    <div class="more-block">
+        <a class="read-more" href="<?php echo get_permalink(); ?>">
+            <?php esc_html_e( 'Read More', 'wp_dev' ); ?>
+        </a>
+    </div>
 </div>

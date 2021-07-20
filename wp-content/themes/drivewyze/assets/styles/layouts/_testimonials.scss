@@ -146,7 +146,6 @@
         .post-content {
           flex-basis: 100%;
           padding: 0 15px 22px;
-          border-bottom: 1px solid $color-15;
 
           @media (min-width: $bp-M) {
             display: flex;
@@ -249,6 +248,15 @@
           }
         }
 
+        .more-block {
+          margin-top: auto;
+          border-top: 1px solid $color-15;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
         .read-more {
           font-weight: 900;
           font-size: rem(11.5);
@@ -268,24 +276,27 @@
           }
 
           @media (min-width: $bp-L) {
-            transition: $transition-ease;
-            border-bottom: 2px solid transparent;
+            @include btn-arrow($color-11, $color-6, $color-2);
 
-            &:hover {
-              border-bottom: 2px solid $color-11;
+            padding: 0 0 3px 0 !important;
+            margin-top: 15px;
+
+            &::before {
+              width: 100%;
             }
           }
 
           @media (min-width: $bp-2XL) {
             font-size: rem(16);
             line-height: rem(26);
-            margin-bottom: 0;
-            margin-top: 13px;
+            margin-bottom: -7px;
+            margin-top: 1px;
+            padding: 10px 0 3px 0 !important;
           }
 
           @media (min-width: $bp-5XL) {
             margin-bottom: -6px;
-            margin-top: 18px;
+            margin-top: 7px;
           }
 
           &::after {
