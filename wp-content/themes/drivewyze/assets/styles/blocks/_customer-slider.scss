@@ -3,8 +3,10 @@
 .customer-slider {
   position: relative;
   background-color: $color-15;
-  padding-top: 90px;
+  padding-top: 81px;
   padding-bottom: 60px;
+  display: flex;
+  flex-direction: column;
 
   @media (min-width: $bp-M) {
     padding-top: 40px;
@@ -53,8 +55,9 @@
 
     @media (min-width: $bp-5XL) {
       bottom: 0;
-      right: 194px;
+      right: 185px;
       height: 140px;
+      background-image: url("../../images/dots-slider.svg");
     }
 
     @media (min-width: 2000px) {
@@ -68,6 +71,10 @@
 
       @media (min-width: $bp-L) {
         object-fit: cover;
+      }
+
+      @media (min-width: $bp-5XL) {
+        display: none;
       }
     }
   }
@@ -97,36 +104,14 @@
   }
 
   &__button {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 184px;
-    height: 36px;
+    @include primary-btn-arrow($color-2, $color-11, $color-6);
+
     font-family: $f-base;
     font-size: rem(11);
     font-weight: 900;
     line-height: 16px;
     text-transform: uppercase;
-    background-color: $color-9;
-    color: $color-2;
     margin: auto;
-    padding: 0 15px;
-
-    @media (min-width: $bp-2XL) {
-      max-width: 240px;
-      height: 40px;
-      font-size: rem(16);
-    }
-
-    &::after {
-      content: "";
-      display: block;
-      width: 15px;
-      height: 11px;
-      background-image: url("../images/arrow-right.svg");
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
   }
 
   &-container {
@@ -165,8 +150,16 @@
           }
 
           &-top {
-            padding: 50px 25px;
+            padding: 50px 25px 40px;
             border-bottom: 1px solid $color-5;
+
+            @media (min-width: $bp-L) {
+              padding: 32px 25px 31px;
+            }
+
+            @media (min-width: $bp-5XL) {
+              padding: 26px 25px 55px;
+            }
 
             h3 {
               font-family: $f-base;
@@ -177,6 +170,10 @@
               color: $color-8;
               text-transform: uppercase;
               text-align: center;
+
+              @media (min-width: $bp-L) {
+                margin-bottom: 26px;
+              }
 
               @media (min-width: $bp-2XL) {
                 font-size: rem(16);
@@ -193,9 +190,19 @@
               color: $color-6;
               text-align: center;
 
+              @media (min-width: $bp-L) {
+                max-width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+              }
+
               @media (min-width: $bp-2XL) {
                 font-size: rem(36);
                 line-height: 42px;
+              }
+
+              @media (min-width: $bp-5XL) {
+                max-width: 85%;
               }
             }
           }
@@ -222,6 +229,14 @@
               flex-direction: column;
               justify-content: center;
               padding: 10px 10px 10px 15px;
+
+              @media (min-width: $bp-L) {
+                padding: 19px 10px 10px 27px;
+              }
+
+              @media (min-width: $bp-5XL) {
+                padding: 8px 10px 10px 25px;
+              }
 
               h4 {
                 font-family: $f-base;
@@ -252,10 +267,31 @@
         background-color: $color-2;
         box-shadow: 2px 2px 15px rgba($color-1, 0.1);
         border-radius: 100%;
+        transform: translateY(21%);
+        transition: $transition-ease;
 
         @media (min-width: $bp-M) {
           width: 60px;
           height: 60px;
+          top: 41%;
+        }
+
+        @media (min-width: $bp-L) {
+          top: 43%;
+
+          &:hover {
+            background-color: $color-6;
+
+            & > .arrow {
+              &::after {
+                background-image: url("../../images/arrow-right.svg");
+              }
+            }
+          }
+        }
+
+        @media (min-width: $bp-5XL) {
+          top: 44%;
         }
 
         &::after {
@@ -273,12 +309,13 @@
             left: 50%;
             transform: translate(-50%, -50%);
             content: "";
-            background-image: url("../images/arrow-carousel.svg");
+            background-image: url("../../images/arrow.svg");
             background-repeat: no-repeat;
             background-size: cover;
             display: block;
             width: 9px;
             height: 8px;
+            transition: $transition-ease;
 
             @media (min-width: $bp-M) {
               width: 15px;
@@ -289,14 +326,18 @@
       }
 
       .swiper-button-prev {
-        left: 5px;
+        left: -6px;
 
         @media (min-width: $bp-M) {
-          left: -22.5%;
+          left: -28.5%;
         }
 
         @media (min-width: $bp-L) {
-          left: -12.5%;
+          left: -14%;
+        }
+
+        @media (min-width: $bp-5XL) {
+          left: -13.7%;
         }
 
         & > .arrow {
@@ -305,14 +346,18 @@
       }
 
       .swiper-button-next {
-        right: 5px;
+        right: -6px;
 
         @media (min-width: $bp-M) {
-          right: -22.5%;
+          right: -28.5%;
         }
 
         @media (min-width: $bp-L) {
-          right: -12.5%;
+          right: -14%;
+        }
+
+        @media (min-width: $bp-5XL) {
+          right: -13.7%;
         }
       }
     }

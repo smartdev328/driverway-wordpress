@@ -308,11 +308,24 @@
       position: absolute;
       top: 85.5%;
       bottom: -50px;
+      transition: $transition-ease;
 
       @media (min-width: $bp-M) {
         width: 60px;
         height: 60px;
         top: 44.5%;
+      }
+
+      @media (min-width: $bp-L) {
+        &:hover {
+          background-color: $color-6;
+
+          & > .arrow {
+            &::after {
+              background-image: url("../../images/arrow-left.svg");
+            }
+          }
+        }
       }
 
       @media (min-width: $bp-5XL) {
@@ -340,6 +353,7 @@
           display: block;
           width: 13px;
           height: 11px;
+          transition: $transition-ease;
 
           @media (min-width: $bp-M) {
             width: 15px;
@@ -660,6 +674,18 @@
         height: 60px;
         bottom: 50%;
         transform: translateY(50%);
+      }
+
+      @media (min-width: $bp-L) {
+        &:hover {
+          background-color: $color-6;
+
+          & > .arrow {
+            &::after {
+              background-image: url("../../images/arrow-right.svg");
+            }
+          }
+        }
       }
 
       @media (min-width: $bp-5XL) {

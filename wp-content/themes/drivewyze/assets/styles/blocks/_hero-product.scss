@@ -243,7 +243,7 @@
       height: 220px;
 
       @media (min-width: $bp-M) {
-        height: 329px;
+        height: 525px;
       }
 
       @media (min-width: $bp-2XL) {
@@ -251,7 +251,7 @@
       }
 
       @media (min-width: $bp-5XL) {
-        height: 645px;
+        height: 650px;
       }
 
       & > iframe {
@@ -391,6 +391,11 @@
       @media (min-width: $bp-2XL) {
         overflow-x: hidden;
         padding: 136px 0 35px;
+      }
+
+      @media (min-width: $bp-5XL) {
+        overflow-x: hidden;
+        padding: 164px 0 7px;
       }
 
       &.active {

@@ -202,7 +202,13 @@ ol.custom {
       font-weight: 400;
       text-align: left;
 
-      @media (min-width: $bp-L) {
+      @media (min-width: $bp-2XL) {
+        font-size: rem(28);
+        left: -12px;
+        top: 2px;
+      }
+
+      @media (min-width: $bp-2XL) {
         font-size: rem(48);
         left: -8px;
         top: 9px;
@@ -225,7 +231,7 @@ ol.custom {
     letter-spacing: 0.24px;
     color: $color-6;
 
-    @media (min-width: $bp-L) {
+    @media (min-width: $bp-2XL) {
       margin-bottom: 50px;
       padding-left: 103px;
       font-size: rem(36);
