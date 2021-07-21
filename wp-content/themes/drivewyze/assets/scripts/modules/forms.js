@@ -2,7 +2,7 @@
 
 	function focusLabel() {
 		const labeledInput = $(
-			".gform_wrapper .gform_fields input, .gform_wrapper .gform_fields textarea"
+			".gform_wrapper .gform_fields input, .gform_wrapper .gform_fields textarea, .gform_wrapper .gform_fields select"
 		);
 
 		labeledInput.each(function() {

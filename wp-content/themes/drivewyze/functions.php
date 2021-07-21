@@ -144,5 +144,39 @@ add_filter('wpseo_breadcrumb_separator', 'filter_wpseo_breadcrumb_separator', 10
 // gform submit button
 add_filter( 'gform_submit_button', 'om_form_submit_button', 10, 2 );
 function om_form_submit_button( $button, $form ) {
-	return "<button class='button gform_button' id='gform_submit_button_{$form['id']}'>{$form['buttonText']}</button>";
+	$button_text = !empty($form['buttonText']) ? $form['buttonText'] : 'submit';
+	return "<button class='button gform_button' id='gform_submit_button_{$form['id']}'>{$button_text}</button>";
 }
+
+
+//Add the meta box callback function
+function admin_init(){
+	add_meta_box("partners_parent_id", "Partners Parent ID", "set_partners_parent_id", "partners", "normal", "low");
+}
+add_action("admin_init", "admin_init");
+
+//Meta box for setting the parent ID
+function set_partners_parent_id() {
+	global $post;
+	$custom = get_post_custom($post->ID);
+	$parent_id = !empty($custom['parent_id'][0]) ? $custom['parent_id'][0] : '';
+	?>
+	<p>Please specify the ID of the page or post to be a parent to this Partner.</p>
+	<p>Leave blank for no heirarchy.  Partners will appear from the server root with no assocaited parent page or post.</p>
+	<input type="text" id="parent_id" name="parent_id" value="<?php echo $post->post_parent; ?>" />
+	<?php
+	echo '<input type="hidden" name="parent_id_noncename" value="' . wp_create_nonce(__FILE__) . '" />';
+}
+
+// Save the meta data
+function save_partners_parent_id($post_id) {
+	global $post;
+
+// make sure data came from our meta box
+	if (!wp_verify_nonce($_POST['parent_id_noncename'],__FILE__)) return $post_id;
+	if(isset($_POST['parent_id']) && ($_POST['post_type'] == "partners")) {
+		$data = $_POST['parent_id'];
+		update_post_meta($post_id, 'parent_id', $data);
+	}
+}
+add_action("save_post", "save_partners_parent_id");
