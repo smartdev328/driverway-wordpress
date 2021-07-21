@@ -30,6 +30,7 @@ $theme_includes = [
 	'/lib/acf_blocks_loader.php',              // ACF Blocks Loader
 	'/lib/wp_dashboard_customizer.php',        // WP Dashboard customizer
 	'/lib/gravityforms-filter.php',        	   // GF plugin filter for simple select forms
+	'/lib/shortcodes.php',        	           // Shortcodes
 ];
 
 foreach ( $theme_includes as $file ) {
