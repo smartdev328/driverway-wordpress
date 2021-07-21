@@ -27,6 +27,30 @@
             "mime_types": ""
         },
         {
+            "key": "field_60f8025d8f689",
+            "label": "Icon (Desktop)",
+            "name": "icon_desk",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_60f1920ae3bec",
             "label": "Secondary Title",
             "name": "secondary_title",
@@ -82,5 +106,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1626444337
+    "modified": 1626866287
 }
