@@ -144,5 +144,6 @@ add_filter('wpseo_breadcrumb_separator', 'filter_wpseo_breadcrumb_separator', 10
 // gform submit button
 add_filter( 'gform_submit_button', 'om_form_submit_button', 10, 2 );
 function om_form_submit_button( $button, $form ) {
-	return "<button class='button gform_button' id='gform_submit_button_{$form['id']}'>{$form['buttonText']}</button>";
+	$button_text = !empty($form['buttonText']) ? $form['buttonText'] : 'submit';
+	return "<button class='button gform_button' id='gform_submit_button_{$form['id']}'>{$button_text}</button>";
 }
