@@ -380,30 +380,29 @@
         margin: -20px 133px 200px 0;
       }
 
-      img {
+      &::before {
         position: absolute;
-        top: -244px;
+        content: '';
+        top: -263px;
         left: 50%;
+        -webkit-transform: translateX(-50%);
         transform: translateX(-50%);
-        width: 100%;
-        height: auto;
-        min-width: 446px;
-        max-width: 446px;
+        width: 463px;
+        height: 474px;
         z-index: 1;
-
-        @media (min-width: $bp-M) {
-          min-width: 405px;
-          max-width: 405px;
-        }
+        background-size: cover;
+        background-image: url("../../images/inrerior-image.svg");
 
         @media (min-width: $bp-2XL) {
           min-width: 493px;
           max-width: 493px;
+          height: 506px;
         }
 
         @media (min-width: $bp-5XL) {
           min-width: 633px;
           max-width: 633px;
+          height: 648px;
         }
       }
 
