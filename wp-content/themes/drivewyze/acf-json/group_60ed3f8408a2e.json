@@ -70,7 +70,7 @@
                 ]
             ],
             "wrapper": {
-                "width": "50",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -97,7 +97,34 @@
                 ]
             ],
             "wrapper": {
-                "width": "50",
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_60f81d532979b",
+            "label": "Fleet hero active slide",
+            "name": "active_slide",
+            "type": "text",
+            "instructions": "Copy the content of the \"Slide nav name\" field here to make it active.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60ed4fd81a059",
+                        "operator": "==",
+                        "value": "multiple"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -489,5 +516,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1626701202
+    "modified": 1626873457
 }
