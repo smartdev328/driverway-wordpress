@@ -22,7 +22,7 @@
             "allow_null": 0,
             "other_choice": 0,
             "default_value": "",
-            "layout": "vertical",
+            "layout": "horizontal",
             "return_format": "value",
             "save_other_choice": 0
         },
@@ -70,7 +70,7 @@
                 ]
             ],
             "wrapper": {
-                "width": "50",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -97,7 +97,34 @@
                 ]
             ],
             "wrapper": {
-                "width": "50",
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_60f81d532979b",
+            "label": "Fleet hero active slide",
+            "name": "active_slide",
+            "type": "text",
+            "instructions": "Copy the content of the \"Slide nav name\" field here to make it active.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60ed4fd81a059",
+                        "operator": "==",
+                        "value": "multiple"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -138,7 +165,7 @@
                     "key": "field_60ed3fb6126f0",
                     "label": "Slide title",
                     "name": "slide_title",
-                    "type": "text",
+                    "type": "textarea",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -149,9 +176,9 @@
                     },
                     "default_value": "",
                     "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": "br"
                 },
                 {
                     "key": "field_60ed3fbc126f1",
@@ -170,7 +197,7 @@
                     "placeholder": "",
                     "maxlength": "",
                     "rows": "",
-                    "new_lines": ""
+                    "new_lines": "br"
                 },
                 {
                     "key": "field_60ed440dc81c3",
@@ -210,7 +237,7 @@
                             "key": "field_60ed3ffc126f4",
                             "label": "Customer title",
                             "name": "customer_title",
-                            "type": "text",
+                            "type": "textarea",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -221,15 +248,15 @@
                             },
                             "default_value": "",
                             "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
+                            "maxlength": "",
+                            "rows": 4,
+                            "new_lines": ""
                         },
                         {
                             "key": "field_60ed400c126f5",
                             "label": "Customer name",
                             "name": "customer_name",
-                            "type": "text",
+                            "type": "textarea",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -240,15 +267,15 @@
                             },
                             "default_value": "",
                             "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
+                            "maxlength": "",
+                            "rows": 4,
+                            "new_lines": ""
                         },
                         {
                             "key": "field_60ed4020126f6",
                             "label": "Customer desc",
                             "name": "customer_desc",
-                            "type": "text",
+                            "type": "textarea",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -259,9 +286,9 @@
                             },
                             "default_value": "",
                             "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
+                            "maxlength": "",
+                            "rows": 4,
+                            "new_lines": ""
                         },
                         {
                             "key": "field_60ed3ff1126f3",
@@ -489,5 +516,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1626701202
+    "modified": 1626944178
 }
