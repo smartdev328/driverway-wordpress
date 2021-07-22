@@ -125,45 +125,45 @@ $active_slide				= str_replace(' ', '', strtolower( get_field( 'active_slide' ) 
 			$customer_img	 = $customer_group['customer_image'];
 			?>
 				<div class="fleet-hero">
-					<div class="fleet-hero__container">
-						<?php if( $name ) : ?>
-							<span><?php echo $name; ?></span>
-						<?php endif; ?>
+					<div class="fleet-hero-container">
+						<div class="fleet-hero__slide">
+							<?php if( $name ) : ?>
+								<span><?php echo $name; ?></span>
+							<?php endif; ?>
 
-						<?php if( $title ) : ?>
-							<h2><?php echo $title; ?></h2>
-						<?php endif; ?>
+							<?php if( $title ) : ?>
+								<h2><?php echo $title; ?></h2>
+							<?php endif; ?>
 
-						<?php if( $desc ) : ?>
-							<p><?php echo $desc; ?></p>
-						<?php endif; ?>
+							<?php if( $desc ) : ?>
+								<p><?php echo $desc; ?></p>
+							<?php endif; ?>
 
-						<?php if( $customer_title || $customer_name || $customer_desc ) : ?>
-							<div class="customer-group customer-group-text">
+							<?php if( $customer_title || $customer_name || $customer_desc ) : ?>
+								<div class="customer-group customer-group-text">
 
-								<?php if( $customer_title ) : ?>
-									<h3><?php echo $customer_title; ?></h3>
-								<?php endif; ?>
+									<?php if( $customer_title ) : ?>
+										<h3><?php echo $customer_title; ?></h3>
+									<?php endif; ?>
 
-								<?php if( $customer_name ) : ?>
-									<p><?php echo $customer_name; ?></p>
-								<?php endif; ?>
+									<?php if( $customer_name ) : ?>
+										<p><?php echo $customer_name; ?></p>
+									<?php endif; ?>
 
-								<?php if( $customer_desc ) : ?>
-									<p><?php echo $customer_desc; ?></p>
-								<?php endif; ?>
+									<?php if( $customer_desc ) : ?>
+										<p><?php echo $customer_desc; ?></p>
+									<?php endif; ?>
 
-							</div>
-						<?php endif; ?>
+								</div>
+							<?php endif; ?>
 
-						<?php if( $customer_img ) : ?>
-							<div class="customer-group customer-group-image">
-								<div class="customer-group-image__dot-pattern-top"></div>
-								<img src="<?php echo $customer_img['url']; ?>"
-									 alt="<?php echo $customer_img['alt']; ?>">
-								<div class="customer-group-image__dot-pattern-bottom"></div>
-							</div>
-						<?php endif; ?>
+							<?php if( $customer_img ) : ?>
+								<div class="customer-group customer-group-image">
+									<img src="<?php echo $customer_img['url']; ?>"
+										 alt="<?php echo $customer_img['alt']; ?>">
+								</div>
+							<?php endif; ?>
+						</div>
 					</div>
 				</div>
 			<?php
