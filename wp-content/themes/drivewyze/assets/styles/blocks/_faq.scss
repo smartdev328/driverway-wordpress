@@ -1,0 +1,160 @@
+.faq-section {
+  padding: 20px 15px 38px;
+
+  @media (min-width: $bp-L) {
+    padding: 58px 30px;
+  }
+
+  &__block {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1545px;
+    display: flex;
+    flex-direction: column;
+
+    .faq-item {
+      width: 100%;
+      border-bottom: 1px solid $color-6;
+      position: relative;
+
+      &:first-of-type {
+        border-top: 1px solid $color-6;
+      }
+
+      &__shown {
+        padding: 15px 25px 15px 0;
+        width: 100%;
+        flex-basis: 100%;
+        cursor: pointer;
+        position: relative;
+        transition: $transition-ease;
+
+        @media (min-width: $bp-5XL) {
+          padding-top: 25px;
+          padding-right: 90px;
+          padding-bottom: 17px;
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+        }
+
+        h2 {
+          margin-bottom: 0;
+          letter-spacing: -0.4px;
+
+          @media (min-width: $bp-2XL) {
+            font-size: rem(36);
+            line-height: rem(42);
+            letter-spacing: 0.3px;
+          }
+
+          @media (min-width: $bp-5XL) {
+            padding-right: 15px;
+            width: 470px;
+          }
+        }
+
+        h4 {
+          display: none;
+
+          @media (min-width: $bp-5XL) {
+            display: block;
+          }
+
+          @media (min-width: $bp-5XL) {
+            padding-top: 4px;
+            width: calc(100% - 470px);
+          }
+        }
+
+        h2,
+        h4 {
+          color: $color-6;
+        }
+      }
+
+      &_open {
+        .faq-item__shown {
+          padding-top: 30px;
+
+          span {
+            &::before {
+              transform: rotate(-180deg);
+            }
+          }
+        }
+      }
+
+      &__hidden {
+        padding: 16px 0 25px;
+        font-size: rem(16);
+        display: none;
+
+        @media (min-width: $bp-5XL) {
+          margin: 0 0 0 auto;
+          padding-top: 0;
+          padding-right: 150px;
+          width: calc(100% - 470px);
+        }
+
+        h4 {
+          padding-top: 30px;
+          color: $color-6;
+
+          @media (min-width: $bp-5XL) {
+            padding-top: 35px;
+            margin-bottom: 6px;
+          }
+
+          &.mobile {
+            padding: 0;
+
+            @media (min-width: $bp-5XL) {
+              display: none;
+            }
+          }
+        }
+
+        p {
+          margin-bottom: 9px;
+          letter-spacing: -0.2px;
+
+          @media (min-width: $bp-5XL) {
+            margin-bottom: 8px;
+            letter-spacing: -0.2px;
+            line-height: rem(25);
+          }
+        }
+      }
+
+      &__button {
+        width: 26px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        transition: $transition-ease;
+
+        &::before {
+          content: '';
+          background-color: $color-6;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+          mask: url('../../images/accordion-angle.svg') 0 0/26px 10px;
+          mask-repeat: no-repeat;
+          width: 26px;
+          height: 15px;
+          transition: $transition-ease;
+
+          @media (min-width: $bp-5XL) {
+            height: 26px;
+          }
+        }
+      }
+    }
+  }
+}
