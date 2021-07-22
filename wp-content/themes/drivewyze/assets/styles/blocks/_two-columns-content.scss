@@ -1,15 +1,11 @@
 .two-columns-content {
   background-color: $color-2;
   padding: 0 15px;
-  max-width: 1860px;
+  max-width: 1920px;
   margin: 0 auto;
 
   @media (min-width: $bp-M) {
     padding: 0 30px;
-  }
-
-  @media (min-width: $bp-5XL) {
-    padding: 0;
   }
 
   &_left {
