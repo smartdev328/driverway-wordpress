@@ -117,6 +117,149 @@
         }
       }
     }
+
+    &.interior {
+      padding-bottom: 24px;
+      min-height: 100%;
+
+      @media (min-width: $bp-M) {
+        padding-bottom: 40px;
+      }
+
+      @media (min-width: $bp-L) {
+        padding-bottom: 70px;
+      }
+
+      @media (min-width: $bp-5XL) {
+        padding-top: 210px;
+        padding-bottom: 174px;
+      }
+
+      &::before {
+        content: '';
+        width: 100px;
+        height: 130px;
+        position: absolute;
+        right: -18px;
+        top: 0;
+        background-size: 180%;
+        background-repeat: repeat;
+        background-image: url("../../images/hero-right.svg");
+        z-index: -1;
+
+        @media (min-width: $bp-2XL) {
+          width: 352px;
+          height: 233px;
+          right: 72px;
+          background-size: auto;
+        }
+      }
+
+      &::after {
+        content: '';
+        width: 103px;
+        height: 106px;
+        position: absolute;
+        left: 0;
+        bottom: 20px;
+        margin: auto;
+        background-size: 110px;
+        background-repeat: repeat;
+        background-image: url("../../images/hero-left.svg");
+        transform: translateY(-100%);
+        z-index: -1;
+
+        @media (min-width: $bp-2XL) {
+          width: 185px;
+          height: 181px;
+          left: 0;
+          bottom: 0;
+          background-size: auto;
+          transform: translateX(-150px);
+        }
+
+        @media (min-width: $bp-5XL) {
+          transform: none;
+        }
+      }
+
+      h5 {
+        @media (min-width: $bp-5XL) {
+          margin-bottom: 23px;
+        }
+      }
+
+      .header-content {
+        margin-bottom: 16px;
+
+        @media (min-width: $bp-2XL) {
+          max-width: 800px;
+        }
+
+        @media (min-width: $bp-5XL) {
+          margin-bottom: 40px;
+        }
+
+        h1 {
+          margin-bottom: 16px;
+
+          @media (min-width: $bp-5XL) {
+            margin-bottom: 36px;
+          }
+        }
+
+        p {
+          margin-bottom: 12px;
+          font-family: $f-base;
+          font-size: rem(18);
+          font-weight: 400;
+          line-height: rem(24);
+          letter-spacing: 0.25px;
+
+          @media (min-width: $bp-5XL) {
+            font-size: rem(22);
+            line-height: rem(30);
+            letter-spacing: 0.65px;
+          }
+        }
+      }
+
+      .hero-lightbox__btns {
+        margin-bottom: 0;
+
+        a {
+          margin-bottom: 23px;
+          padding-right: 31px;
+          max-width: 240px;
+
+          @media (min-width: $bp-5XL) {
+            margin-right: 31px;
+            padding-right: 39px;
+            padding-left: 17px;
+          }
+
+          @media (min-width: $bp-L) {
+            max-width: 100%;
+          }
+
+          &:last-of-type {
+            margin-bottom: 0;
+
+            @media (min-width: $bp-5XL) {
+              margin-bottom: 23px;
+            }
+          }
+
+          &::after {
+            right: 8px;
+
+            @media (min-width: $bp-5XL) {
+              right: 12px;
+            }
+          }
+        }
+      }
+    }
   }
 
   &-bg {
