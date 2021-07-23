@@ -29,11 +29,11 @@ $button				= get_field( 'testimonials_button' );
 	<div class="<?php echo $block_container; ?>">
 
 		<?php if( $title ) : ?>
-			<h2 class="<?php echo $block_class . '__title'; ?>"><?php echo $title; ?></h2>
+			<h2 data-aos="fade-up" data-aos-duration="500" class="<?php echo $block_class . '__title'; ?>"><?php echo $title; ?></h2>
 		<?php endif; ?>
 
 		<?php if( $slider ) : ?>
-			<div class="swiper-container">
+			<div class="swiper-container" data-aos="fade-up" data-aos-duration="500">
 				<div class="swiper-wrapper" data-slides="<?php echo count($slider); ?>">
 
 					<?php foreach ( $slider as $slide ) :
@@ -99,7 +99,7 @@ $button				= get_field( 'testimonials_button' );
 	</div>
 
 	<?php if( $button ) : ?>
-		<a class="<?php echo $block_class . '__button'; ?>"
+		<a class="<?php echo $block_class . '__button'; ?>" data-aos="fade-up" data-aos-duration="500"
 		   href="<?php echo $button['url']; ?>"
 		   target="<?php echo $button['target'] ? '_blank' : '_self'; ?>"
 		   title="<?php echo $button['title']; ?>"><?php echo $button['title']; ?></a>

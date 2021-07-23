@@ -25,13 +25,14 @@ $cards        = get_field( 'cards' );
 <?php if ( ! empty( $cards ) && is_array( $cards ) ) : ?>
 	<section id="<?php echo $block_id; ?>" class="<?php echo $slug; ?> <?php echo $align_class; ?> <?php echo $custom_class; ?>">
 		<div class="cards__container">
+            <?php $i = 1 ?>
 			<?php foreach ( $cards as $card ) : ?>
 				<?php
 				$title = is_array( $card ) ? $card['title'] : '';
 				$desc  = is_array( $card ) ? $card['description'] : '';
 				$link  = is_array( $card ) ? $card['link'] : '';
 				?>
-				<div class="card">
+				<div class="card" data-aos="fade-up" data-aos-duration="500" data-aos-delay="<?php echo 100*$i ?>">
 					<?php if ($title || $desc): ?>
 						<div class="card-info">
 							<?php if ( $title ) : ?>
@@ -50,7 +51,7 @@ $cards        = get_field( 'cards' );
 						</a>
 					<?php endif; ?>
 				</div>
-			<?php endforeach; ?>
+			<?php $i++; endforeach; ?>
 		</div>
 	</section>
 <?php endif; ?>

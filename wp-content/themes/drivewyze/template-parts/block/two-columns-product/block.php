@@ -22,13 +22,15 @@ $right_content		= get_field( 'right_column_content' );
 	<div class="<?php echo $block_class . '-container'; ?>">
 
 		<?php if( $left_content ) : ?>
-			<div class="<?php echo $block_class . '-container__column ' . $block_class . '-container__column_left'; ?>">
+			<div class="<?php echo $block_class . '-container__column ' . $block_class . '-container__column_left'; ?>"
+                 data-aos="fade-up" data-aos-duration="500">
 				<?php echo $left_content; ?>
 			</div>
 		<?php endif; ?>
 
 		<?php if( $right_content ) : ?>
-			<div class="<?php echo $block_class . '-container__column ' . $block_class . '-container__column_right'; ?>">
+			<div class="<?php echo $block_class . '-container__column ' . $block_class . '-container__column_right'; ?>"
+                 data-aos="fade-up" data-aos-duration="500">
 				<?php echo $right_content; ?>
 			</div>
 		<?php endif; ?>

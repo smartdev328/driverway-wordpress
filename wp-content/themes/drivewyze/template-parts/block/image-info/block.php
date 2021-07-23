@@ -27,9 +27,10 @@ $bl_bg_img    = get_field( 'ii_bg' );
 $bl_bg        = ( ! empty( $bl_bg_img ) && is_array( $bl_bg_img ) ) ? 'style="background-image: url(' . $bl_bg_img['url'] . ')"' : '';
 ?>
 <section id="<?php echo $block_id; ?>"
-		 class="image-info-block <?php echo $slug; ?> <?php echo $align_class; ?> <?php echo $custom_class; ?>" <?php echo $bl_bg; ?>>
+		 class="image-info-block <?php echo $slug; ?> <?php echo $align_class; ?> <?php echo $custom_class; ?>"
+    <?php echo $bl_bg; ?> data-aos="fade-in" data-aos-duration="500">
 <?php if ( $bl_title || $bl_info || $bl_link ) : ?>
-	<div class="image-info-block__container">
+	<div class="image-info-block__container" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
 		<div class="image-info-block-info subtitle">
 			<div class="image-info-block-decor">
 				<div class="image-info-block-decor__img"></div>

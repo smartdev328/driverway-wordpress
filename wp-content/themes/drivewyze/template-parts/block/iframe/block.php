@@ -19,7 +19,8 @@ $custom_class = isset( $block['className'] ) ? $block['className'] : '';
 $iframe       = get_field('iframe-embed');
 ?>
 <?php if ( $iframe ) : ?>
-<section id="<?php echo $block_id; ?>" class="<?php echo $slug; ?> <?php echo $align_class; ?> <?php echo $custom_class; ?>">
+<section id="<?php echo $block_id; ?>" class="<?php echo $slug; ?> <?php echo $align_class; ?> <?php echo $custom_class; ?>"
+         data-aos="fade-up" data-aos-duration="500">
 	<?php echo $iframe; ?>
 </section>
 <?php endif; ?>

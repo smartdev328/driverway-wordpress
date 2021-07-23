@@ -21,11 +21,13 @@ $logotypes			= get_field( 'logotypes' );
 <section id="<?php echo $block_id; ?>" class="<?php echo $block_class; ?>">
 
 	<?php if( $section_title ) : ?>
-		<h2 class="<?php echo $block_class . '__title'; ?>"><?php echo $section_title; ?></h2>
+		<h2 class="<?php echo $block_class . '__title'; ?>" data-aos="fade-up" data-aos-duration="500">
+            <?php echo $section_title; ?>
+        </h2>
 	<?php endif; ?>
 
 	<?php if( $logotypes ) : ?>
-		<div class="<?php echo $block_class . '-container'; ?>">
+		<div class="<?php echo $block_class . '-container'; ?>" data-aos="fade-up" data-aos-duration="500">
 
 			<?php foreach ( $logotypes as $logo ) :
 				$link = $logo['link'];

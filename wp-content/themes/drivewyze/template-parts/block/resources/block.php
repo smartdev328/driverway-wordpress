@@ -23,10 +23,10 @@ $links_repeater = get_field( 'resources_links_repeater' );
 ?>
 <section id="<?php echo $block_id; ?>" class="<?php echo $slug; ?> <?php echo $slug; ?>_<?php echo $select_type; ?>">
     <?php if ( $title ) : ?>
-        <h2 class="<?php echo $slug; ?>__title"><?php echo $title ?></h2>
+        <h2 class="<?php echo $slug; ?>__title" data-aos="fade-up" data-aos-duration="500"><?php echo $title ?></h2>
     <?php endif; ?>
 
-    <div class="<?php echo $slug; ?>-container">
+    <div class="<?php echo $slug; ?>-container" data-aos="fade-up" data-aos-duration="500">
         <?php if ( $select_type === 'file' ) { ?>
             <div class="swiper-container">
                 <div class="swiper-wrapper">

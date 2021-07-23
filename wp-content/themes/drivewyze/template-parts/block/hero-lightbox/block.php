@@ -57,14 +57,14 @@ $scroll_to_id      = get_field( 'scroll_to_id' );
 
 	<div class="hero-lightbox__container <?php echo $hero_class; ?>">
 		<?php if ( $subtitle ) : ?>
-			<h5><?php echo $subtitle; ?></h5>
+			<h5 data-aos="fade-up" data-aos-duration="500"><?php echo $subtitle; ?></h5>
 		<?php endif; ?>
 		<?php if ( $title ) : ?>
-			<div class="header-content">
+			<div class="header-content" data-aos="fade-up" data-aos-duration="500">
 				<?php echo $title; ?>
 			</div>
 		<?php endif; ?>
-		<div class="hero-lightbox__btns">
+		<div class="hero-lightbox__btns" data-aos="fade-up" data-aos-duration="500">
 			<?php if ( $bottom_links && is_array( $bottom_links ) ) : ?>
 				<?php foreach ( $bottom_links as $item ) : ?>
 					<?php $bottom_link = is_array( $item ) ? $item['link'] : ''; ?>

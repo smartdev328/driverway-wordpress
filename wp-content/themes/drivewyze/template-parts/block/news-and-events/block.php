@@ -27,22 +27,22 @@ $link           = get_field( 'link' );
 ?>
 <section id="<?php echo $block_id; ?>" class="<?php echo $slug; ?>">
     <?php if ( $title ) : ?>
-        <h3 class="<?php echo $slug; ?>__title"><?php echo $title ?></h3>
+        <h3 class="<?php echo $slug; ?>__title" data-aos="fade-up" data-aos-duration="500"><?php echo $title ?></h3>
     <?php endif; ?>
 
     <?php if ( $subtitle ) : ?>
-        <p class="<?php echo $slug; ?>__subtitle"><?php echo $subtitle ?></p>
+        <p class="<?php echo $slug; ?>__subtitle" data-aos="fade-up" data-aos-duration="500"><?php echo $subtitle ?></p>
     <?php endif; ?>
 
     <?php if ( ! empty( $link ) && is_array( $link) ) :
         $link_target = $link['target'] ? $link['target'] : '_blank'; ?>
-        <a class="<?php echo $slug; ?>__link" href="<?php echo $link['url']; ?>"
+        <a class="<?php echo $slug; ?>__link" href="<?php echo $link['url']; ?>" data-aos="fade-up" data-aos-duration="500"
            target="<?php echo esc_attr( $link_target ); ?>">
             <span><?php echo $link['title']; ?></span>
         </a>
     <?php endif; ?>
 
-    <div class="blog-posts__container">
+    <div class="blog-posts__container" data-aos="fade-up" data-aos-duration="500">
         <div class="blog-posts__block load-posts-block">
             <?php
             $args  = array(

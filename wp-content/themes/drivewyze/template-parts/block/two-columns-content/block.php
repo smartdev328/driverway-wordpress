@@ -26,7 +26,7 @@ $columns      = get_field( 'columns' );
 <section id="<?php echo $block_id; ?>" class="<?php echo $slug; ?> <?php echo $slug; ?>_<?php echo $position;  ?>">
     <?php if ( $columns ) : ?>
         <?php foreach ( $columns as $column ) : ?>
-            <div class="column-item">
+            <div class="column-item" data-aos="fade-up" data-aos-duration="500">
                 <?php if ( ! empty( $column['image'] ) && is_array( $column['image']) ) : ?>
                     <div class="column-item__image">
                         <?php echo wp_get_attachment_image( $column['image']['ID'], 'large' ); ?>

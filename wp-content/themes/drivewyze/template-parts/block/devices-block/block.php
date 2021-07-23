@@ -25,7 +25,7 @@ $block_desc     = get_field('block_desc');
 $icon_title     = get_field('icon_text');
 ?>
 <section id="<?php echo $block_id; ?>" class="device <?php echo $slug; ?> <?php echo $align_class; ?> <?php echo $custom_class; ?>">
-	<div class="device__container">
+	<div class="device__container" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
 		<?php
 			$args  = array(
 				'post_type'      => 'partners',

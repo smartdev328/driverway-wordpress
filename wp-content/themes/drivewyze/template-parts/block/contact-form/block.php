@@ -21,7 +21,7 @@ $section_subtitle	= get_field( 'section_subtitle' );
 $bg_color			= get_field( 'background_color' );
 $block_class_mod	= $bg_color ? ' ' . $block_class . '-container_white' : '';
 ?>
-<section id="<?php echo $block_id; ?>" class="<?php echo $block_class; ?>">
+<section id="<?php echo $block_id; ?>" class="<?php echo $block_class; ?>" data-aos="fade-up" data-aos-duration="500">
 
 	<?php if( $form_id || $section_title ) : ?>
 		<div class="<?php echo $block_class . '-container' . $block_class_mod; ?>">

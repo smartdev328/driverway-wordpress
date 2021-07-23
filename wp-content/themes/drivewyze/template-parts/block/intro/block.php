@@ -33,10 +33,11 @@ $rc_subtitle  = is_array( $right_col ) ? $right_col['subtitle'] : '';
 $rc_desc      = is_array( $right_col ) ? $right_col['description'] : '';
 $rc_link      = is_array( $right_col ) ? $right_col['link'] : '';
 ?>
-<section id="<?php echo $block_id; ?>" class="<?php echo $slug; ?> <?php echo $align_class; ?> <?php echo $custom_class; ?>">
+<section id="<?php echo $block_id; ?>" class="<?php echo $slug; ?> <?php echo $align_class; ?> <?php echo $custom_class; ?>"
+         data-aos="fade-in" data-aos-duration="500">
 	<div class="intro-wrap">
 		<?php if ( $lc_title || $lc_info ) : ?>
-			<div class="intro-left" <?php echo $lc_bg; ?>>
+			<div class="intro-left" <?php echo $lc_bg; ?> data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
 				<div class="intro-left__container">
 					<div class="intro-left-info subtitle">
 						<div class="intro-left-decor">
@@ -55,18 +56,18 @@ $rc_link      = is_array( $right_col ) ? $right_col['link'] : '';
 			</div>
 		<?php endif; ?>
 		<?php if ( $rc_title || $rc_subtitle || $rc_desc ) : ?>
-			<div class="intro-right">
+			<div class="intro-right" >
 				<?php if ( $rc_subtitle ) : ?>
-					<h5><?php echo $rc_subtitle; ?></h5>
+					<h5 data-aos="fade-up" data-aos-duration="500" data-aos-delay="200"><?php echo $rc_subtitle; ?></h5>
 				<?php endif; ?>
 				<?php if ( $rc_title ) : ?>
-					<h2><?php echo $rc_title; ?></h2>
+					<h2 data-aos="fade-up" data-aos-duration="500" data-aos-delay="200"><?php echo $rc_title; ?></h2>
 				<?php endif; ?>
 				<?php if ( $rc_desc ) : ?>
-					<p><?php echo $rc_desc; ?></p>
+					<p data-aos="fade-up" data-aos-duration="500" data-aos-delay="200"><?php echo $rc_desc; ?></p>
 				<?php endif; ?>
 				<?php if ( ! empty( $rc_link ) && is_array( $rc_link ) ) : ?>
-					<a class="intro-link" href="<?php echo $rc_link['url']; ?>" target="<?php echo $rc_link['target']; ?>">
+					<a data-aos="fade-up" data-aos-duration="500" data-aos-delay="200" class="intro-link" href="<?php echo $rc_link['url']; ?>" target="<?php echo $rc_link['target']; ?>">
 						<?php echo $rc_link['title']; ?>
 					</a>
 				<?php endif; ?>
