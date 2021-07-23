@@ -22,11 +22,9 @@ $button				= get_field( 'testimonials_button' );
 ?>
 <section id="<?php echo $block_id; ?>" class="<?php echo $block_class; ?>">
 
-    <?php if ( ! is_front_page() ) :?>
-        <div class="dot-pattern">
-            <img src="<?php echo asset_path('/images/dot-pattern.svg'); ?>">
-        </div>
-    <?php endif; ?>
+    <div class="dot-pattern <?php echo is_front_page() ? 'dot-pattern_front' : ''  ?>">
+        <img src="<?php echo asset_path('/images/dot-pattern.svg'); ?>">
+    </div>
 
 	<div class="<?php echo $block_container; ?>">
 

@@ -28,49 +28,49 @@
         }
       }
     }
+
+    .search-form {
+      margin-left: 0;
+
+      @media screen and (max-width: $bp-SM - 1px) {
+        display: flex;
+        flex-direction: column;
+      }
+
+      input {
+        border: 1px solid $color-3;
+        height: 40px;
+        padding: 0 15px;
+      }
+
+      label {
+        @media screen and (max-width: $bp-SM - 1px) {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      .search-submit {
+        height: 40px;
+        color: $color-2;
+        background: $color-3;
+        transition: 0.3s all;
+        border: 1px solid $color-3;
+        margin-bottom: 30px;
+        margin-top: 1px;
+
+        @media screen and (min-width: $bp-L) {
+          &:hover {
+            color: $color-3;
+            background: $color-2;
+          }
+        }
+      }
+    }
   }
 
   .entry-footer,
   .entry-meta {
     display: none;
-  }
-
-  .search-form {
-    margin-left: 0;
-
-    @media screen and (max-width: $bp-SM - 1px) {
-      display: flex;
-      flex-direction: column;
-    }
-
-    input {
-      border: 1px solid $color-3;
-      height: 40px;
-      padding: 0 15px;
-    }
-
-    label {
-      @media screen and (max-width: $bp-SM - 1px) {
-        display: flex;
-        flex-direction: column;
-      }
-    }
-
-    .search-submit {
-      height: 40px;
-      color: $color-2;
-      background: $color-3;
-      transition: 0.3s all;
-      border: 1px solid $color-3;
-      margin-bottom: 30px;
-      margin-top: 1px;
-
-      @media screen and (min-width: $bp-L) {
-        &:hover {
-          color: $color-3;
-          background: $color-2;
-        }
-      }
-    }
   }
 }

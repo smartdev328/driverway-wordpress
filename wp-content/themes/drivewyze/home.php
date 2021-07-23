@@ -52,7 +52,7 @@ get_header(); ?>
                     </select>
                 </div>
 
-                <a href="<?php echo get_search_link() ?>" class="posts-search"></a>
+                <a href="<?php echo esc_url(home_url()); ?>/?s=" class="posts-search"></a>
 			</div>
 
 			<div class="blog-posts__container">

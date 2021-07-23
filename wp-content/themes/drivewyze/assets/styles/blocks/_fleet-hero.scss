@@ -1,12 +1,22 @@
 .hero-fleet {
-  &.fleet-multiple {
+  overflow: hidden;
+
+  .page-breadcrumbs {
+    padding-top: 60px;
+
+    @media (min-width: $bp-M) {
+      padding-top: 70px;
+    }
+  }
+
+  .fleet-hero {
     display: flex;
     flex-direction: column;
     background-color: $color-15;
     width: 100%;
 
     @media (min-width: $bp-L) {
-      padding-top: 49px;
+      padding-top: 43px;
     }
 
     @media (min-width: $bp-2XL) {
@@ -17,407 +27,343 @@
       padding-top: 193px;
     }
 
-    .swiper-pagination {
-      display: -webkit-box;
-      flex-wrap: nowrap;
-      position: static;
-      order: 1;
-      height: 50px;
-      background-color: $color-2;
-      width: 100%;
+    &-container {
+      order: 2;
+      padding-top: 37px;
 
       @media (min-width: $bp-M) {
-        order: 2;
+        padding-top: 32px;
       }
 
-      @media (min-width: $bp-2XL) {
-        height: 59px;
+      @media (min-width: $bp-L) {
+        padding-top: 0;
+      }
+    }
+
+    .fleet-hero__slide {
+      position: relative;
+      display: none;
+      padding: 0 15px;
+
+      &.active {
+        display: block;
       }
 
-      .swiper-pagination-el {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      @media (min-width: $bp-M) {
+        padding: 20px 30px 25px;
+      }
+
+      @media (min-width: $bp-L) {
+        padding-top: 0;
+      }
+
+      @media (min-width: $bp-5XL) {
+        padding-bottom: 75px;
+      }
+
+      & > span {
+        display: block;
+        position: relative;
         font-size: rem(11.5);
-        line-height: 16px;
-        font-weight: 700;
-        color: $color-6;
         text-transform: uppercase;
-        height: 100%;
-        padding: 0 6px;
+        font-weight: 700;
+        color: $color-11;
+        left: 15px;
+        margin-bottom: 15px;
 
         @media (min-width: $bp-M) {
-          width: 100%;
-          border-right: 1px solid $color-15;
+          left: 20px;
         }
 
         @media (min-width: $bp-L) {
-          justify-content: flex-start;
-          padding: 0 15px;
-          font-size: rem(18);
-          text-transform: capitalize;
+          left: 100px;
+          margin-bottom: 10px;
+        }
+
+        @media (min-width: $bp-2XL) {
+          font-size: rem(16);
+          left: 134px;
+          margin-bottom: 16px;
+        }
+
+        @media (min-width: $bp-5XL) {
+          margin-left: 58px;
+          left: 120px;
+          margin-bottom: 23px;
+        }
+
+        &::before {
+          position: absolute;
+          content: "";
+          display: block;
+          width: 9px;
+          height: 9px;
+          background-color: $color-11;
+          top: 8px;
+          left: -14px;
+
+          @media (min-width: $bp-M) {
+            width: 11px;
+            height: 11px;
+            left: -20px;
+          }
+        }
+      }
+
+      & > h2 {
+        font-size: rem(32);
+        line-height: 36px;
+        color: $color-6;
+        margin-bottom: 13px;
+
+        @media (min-width: $bp-M) {
+          font-size: rem(28);
+          line-height: 34px;
+          letter-spacing: -0.01em;
+          margin-bottom: 28px;
+          max-width: 462px;
+        }
+
+        @media (min-width: $bp-L) {
+          margin-left: 79px;
+          margin-bottom: 13px;
+        }
+
+        @media (min-width: $bp-2XL) {
+          font-size: rem(48);
+          margin-bottom: 21px;
+          max-width: 785px;
+          line-height: 58px;
+          margin-left: 110px;
+        }
+
+        @media (min-width: $bp-5XL) {
+          max-width: 740px;
+          margin-bottom: 21px;
+          margin-left: 156px;
+        }
+      }
+
+      & > p {
+        font-size: rem(18);
+        color: $color-3;
+        margin-bottom: 48px;
+        line-height: 24px;
+
+        @media (min-width: $bp-M) {
+          line-height: 24px;
+          letter-spacing: 0.25px;
+          margin-bottom: 29px;
+          max-width: 370px;
+        }
+
+        @media (min-width: $bp-L) {
+          margin-bottom: 12px;
+          max-width: 481px;
+          margin-left: 79px;
         }
 
         @media (min-width: $bp-2XL) {
           font-size: rem(22);
+          line-height: 34px;
+          max-width: 710px;
+          margin-bottom: 27px;
+          margin-left: 110px;
         }
 
-        &.active {
-          background-color: $color-15;
-          border-bottom: 3px solid $color-6;
+        @media (min-width: $bp-5XL) {
+          margin-bottom: 55px;
+          max-width: 757px;
+          margin-left: 156px;
         }
+      }
 
-        &_title {
-          color: $color-3;
-          max-width: 60px;
+      .customer-group {
+        &.customer-group-text {
+          background-color: $color-2;
+          padding: 25px;
+          max-width: 100%;
           width: 100%;
-          border-right: 1px solid $color-15;
-          justify-content: center;
 
           @media (min-width: $bp-M) {
-            max-width: 128px;
-            color: $color-6;
+            padding: 14px 20px;
           }
 
           @media (min-width: $bp-L) {
-            max-width: 181px;
-            color: $color-3;
-            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+            max-width: 698px;
+            width: 100%;
+            margin-left: 51px;
+            padding: 10px 20px;
           }
 
           @media (min-width: $bp-2XL) {
-            max-width: 250px;
-            font-size: rem(16);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-width: 913px;
+            padding: 20px 50px;
+          }
+
+          @media (min-width: $bp-5XL) {
+            max-width: 1297px;
+            margin-left: 96px;
+          }
+
+          h3 {
+            color: $color-6;
+            font-size: rem(24);
+            font-weight: 300;
+            line-height: 32px;
+            letter-spacing: 0.01em;
+            margin-bottom: 7px;
+
+            @media (min-width: $bp-M) {
+              max-width: 355px;
+            }
+
+            @media (min-width: $bp-2XL) {
+              max-width: 555px;
+              font-size: rem(36);
+              line-height: rem(48);
+              margin-bottom: 25px;
+            }
+          }
+
+          p {
+            font-size: rem(11.5);
+            letter-spacing: 0.01em;
+            color: $color-3;
+            font-weight: 400;
+            margin-bottom: 0;
+
+            @media (min-width: $bp-M) {
+              font-size: rem(15);
+              line-height: 26px;
+            }
+
+            &.bold {
+              font-weight: 700;
+            }
           }
         }
-      }
 
-      &-container {
-        display: -webkit-box;
-        align-items: center;
-        justify-content: space-between;
-        width: calc(100% - 60px);
-        overflow-x: scroll;
-        overflow-y: hidden;
-
-        @media (min-width: $bp-M) {
-          width: calc(100% - 128px);
-          overflow-x: hidden;
-          display: flex;
-        }
-
-        @media (min-width: $bp-L) {
-          width: calc(100% - 181px);
-        }
-      }
-    }
-
-    .swiper-container {
-      display: flex;
-      flex-wrap: wrap;
-      width: 100%;
-      order: 2;
-
-      @media (min-width: $bp-M) {
-        height: 549px;
-      }
-
-      @media (min-width: $bp-L) {
-        order: 1;
-        max-width: 832px;
-        width: 100%;
-        height: 461px;
-      }
-
-      @media (min-width: $bp-2XL) {
-        max-width: 1198px;
-        height: 616px;
-      }
-
-      @media (min-width: $bp-5XL) {
-        max-width: 1720px;
-        height: 780px;
-      }
-
-      .swiper-wrapper {
-        .swiper-slide {
-          padding: 0 15px;
+        &.customer-group-image {
+          position: relative;
+          max-width: 180px;
+          width: 100%;
+          margin: -20px auto 0;
 
           @media (min-width: $bp-M) {
-            padding: 20px 30px 25px;
+            position: absolute;
+            bottom: 0;
+            right: 40px;
+            max-width: 330px;
+            width: 100%;
+            height: auto;
           }
 
           @media (min-width: $bp-L) {
-            padding-top: 0;
+            max-width: 365px;
+            bottom: 0;
+            right: 76px;
+            max-height: 116%;
           }
 
-          & > span {
-            display: block;
+          @media (min-width: $bp-2XL) {
+            max-width: 460px;
+            right: 100px;
+            bottom: 0;
+            max-height: 116%;
+          }
+
+          @media (min-width: $bp-5XL) {
+            max-width: 733px;
+            height: auto;
+            right: 190px;
+            bottom: 0;
+            max-height: 116%;
+          }
+
+          img {
             position: relative;
-            font-size: rem(11.5);
-            text-transform: uppercase;
-            font-weight: 400;
-            color: $color-11;
-            left: 15px;
-            margin-bottom: 16px;
-
-            @media (min-width: $bp-2XL) {
-              font-size: rem(16);
-            }
-
-            @media (min-width: $bp-5XL) {
-              margin-left: 58px;
-            }
-
-            &::before {
-              position: absolute;
-              content: "";
-              display: block;
-              width: 9px;
-              height: 9px;
-              background-color: $color-11;
-              top: 8px;
-              left: -14px;
-            }
+            z-index: 1;
+            max-width: 100%;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: bottom;
           }
 
-          & > h2 {
-            font-size: rem(32);
-            line-height: 36px;
-            color: $color-6;
-            margin-bottom: 15px;
+          &::before {
+            position: absolute;
+            content: "";
+            width: 135px;
+            height: 152px;
+            background-image: url("../../images/dot-pattern-fleet-right.svg");
+            background-size: cover;
+            top: 30px;
+            right: -58px;
+            z-index: 0;
 
             @media (min-width: $bp-M) {
-              font-size: rem(28);
-              line-height: 34px;
-              letter-spacing: -0.01em;
-              margin-bottom: 28px;
-              max-width: 462px;
-            }
-
-            @media (min-width: $bp-2XL) {
-              font-size: rem(48);
-              margin-bottom: 18px;
-              max-width: 785px;
-              line-height: 58px;
-            }
-
-            @media (min-width: $bp-5XL) {
-              max-width: 740px;
-              margin-bottom: 21px;
-              margin-left: 58px;
-            }
-          }
-
-          & > p {
-            font-size: rem(18);
-            color: $color-3;
-            margin-bottom: 48px;
-
-            @media (min-width: $bp-M) {
-              line-height: 24px;
-              letter-spacing: 0.25px;
-              margin-bottom: 29px;
-              max-width: 370px;
+              background-image: url("../../images/dot-pattern-fleet-right-m.svg");
+              width: 107px;
+              height: 327px;
+              right: -10px;
+              top: 47px;
             }
 
             @media (min-width: $bp-L) {
-              margin-bottom: 12px;
-              max-width: 481px;
+              right: -23px;
+              top: 50px;
             }
 
             @media (min-width: $bp-2XL) {
-              font-size: rem(22);
-              line-height: 34px;
-              max-width: 710px;
-              margin-bottom: 27px;
+              top: 139px;
+              right: -30px;
             }
 
             @media (min-width: $bp-5XL) {
-              margin-bottom: 49px;
-              max-width: 757px;
-              margin-left: 58px;
+              background-image: url("../../images/dot-pattern-fleet-right-l.svg");
+              width: 184px;
+              height: 385px;
+              top: 203px;
+              right: -79px;
             }
           }
 
-          .customer-group {
-            &.customer-group-text {
-              background-color: $color-2;
-              padding: 25px;
-              max-width: 100%;
-              width: 100%;
-              height: 230px;
+          &::after {
+            position: absolute;
+            display: none;
+            content: "";
+            background-image: url("../../images/dot-pattern-fleet-left-m.svg");
+            height: 53px;
+            width: 184px;
+            z-index: 0;
 
-              @media (min-width: $bp-M) {
-                height: 149px;
-              }
-
-              @media (min-width: $bp-L) {
-                max-width: 698px;
-                width: 100%;
-                margin-left: -20px;
-              }
-
-              @media (min-width: $bp-2XL) {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                max-width: 913px;
-                padding: 20px 50px;
-                height: 201px;
-              }
-
-              @media (min-width: $bp-5XL) {
-                height: 252px;
-                max-width: 1297px;
-              }
-
-              h3 {
-                color: $color-6;
-                font-size: rem(24);
-                font-weight: 300;
-                line-height: 32px;
-                letter-spacing: 0.01em;
-                margin-bottom: 7px;
-
-                @media (min-width: $bp-M) {
-                  max-width: 355px;
-                }
-
-                @media (min-width: $bp-2XL) {
-                  max-width: 555px;
-                  font-size: rem(36);
-                  margin-bottom: 25px;
-                }
-              }
-
-              p {
-                font-size: rem(11.5);
-                letter-spacing: 0.01em;
-                color: $color-3;
-                font-weight: 400;
-                margin-bottom: 0;
-
-                @media (min-width: $bp-M) {
-                  font-size: rem(15);
-                  line-height: 26px;
-                }
-
-                &.bold {
-                  font-weight: 700;
-                }
-              }
+            @media (min-width: $bp-M) {
+              display: block;
+              top: 253px;
+              left: -50px;
             }
 
-            &.customer-group-image {
-              position: relative;
-              max-width: 180px;
-              width: 100%;
-              margin: -20px auto 0;
+            @media (min-width: $bp-L) {
+              top: 245px;
+              left: -84px;
+            }
 
-              @media (min-width: $bp-M) {
-                position: absolute;
-                bottom: 0;
-                right: 40px;
-                max-width: 280px;
-                width: 100%;
-                height: 481px;
-              }
+            @media (min-width: $bp-2XL) {
+              top: 317px;
+              left: -64px;
+            }
 
-              @media (min-width: $bp-L) {
-                max-width: 265px;
-                height: 455px;
-              }
-
-              @media (min-width: $bp-2XL) {
-                max-width: 360px;
-                height: 615px;
-              }
-
-              @media (min-width: $bp-5XL) {
-                max-width: 533px;
-                height: 912px;
-              }
-
-              img {
-                max-width: 100%;
-                width: 100%;
-                height: 100%;
-
-                @media (min-width: $bp-5XL) {
-                  position: relative;
-                  top: 132px;
-                }
-              }
-
-              &::before {
-                position: absolute;
-                content: "";
-                width: 135px;
-                height: 152px;
-                background-image: url("../../images/dot-pattern-fleet-right.svg");
-                background-size: cover;
-                top: 30px;
-                right: -58px;
-                z-index: -1;
-
-                @media (min-width: $bp-M) {
-                  background-image: url("../../images/dot-pattern-fleet-right-m.svg");
-                  width: 107px;
-                  height: 327px;
-                  right: 40px;
-                  top: 57px;
-                }
-
-                @media (min-width: $bp-L) {
-                  right: -20px;
-                }
-
-                @media (min-width: $bp-2XL) {
-                  top: 139px;
-                  right: -30px;
-                }
-
-                @media (min-width: $bp-5XL) {
-                  width: 184px;
-                  height: 385px;
-                  top: 350px;
-                  right: -85px;
-                }
-              }
-
-              &::after {
-                position: absolute;
-                display: none;
-                content: "";
-                background-image: url("../../images/dot-pattern-fleet-left-m.svg");
-                height: 53px;
-                width: 184px;
-                z-index: -1;
-
-                @media (min-width: $bp-M) {
-                  display: block;
-                  top: 230px;
-                  left: -50px;
-                }
-
-                @media (min-width: $bp-L) {
-                  top: 255px;
-                  left: -80px;
-                }
-
-                @media (min-width: $bp-2XL) {
-                  top: 317px;
-                  left: -64px;
-                }
-
-                @media (min-width: $bp-5XL) {
-                  width: 184px;
-                  height: 81px;
-                  top: 493px;
-                  left: -87px;
-                }
-              }
+            @media (min-width: $bp-5XL) {
+              width: 184px;
+              height: 81px;
+              top: 447px;
+              left: -99px;
             }
           }
         }
@@ -425,331 +371,154 @@
     }
   }
 
-  &.fleet-single {
-    .fleet-hero {
-      position: relative;
+  &.fleet-multiple {
+    .fleet-hero-nav {
+      order: 1;
       display: flex;
-      flex-direction: column;
-      background-color: $color-15;
+      justify-content: flex-start;
+      flex-basis: 100%;
+      max-width: 100%;
       width: 100%;
-      padding: 60px 15px 0;
-
-      @media (min-width: $bp-M) {
-        padding: 60px 15px 25px;
-      }
+      height: 50px;
+      background-color: $color-2;
+      border-top: 1px solid $color-15;
+      border-bottom: 1px solid $color-15;
 
       @media (min-width: $bp-L) {
-        padding: 48px 80px 19px;
+        position: relative;
+        z-index: 1;
+        height: 30px;
       }
 
       @media (min-width: $bp-2XL) {
-        padding: 66px 90px 30px;
+        height: 59px;
       }
 
-      @media (min-width: $bp-5XL) {
-        padding-top: 193px;
+      .fleet-hero-nav__title {
+        display: none;
+        height: 100%;
+        font-family: $f-base;
+        font-size: rem(11.5);
+        font-weight: 700;
+        text-transform: uppercase;
+        justify-content: center;
+        color: $color-3;
+        padding: 12px 15px 15px;
+        border-right: 1px solid $color-15;
+
+        @media (min-width: $bp-M) {
+          max-width: 128px;
+          width: 100%;
+          color: $color-6;
+        }
+
+        @media (min-width: $bp-L) {
+          display: flex;
+          align-items: center;
+          color: $color-3;
+          padding: 12px 15px 15px 0;
+          max-width: 181px;
+        }
+
+        @media (min-width: $bp-2XL) {
+          font-size: rem(16);
+          line-height: rem(26);
+          letter-spacing: 0.08em;
+          max-width: 249px;
+          padding: 17px 15px 15px 0;
+        }
+
+        @media (min-width: $bp-5XL) {
+          max-width: 267px;
+          padding: 17px 15px 15px 4px;
+        }
+
+        &_mob {
+          display: flex;
+          align-items: center;
+
+          @media (min-width: $bp-L) {
+            display: none;
+          }
+        }
       }
 
-      &__container {
-        position: relative;
+      &-scroll {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         max-width: 100%;
         width: 100%;
-        margin: auto;
+        overflow-x: hidden;
+        overflow-y: hidden;
 
-        & > span {
-          display: block;
+        @media (min-width: $bp-L) {
+          overflow: visible;
+        }
+
+        &__item {
           position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: $f-base;
           font-size: rem(11.5);
-          text-transform: uppercase;
-          font-weight: 400;
-          color: $color-11;
-          left: 15px;
-          margin-bottom: 16px;
-
-          @media (min-width: $bp-L) {
-            margin-left: 30px;
-          }
-
-          @media (min-width: $bp-2XL) {
-            font-size: rem(16);
-            margin-left: 50px;
-          }
-
-          @media (min-width: $bp-5XL) {
-            margin-left: 58px;
-          }
-
-          &::before {
-            position: absolute;
-            content: "";
-            display: block;
-            width: 9px;
-            height: 9px;
-            background-color: $color-11;
-            top: 8px;
-            left: -14px;
-          }
-        }
-
-        & > h2 {
-          font-size: rem(32);
-          line-height: 36px;
+          font-weight: 700;
           color: $color-6;
-          margin-bottom: 15px;
+          text-transform: uppercase;
+          padding: 11px 8px 14px;
+          width: 100%;
 
           @media (min-width: $bp-M) {
-            font-size: rem(28);
-            line-height: 34px;
-            letter-spacing: -0.01em;
-            margin-bottom: 28px;
-            max-width: 462px;
+            padding: 10px 8px 14px;
           }
 
           @media (min-width: $bp-L) {
-            padding-left: 30px;
-          }
-
-          @media (min-width: $bp-2XL) {
-            font-size: rem(48);
-            margin-bottom: 18px;
-            max-width: 785px;
-            line-height: 58px;
-            padding-left: 50px;
-          }
-
-          @media (min-width: $bp-5XL) {
-            max-width: 740px;
-            margin-bottom: 21px;
-            margin-left: 58px;
-          }
-        }
-
-        & > p {
-          font-size: rem(18);
-          color: $color-3;
-          margin-bottom: 48px;
-
-          @media (min-width: $bp-M) {
-            line-height: 24px;
+            justify-content: flex-start;
+            padding-left: 26px;
+            font-size: rem(18);
+            line-height: rem(24);
             letter-spacing: 0.25px;
-            margin-bottom: 29px;
-            max-width: 370px;
-          }
-
-          @media (min-width: $bp-L) {
-            margin-bottom: 12px;
-            max-width: 481px;
-            padding-left: 30px;
+            text-transform: none;
+            font-weight: 400;
+            height: 100%;
           }
 
           @media (min-width: $bp-2XL) {
             font-size: rem(22);
-            line-height: 34px;
-            max-width: 710px;
-            margin-bottom: 27px;
-            padding-left: 50px;
+            line-height: rem(34);
+            letter-spacing: 0.025em;
+            padding: 13px 8px 10px 24px;
           }
 
           @media (min-width: $bp-5XL) {
-            margin-bottom: 49px;
-            max-width: 757px;
-            margin-left: 58px;
-          }
-        }
-
-        & > .customer-group {
-          &.customer-group-text {
-            background-color: $color-2;
-            padding: 25px;
-            max-width: 100%;
-            width: 100%;
-            height: 230px;
-
-            @media (min-width: $bp-M) {
-              height: 149px;
-              padding: 12px 30px 22px;
-            }
-
-            @media (min-width: $bp-L) {
-              max-width: 698px;
-              width: 100%;
-              margin-left: -20px;
-            }
-
-            @media (min-width: $bp-2XL) {
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              max-width: 913px;
-              padding: 20px 50px;
-              height: 201px;
-            }
-
-            @media (min-width: $bp-5XL) {
-              height: 252px;
-              max-width: 1297px;
-            }
-
-            h3 {
-              color: $color-6;
-              font-size: rem(24);
-              font-weight: 300;
-              line-height: 32px;
-              letter-spacing: 0.01em;
-              margin-bottom: 7px;
-
-              @media (min-width: $bp-M) {
-                max-width: 355px;
-              }
-
-              @media (min-width: $bp-2XL) {
-                max-width: 555px;
-                font-size: rem(36);
-                margin-bottom: 25px;
-              }
-            }
-
-            p {
-              font-size: rem(11.5);
-              letter-spacing: 0.01em;
-              color: $color-3;
-              font-weight: 400;
-              margin-bottom: 0;
-
-              @media (min-width: $bp-M) {
-                font-size: rem(15);
-                line-height: 26px;
-              }
-
-              &.bold {
-                font-weight: 700;
-              }
-            }
+            padding-left: 50px;
           }
 
-          &.customer-group-image {
-            position: relative;
-            max-width: 180px;
-            width: 100%;
-            margin: -20px auto 0;
-
-            @media (min-width: $bp-M) {
-              position: absolute;
-              bottom: 0;
-              right: 40px;
-              max-width: 280px;
-              width: 100%;
-              height: 481px;
-            }
-
-            @media (min-width: $bp-L) {
-              max-width: 265px;
-              height: 455px;
-            }
-
-            @media (min-width: $bp-2XL) {
-              max-width: 360px;
-              height: 615px;
-            }
-
-            @media (min-width: $bp-5XL) {
-              max-width: 533px;
-              height: 912px;
-            }
-
-            img {
-              max-width: 100%;
-              width: 100%;
-              height: 100%;
-
-              @media (min-width: $bp-5XL) {
-                position: relative;
-                top: 132px;
-              }
-            }
-
-            &::before {
-              position: absolute;
-              content: "";
-              width: 135px;
-              height: 152px;
-              background-image: url("../../images/dot-pattern-fleet-right.svg");
-              background-size: cover;
-              top: 30px;
-              right: -58px;
-              z-index: -1;
-
-              @media (min-width: $bp-M) {
-                background-image: url("../../images/dot-pattern-fleet-right-m.svg");
-                width: 107px;
-                height: 327px;
-                right: 40px;
-                top: 57px;
-              }
-
-              @media (min-width: $bp-L) {
-                right: -20px;
-              }
-
-              @media (min-width: $bp-2XL) {
-                top: 139px;
-                right: -30px;
-              }
-
-              @media (min-width: $bp-5XL) {
-                width: 184px;
-                height: 385px;
-                top: 350px;
-                right: -85px;
-              }
-            }
+          &.active {
+            background-color: $color-15;
 
             &::after {
               position: absolute;
-              display: none;
               content: "";
-              background-image: url("../../images/dot-pattern-fleet-left-m.svg");
-              height: 53px;
-              width: 184px;
-              z-index: -1;
-
-              @media (min-width: $bp-M) {
-                display: block;
-                top: 230px;
-                left: -50px;
-              }
+              left: 0;
+              right: 0;
+              max-width: 100%;
+              width: 100%;
+              bottom: 0;
+              height: 2px;
+              background-color: $color-6;
 
               @media (min-width: $bp-L) {
-                top: 255px;
-                left: -80px;
-              }
-
-              @media (min-width: $bp-2XL) {
-                top: 317px;
-                left: -64px;
-              }
-
-              @media (min-width: $bp-5XL) {
-                width: 184px;
-                height: 81px;
-                top: 493px;
-                left: -87px;
+                bottom: -2px;
               }
             }
           }
         }
+      }
 
-        @media (min-width: $bp-L) {
-          max-width: 832px;
-        }
-
-        @media (min-width: $bp-2XL) {
-          max-width: 1186px;
-        }
-
-        @media (min-width: $bp-5XL) {
-          max-width: 1660px;
-        }
+      @media (min-width: $bp-L) {
+        order: 2;
       }
     }
   }

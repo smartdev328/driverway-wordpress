@@ -31,7 +31,7 @@ $right_side	= get_field( 'right_side' );
         yoast_breadcrumb( '<p id="breadcrumbs" class="breadcrumbs">','</p>' );
     } ?>
 
-    <div class="<?php echo $slug; ?>__block <?php echo $slug; ?>__block_image">
+    <div class="<?php echo $slug; ?>__block <?php echo $right_side['select_type'] == 'image' ? 'interior__block_image' : '' ?>">
         <?php if( $left_side ) : ?>
             <div class="<?php echo $slug; ?>__left">
                 <?php if( $left_side['prefix'] ) : ?>
@@ -68,9 +68,8 @@ $right_side	= get_field( 'right_side' );
 
         <?php } else { ?>
 
-            <?php if( ! empty( $right_side['image'] ) && is_array( $right_side['image']) ) : ?>
+            <?php if( ( $right_side['text_in_image'] ) ) : ?>
                 <div class="<?php echo $slug; ?>__right <?php echo $slug; ?>__right_image">
-                    <img src="<?php echo $right_side['image']['url'] ?>" alt="<?php echo $right_side['image']['alt'] ?>">
                     <?php if( $right_side['text_in_image'] ) : ?>
                         <p><?php echo $right_side['text_in_image'] ?></p>
                     <?php endif; ?>
