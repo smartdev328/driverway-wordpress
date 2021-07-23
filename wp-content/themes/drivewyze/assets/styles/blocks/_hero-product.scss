@@ -1,4 +1,5 @@
-.hero-product-section {
+.hero-product-section,
+.tabs {
   &-container {
     display: flex;
     flex-wrap: wrap;
@@ -6,7 +7,8 @@
     width: 100%;
   }
 
-  &-tabs-nav {
+  &-tabs-nav,
+  &-nav {
     display: flex;
     justify-content: flex-start;
     order: 1;
@@ -345,7 +347,8 @@
     }
   }
 
-  &-tabs-content {
+  &-tabs-content,
+  &-content {
     order: 3;
     flex-basis: 100%;
     background-color: $color-2;
@@ -370,7 +373,8 @@
       height: 100%;
       background-color: $color-15;
 
-      .hero-product-section-tabs-content__item-container {
+      .hero-product-section-tabs-content__item-container,
+      .tabs-content__item-container {
         overflow-y: hidden;
         overflow-x: scroll;
 
@@ -401,7 +405,8 @@
       &.active {
         display: block;
 
-        .hero-product-section-tabs-content__item-container {
+        .hero-product-section-tabs-content__item-container,
+        .tabs-content__item-container {
           display: -webkit-box;
           align-items: center;
           justify-content: center;
@@ -427,7 +432,8 @@
         }
       }
 
-      .hero-product-section-tab-content {
+      .hero-product-section-tab-content,
+      .tabs-tab-content {
         max-width: 135px;
         width: 100%;
         margin-right: 53px;
@@ -492,5 +498,196 @@
         }
       }
     }
+  }
+}
+
+.tabs {
+  &-content {
+    padding: 40px 15px 70px;
+
+    @media (min-width: $bp-M) {
+      padding: 30px;
+    }
+
+    @media (min-width: $bp-L) {
+      padding-top: 88px;
+      padding-bottom: 80px;
+    }
+
+    @media (min-width: $bp-2XL) {
+      padding-top: 100px;
+      padding-bottom: 130px;
+    }
+
+    &.white {
+      background-color: $color-2;
+    }
+
+    &.light {
+      background-color: $color-15;
+    }
+  }
+
+  &-nav {
+    &-scroll {
+      overflow-x: auto;
+    }
+
+    &__item {
+      padding-left: 17px;
+      padding-right: 17px;
+      min-width: auto;
+      letter-spacing: 1px;
+
+      @media (min-width: $bp-L) {
+        padding: 10px 8px 16px;
+        justify-content: center;
+        letter-spacing: 0;
+      }
+
+      &.half {
+        width: 50%;
+      }
+
+      &.active {
+        &::after {
+          bottom: 1px;
+
+          @media (min-width: $bp-2XL) {
+            bottom: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  .tab {
+    &-item {
+      display: none;
+      padding: 0;
+      background-color: transparent;
+
+      &-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        @media (min-width: $bp-L) {
+          display: grid;
+          grid-template-columns: calc(50% - 64px) auto;
+        }
+
+        @media (min-width: $bp-2XL) {
+          grid-template-columns: 50% 50%;
+        }
+      }
+
+      &.active {
+        display: block;
+      }
+    }
+
+    &-content {
+      margin: 0 0 50px;
+      max-width: 100%;
+
+      @media (min-width: $bp-M) {
+        margin-bottom: 25px;
+        padding-right: 78px;
+        display: grid;
+        grid-template-columns: 128px auto;
+        grid-column-gap: 58px;
+        align-items: center;
+      }
+
+      @media (min-width: $bp-L) {
+        grid-column-gap: 32px;
+      }
+
+      @media (min-width: $bp-2XL) {
+        margin-bottom: 60px;
+        padding-right: 115px;
+        grid-column-gap: 43px;
+      }
+
+      @media (min-width: $bp-5XL) {
+        margin-bottom: 100px;
+        padding-left: 14px;
+        padding-right: 150px;
+        grid-column-gap: 35px;
+        align-items: center;
+      }
+
+      @media (min-width: 2400px) {
+        margin-bottom: 90px;
+        padding-right: 0;
+        max-width: 800px;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      &__img {
+        margin-bottom: 23px;
+        width: 128px;
+        height: 128px;
+
+        @media (min-width: $bp-M) {
+          margin-bottom: 0;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+
+  h2,
+  h3 {
+    color: $color-6;
+  }
+
+  h2 {
+    margin-bottom: 45px;
+
+    @media (min-width: $bp-L) {
+      padding-right: 70px;
+      justify-content: center;
+      text-align: center;
+      letter-spacing: -0.3px;
+    }
+
+    @media (min-width: $bp-2XL) {
+      padding-left: 113px;
+      padding-right: 0;
+      justify-content: flex-start;
+      text-align: left;
+    }
+
+    @media (min-width: 2400px) {
+      padding-left: 0;
+      padding-right: 90px;
+      text-align: center;
+    }
+  }
+
+  h3 {
+    margin-bottom: 17px;
+
+    @media (min-width: $bp-M) {
+      margin-bottom: 8px;
+    }
+
+    @media (min-width: $bp-5XL) {
+      margin-bottom: 23px;
+    }
+  }
+
+  p {
+    margin-bottom: 0;
   }
 }
