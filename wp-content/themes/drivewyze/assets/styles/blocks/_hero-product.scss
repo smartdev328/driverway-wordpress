@@ -15,13 +15,13 @@
     flex-basis: 100%;
     max-width: 100%;
     width: 100%;
-    height: 50px;
+    min-height: 50px;
     background-color: $color-2;
     border-top: 1px solid $color-15;
     border-bottom: 1px solid $color-15;
 
     @media (min-width: $bp-2XL) {
-      height: 59px;
+      min-height: 59px;
     }
 
     &__title {
