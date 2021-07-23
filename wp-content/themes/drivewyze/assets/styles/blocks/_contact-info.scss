@@ -1,0 +1,79 @@
+.contact-info {
+  min-height: 300px;
+  overflow: hidden;
+  position: relative;
+  max-width: 1290px;
+  margin: 0 auto;
+
+  @media (min-width: $bp-M) {
+    display: flex;
+  }
+
+  @media (min-width: $bp-2XL) {
+    padding: 70px 0;
+  }
+
+  &__block {
+    background: $color-11;
+    margin: 15px;
+    padding: 28px 23px 33px;
+
+    @media (min-width: $bp-M) {
+      margin: 15px;
+      flex-basis: 50%;
+
+      &:last-of-type {
+        margin-left: 0;
+      }
+    }
+
+    @media (min-width: $bp-L) {
+      margin: 30px;
+    }
+
+    @media (min-width: $bp-5XL) {
+      padding: 83px 54px 98px;
+    }
+
+    & > * {
+      color: $color-2;
+    }
+
+    h2 {
+      margin-bottom: 12px;
+
+      @media (min-width: $bp-5XL) {
+        margin-bottom: 25px;
+      }
+    }
+
+    p {
+      font-size: rem(18);
+      line-height: rem(24);
+      letter-spacing: 0.25px;
+      margin-bottom: 0;
+
+      @media (min-width: $bp-5XL) {
+        font-size: rem(22);
+        line-height: rem(36);
+      }
+    }
+
+    h4 {
+      padding-top: 41px;
+      font-size: rem(11.5);
+      line-height: rem(16);
+      font-weight: bold;
+      color: $color-6;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+
+      @media (min-width: $bp-5XL) {
+        padding-top: 48px;
+        font-size: rem(16);
+        line-height: rem(26);
+        letter-spacing: 0.08em;
+      }
+    }
+  }
+}

@@ -18,16 +18,6 @@
     margin: auto;
     background-color: $color-6;
 
-    &_white {
-      background-color: transparent;
-
-      @media (min-width: $bp-L) {
-        max-width: 915px;
-        width: 100%;
-        margin: auto;
-      }
-    }
-
     @media (min-width: $bp-M) {
       padding: 44px 61px 34px;
     }
@@ -43,9 +33,23 @@
 
     @media (min-width: $bp-5XL) {
       padding: 65px 158px 58px;
-      max-width: 1860px;
+      max-width: 1920px;
       width: 100%;
       margin: auto;
+    }
+
+    &_white {
+      padding-bottom: 45px;
+      background-color: transparent;
+
+      @media (min-width: $bp-L) {
+        padding-bottom: 72px;
+        padding-left: 30px;
+        padding-right: 30px;
+        max-width: 975px;
+        width: 100%;
+        margin: auto;
+      }
     }
 
     &__column {
@@ -175,10 +179,31 @@
 
                   select {
                     color: $color-8;
+                    -webkit-appearance: none;
+                    appearance: none;
                   }
 
                   textarea {
                     resize: none;
+                  }
+
+                  &_select {
+                    position: relative;
+
+                    &::after {
+                      content: '\f107';
+                      /* stylelint-disable */
+                      font-family: FontAwesome;
+                      /* stylelint-enable */
+                      color: $color-8;
+                      display: inline-block;
+                      position: absolute;
+                      right: 0;
+                      top: 17px;
+                      font-size: 18px;
+                      font-weight: 600;
+                      pointer-events: none;
+                    }
                   }
                 }
 
@@ -206,6 +231,12 @@
 
                   select {
                     color: $color-2;
+                  }
+
+                  .ginput_container_select {
+                    &::after {
+                      color: $color-2;
+                    }
                   }
                 }
               }
@@ -270,23 +301,31 @@
           margin-bottom: 27px;
 
           @media (min-width: $bp-M) {
-            margin-bottom: 50px;
+            letter-spacing: 0.1px;
+            margin-bottom: 47px;
           }
         }
 
         & > p {
           color: $color-13;
           text-align: center;
-          margin-bottom: 34px;
+          margin-bottom: 42px;
 
           @media (min-width: $bp-M) {
-            margin-bottom: 70px;
+            margin-bottom: 53px;
+            letter-spacing: 0.3px;
           }
         }
 
         & > .gform_wrapper {
           & > form {
             & > .gform_body {
+              margin-bottom: 23px;
+
+              @media (min-width: $bp-L) {
+                margin-bottom: 46px;
+              }
+
               .gform_fields {
                 .gfield {
                   &_error {
@@ -299,11 +338,35 @@
                     input,
                     textarea,
                     select {
-                      color: $color-3;
+                      height: 52px;
                       border-bottom: 1px solid $color-4;
+                    }
 
-                      &::placeholder {
-                        color: $color-8;
+                    input,
+                    textarea {
+                      color: $color-3;
+                    }
+
+                    &_select {
+                      &::after {
+                        color: $color-4;
+                      }
+                    }
+                  }
+
+                  label,
+                  select {
+                    color: $color-4;
+                  }
+
+                  &.is-active {
+                    select {
+                      color: $color-3;
+                    }
+
+                    .ginput_container_select {
+                      &::after {
+                        color: $color-3;
                       }
                     }
                   }

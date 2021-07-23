@@ -1,0 +1,303 @@
+.hero-partner {
+  .hero-lightbox {
+    &-bg {
+      &::after {
+        background-color: rgba($color-14, 0.3);
+        mix-blend-mode: multiply;
+      }
+    }
+
+    &__container {
+      margin: 0 auto;
+      padding-bottom: 0;
+      min-height: 100%;
+      max-width: 1920px;
+
+      @media (min-width: $bp-M) {
+        padding-top: 73px;
+        padding-bottom: 80px;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      @media (min-width: $bp-L) {
+        padding-bottom: 60px;
+        padding-top: 64px;
+      }
+
+      @media (min-width: $bp-2XL) {
+        padding: 85px 30px 80px;
+      }
+
+      @media (min-width: $bp-5XL) {
+        padding-top: 112px;
+        padding-bottom: 108px;
+      }
+
+      &::before {
+        content: '';
+        width: 103px;
+        height: 101px;
+        position: absolute;
+        left: 33%;
+        bottom: 158px;
+        transform: translateX(-100%);
+        background-size: auto 130%;
+        background-repeat: no-repeat;
+        background-image: url("../../images/hero-right.svg");
+        z-index: -1;
+
+        @media (min-width: $bp-M) {
+          display: none;
+        }
+
+        @media (min-width: $bp-L) {
+          display: block;
+          bottom: 7px;
+          width: 337px;
+          background-size: auto;
+          height: 72px;
+          left: 4px;
+          transform: none;
+        }
+
+        @media (min-width: $bp-2XL) {
+          height: 114px;
+        }
+
+        @media (min-width: $bp-5XL) {
+          height: 174px;
+          left: -2px;
+          bottom: 3px;
+        }
+      }
+    }
+
+    &__media {
+      margin: 0 auto;
+      padding-top: 75px;
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @media (min-width: $bp-M) {
+        margin: 0;
+        padding-top: 0;
+        flex-direction: row;
+        justify-content: flex-end;
+      }
+
+      @media (min-width: $bp-L) {
+        width: 50%;
+        max-width: 100%;
+      }
+    }
+
+    &__img {
+      padding-bottom: 60%;
+      width: calc(100% - 73px);
+      position: relative;
+
+      @media (min-width: $bp-M) {
+        padding: 0;
+        width: auto;
+        max-width: calc(100% - 110px);
+      }
+
+      @media (min-width: $bp-L) {
+        width: auto;
+      }
+
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: contain;
+
+        @media (min-width: $bp-M) {
+          height: 233px;
+          width: auto;
+          max-width: 100%;
+          position: static;
+        }
+
+        @media (min-width: $bp-L) {
+          height: 264px;
+        }
+
+        @media (min-width: $bp-2XL) {
+          height: 371px;
+        }
+
+        @media (min-width: $bp-5XL) {
+          height: 531px;
+        }
+      }
+    }
+
+    &__icon {
+      padding-top: 12px;
+      padding-bottom: 15px;
+      width: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      @media (min-width: $bp-M) {
+        padding: 48px 7px;
+        max-width: 110px;
+      }
+
+      @media (min-width: $bp-L) {
+        padding: 59px 29px 57px 15px;
+        max-width: 124px;
+        top: -5px;
+      }
+
+      @media (min-width: $bp-2XL) {
+        padding: 80px 33px 80px 15px;
+        max-width: 170px;
+      }
+
+      @media (min-width: $bp-5XL) {
+        padding-top: 115px;
+        padding-bottom: 115px;
+        max-width: 250px;
+      }
+
+      &::before {
+        content: '';
+        width: 100%;
+        height: calc(100% + 74px);
+        position: absolute;
+        background: $color-2;
+        left: 0;
+        top: -74px;
+        z-index: -1;
+
+        @media (min-width: $bp-M) {
+          width: 150%;
+          height: 100%;
+          top: 0;
+          right: 0;
+          left: auto;
+        }
+      }
+
+      &::after {
+        @media (min-width: $bp-M) {
+          content: '';
+          width: 150%;
+          height: 78px;
+          position: absolute;
+          right: 21px;
+          bottom: -42px;
+          background-size: auto;
+          background-repeat: no-repeat;
+          background-image: url("../../images/dot-pattern-intro.svg");
+          z-index: -1;
+        }
+
+        @media (min-width: $bp-2XL) {
+          right: -11px;
+          bottom: -46px;
+        }
+
+        @media (min-width: $bp-5XL) {
+          right: 25px;
+          height: 200px;
+          width: 250px;
+          background-repeat: repeat;
+        }
+      }
+
+      img {
+        max-width: 100%;
+        width: auto;
+        max-height: 27px;
+        object-fit: contain;
+
+        &.mobile {
+          @media (min-width: $bp-M) {
+            display: none;
+          }
+        }
+
+        &.desktop {
+          display: none;
+
+          @media (min-width: $bp-M) {
+            display: inline-block;
+          }
+
+          @media (min-width: $bp-2XL) {
+            width: 100%;
+            max-height: 32px;
+          }
+
+          @media (min-width: $bp-5XL) {
+            max-height: 45px;
+          }
+        }
+      }
+    }
+
+    &__content {
+      @media (min-width: $bp-M) {
+        width: 50%;
+      }
+
+      @media (min-width: $bp-L) {
+        padding-left: 80px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      @media (min-width: $bp-2XL) {
+        padding-left: 110px;
+      }
+
+      @media (min-width: $bp-5XL) {
+        padding-left: 156px;
+        padding-top: 36px;
+      }
+
+      h1 {
+        margin-bottom: 0;
+        color: $color-2;
+
+        @media (min-width: $bp-2XL) {
+          margin-bottom: 10px;
+        }
+
+        @media (min-width: $bp-5XL) {
+          margin-bottom: 42px;
+        }
+      }
+
+      h5 {
+        margin-bottom: 10px;
+
+        @media (min-width: $bp-2XL) {
+          margin-bottom: 24px;
+        }
+      }
+    }
+
+    &__btns {
+      @media (min-width: $bp-L) {
+        margin-bottom: 14px;
+      }
+
+      @media (min-width: $bp-5XL) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
