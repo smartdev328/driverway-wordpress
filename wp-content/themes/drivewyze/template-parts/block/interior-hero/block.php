@@ -31,7 +31,7 @@ $right_side	= get_field( 'right_side' );
         yoast_breadcrumb( '<p id="breadcrumbs" class="breadcrumbs">','</p>' );
     } ?>
 
-    <div class="<?php echo $slug; ?>__block <?php echo $slug; ?>__block_image">
+    <div class="<?php echo $slug; ?>__block <?php echo $right_side['select_type'] == 'image' ? 'interior__block_image' : '' ?>">
         <?php if( $left_side ) : ?>
             <div class="<?php echo $slug; ?>__left">
                 <?php if( $left_side['prefix'] ) : ?>
