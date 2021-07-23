@@ -390,6 +390,7 @@
           display: flex;
           flex-wrap: wrap;
           gap: 12%;
+          overflow-x: hidden;
         }
 
         @media (min-width: $bp-2XL) {
