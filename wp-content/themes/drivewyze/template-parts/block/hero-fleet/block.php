@@ -28,6 +28,10 @@ $fleet_title_desk		= get_field( 'title_desktop' );
 $active_slide				= str_replace(' ', '', strtolower( get_field( 'active_slide' ) ) );
 ?>
 <section id="<?php echo $block_id; ?>" class="<?php echo $block_class . ' ' . $fleet_section_class; ?>">
+    <?php if ( function_exists('yoast_breadcrumb') && !is_front_page() ) :
+        yoast_breadcrumb( '<div class="page-breadcrumbs"><p id="breadcrumbs">','</p></div>' );
+    endif; ?>
+
 	<?php
 	if( $hero_type === 'multiple' )  {
 	 	if( $fleet_slider ) { ?>
