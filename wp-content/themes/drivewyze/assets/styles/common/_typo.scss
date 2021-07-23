@@ -273,7 +273,10 @@ ol.custom {
     width: 100%;
     max-width: $c-width;
   }
+}
 
+.entry-content,
+.site-content {
   .aligncenter {
     text-align: center;
   }
@@ -346,6 +349,23 @@ ol.custom {
   .wp-block-calendar {
     a {
       @include link-el($color-11, $color-14);
+    }
+  }
+
+  .wp-block-image {
+    &.overlay {
+      position: relative;
+      max-width: 768px;
+
+      &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba($color-16, 0.4);
+      }
     }
   }
 

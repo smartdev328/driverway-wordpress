@@ -715,6 +715,14 @@
     @media (min-width: $bp-2XL) {
       padding-bottom: 36px;
     }
+
+    &--light {
+      background-color: $color-15;
+
+      @media (min-width: $bp-L) {
+        min-height: 380px;
+      }
+    }
   }
 
   &-media {
@@ -877,6 +885,30 @@
         margin-top: 22px;
         margin-bottom: 30px;
       }
+    }
+  }
+
+  &--light {
+    background-color: $color-2;
+
+    .post-main {
+      @media (min-width: $bp-L) {
+        padding-bottom: 66px;
+      }
+    }
+
+    h3 {
+      margin-bottom: 20px;
+
+      @media (min-width: $bp-L) {
+        margin-bottom: 58px;
+      }
+    }
+
+    p {
+      margin: 0;
+      padding-bottom: 24px;
+      line-height: rem(26);
     }
   }
 }
