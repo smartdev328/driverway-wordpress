@@ -1,6 +1,7 @@
 // import external dependencies
 
 import "jquery"
+import AOS from 'aos';
 
 // Import everything from autoload
 import "./autoload/**/*"
@@ -19,4 +20,7 @@ jQuery(document).ready(() => {
     posts.select();
     posts.load_more();
 	sliders.init();
-})
+
+	//Init Aos animation
+    AOS.init();
+});
