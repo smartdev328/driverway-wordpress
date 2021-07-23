@@ -34,7 +34,7 @@ $post_icon_mobile  = get_field('icon', $page_id);
 $post_icon_desk    = get_field('icon_desk', $page_id);
 $post_icon_class   = ( !empty($post_icon_desk) && is_array($post_icon_desk)) ? 'mobile' : '';
 ?>
-<section id="<?php echo $block_id; ?>" class="hero-lightbox hero-partner">
+<section id="<?php echo $block_id; ?>" class="hero-lightbox hero-partner" data-aos="fade-up" data-aos-duration="500">
 	<?php
 	if ( function_exists('yoast_breadcrumb') && !is_front_page() ) :
 		yoast_breadcrumb( '<div class="page-breadcrumbs"><p id="breadcrumbs" class="light">','</p></div>' );

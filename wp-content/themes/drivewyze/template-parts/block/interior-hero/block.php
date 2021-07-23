@@ -22,7 +22,7 @@ $bg			= get_field( 'background_image' );
 $left_side	= get_field( 'left_side' );
 $right_side	= get_field( 'right_side' );
 ?>
-<section id="<?php echo $block_id; ?>" class="<?php echo $slug; ?>">
+<section id="<?php echo $block_id; ?>" class="<?php echo $slug; ?>" data-aos="fade-up" data-aos-duration="500">
     <?php if( ! empty( $bg ) && is_array( $bg ) ) : ?>
         <div class="<?php echo $slug; ?>__bg" style="background-image: url(<?php echo $bg['url'] ?>)"></div>
     <?php endif; ?>

@@ -23,7 +23,7 @@ if( isset( $block['data']['preview_image_help'] )  ) :
     echo '<img src="'. $block['data']['preview_image_help'] .'" style="width:100%; height:auto;">';
 endif;
 ?>
-<section id="<?php echo $block_id; ?>" class="<?php echo $block_class; ?>">
+<section id="<?php echo $block_id; ?>" class="<?php echo $block_class; ?>" data-aos="fade-up" data-aos-duration="500">
 
 	<div class="tabs-container">
 

@@ -21,13 +21,13 @@ $team         = get_field( 'team' );
 ?>
 <section id="<?php echo $block_id; ?>" class="<?php echo $slug; ?>">
     <?php if ( $title ) : ?>
-        <h2 class="our-team__title"><?php echo $title; ?></h2>
+        <h2 class="our-team__title" data-aos="fade-up" data-aos-duration="500"><?php echo $title; ?></h2>
     <?php endif; ?>
 
     <?php if ( $team ) : ?>
         <div class="our-team__team">
             <?php foreach ( $team as $person ) : ?>
-                <div class="team-item">
+                <div class="team-item" data-aos="fade-up" data-aos-duration="500">
                     <?php if ( ! empty( $person['image'] ) && is_array( $person['image']) ) : ?>
                         <div class="team-item__image">
                             <?php echo wp_get_attachment_image( $person['image']['ID'], 'large' ); ?>
