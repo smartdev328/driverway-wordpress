@@ -492,6 +492,8 @@
 
           &.active {
             background-color: $color-15;
+            pointer-events: none;
+            cursor: default;
 
             &::after {
               position: absolute;
