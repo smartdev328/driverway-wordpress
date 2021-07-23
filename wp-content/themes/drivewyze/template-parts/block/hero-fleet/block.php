@@ -20,104 +20,15 @@ $slug         			= str_replace( 'acf/', '', $block['name'] );
 $block_id     			= $slug . '-' . $block['id'];
 $block_class  			= $slug;
 $hero_type				= get_field( 'type_of_hero' );
-$fleet_slider			= get_field( 'fleet_slider' );
 $fleet_single			= get_field( 'fleet_hero' );
+$fleet_nav				= get_field( 'fleet_hero_nav' );
 $fleet_section_class 	= $hero_type === 'multiple' ? 'fleet-multiple' : 'fleet-single';
 $fleet_title_mob		= get_field( 'title_mobile' );
 $fleet_title_desk		= get_field( 'title_desktop' );
-$active_slide				= str_replace(' ', '', strtolower( get_field( 'active_slide' ) ) );
+$active_nav				= str_replace(' ', '', strtolower( get_field( 'active_nav' ) ) );
 ?>
 <section id="<?php echo $block_id; ?>" class="<?php echo $block_class . ' ' . $fleet_section_class; ?>">
 	<?php
-	if( $hero_type === 'multiple' )  {
-	 	if( $fleet_slider ) { ?>
-			<div class="fleet-hero">
-				<div class="fleet-hero-container">
-					<?php
-					foreach ( $fleet_slider as $fleet_slide ) {
-						$title = $fleet_slide['slide_title'];
-						$desc = $fleet_slide['slide_description'];
-						$nav_name = $fleet_slide['slide_nav_name'];
-						$slide_id = str_replace(' ', '', strtolower( $nav_name ) );
-						$customer_group = $fleet_slide['customer_group'];
-						$customer_title	= $customer_group['customer_title'];
-						$customer_name	= $customer_group['customer_name'];
-						$customer_desc	= $customer_group['customer_desc'];
-						$customer_img	= $customer_group['customer_image']; ?>
-
-						<div id="<?php echo strtolower( $nav_name ); ?>" class="fleet-hero__slide<?php echo $active_slide === $slide_id ? ' active' : '' ?>">
-
-							<?php if( $nav_name ) : ?>
-								<span><?php echo $nav_name; ?></span>
-							<?php endif; ?>
-
-							<?php if( $title ) : ?>
-								<h2><?php echo $title; ?></h2>
-							<?php endif; ?>
-
-							<?php if( $desc ) : ?>
-								<p><?php echo $desc; ?></p>
-							<?php endif; ?>
-
-							<?php if( $customer_title || $customer_name || $customer_desc ) : ?>
-
-								<div class="customer-group customer-group-text">
-
-									<?php if( $customer_title ) : ?>
-										<h3><?php echo $customer_title; ?></h3>
-									<?php endif; ?>
-
-									<?php if( $customer_name ) : ?>
-										<p class="bold"><?php echo $customer_name; ?></p>
-									<?php endif; ?>
-
-									<?php if( $customer_desc ) : ?>
-										<p><?php echo $customer_desc; ?></p>
-									<?php endif; ?>
-
-								</div>
-
-							<?php endif; ?>
-
-							<?php if( is_array( $customer_img ) ) : ?>
-
-								<div class="customer-group customer-group-image">
-									<img src="<?php echo $customer_img['url']; ?>"
-										 alt="<?php echo $customer_img['alt']; ?>">
-								</div>
-
-							<?php endif; ?>
-
-						</div>
-
-						<?php
-					}
-					?>
-				</div>
-				<div class="fleet-hero-nav">
-
-					<?php if( $fleet_title_mob && $fleet_title_desk ) : ?>
-						<span class="fleet-hero-nav__title">
-						<?php echo $fleet_title_desk . ':'; ?>
-					</span>
-						<span class="fleet-hero-nav__title fleet-hero-nav__title_mob">
-						<?php echo $fleet_title_mob . ':'; ?>
-					</span>
-					<?php endif; ?>
-
-					<div class="fleet-hero-nav-scroll">
-						<?php foreach( $fleet_slider as $fleet_slide ) :
-							$nav_name = $fleet_slide['slide_nav_name'];
-							$slide_id = str_replace(' ', '', strtolower( $nav_name ) ); ?>
-							<a class="fleet-hero-nav-scroll__item<?php echo $active_slide === $slide_id ? ' active' : '' ?>"
-							   href="<?php echo '#' . str_replace(' ', '', strtolower( $nav_name ) );?>"><?php echo $nav_name ?></a>
-						<?php endforeach; ?>
-					</div>
-
-				</div>
-			</div>
-		<?php }
-	} elseif( $hero_type === 'single' ) {
 		if( $fleet_single ) :
 			$name			 = $fleet_single['hero_name'];
 			$title 			 = $fleet_single['hero_title'];
@@ -169,9 +80,37 @@ $active_slide				= str_replace(' ', '', strtolower( get_field( 'active_slide' ) 
 							<?php endif; ?>
 						</div>
 					</div>
+
+					<?php if( $hero_type === 'multiple' ) : ?>
+						<div class="fleet-hero-nav">
+
+							<?php if( $fleet_title_mob && $fleet_title_desk ) : ?>
+								<span class="fleet-hero-nav__title">
+									<?php echo $fleet_title_desk . ':'; ?>
+								</span>
+
+								<span class="fleet-hero-nav__title fleet-hero-nav__title_mob">
+									<?php echo $fleet_title_mob . ':'; ?>
+								</span>
+							<?php endif; ?>
+
+							<div class="fleet-hero-nav-scroll">
+								<?php foreach( $fleet_nav as $nav_item ) :
+									$nav_name = $nav_item['nav_name'];
+									$nav_id = strtolower( $nav_name['title'] );
+									$active = ($active_nav === $nav_id) ? 'active' : '';
+
+								?>
+									<a class="fleet-hero-nav-scroll__item <?php echo $active; ?>"
+									   href="<?php echo  $nav_name['url']; ?>"><?php echo $nav_name['title']; ?></a>
+								<?php endforeach; ?>
+							</div>
+
+						</div>
+					<?php endif; ?>
+
 				</div>
 			<?php
-			endif;
-		}
+		endif;
 	?>
 </section>
