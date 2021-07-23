@@ -31,6 +31,7 @@ $video				= ($video_type) ? $wp_video : $youtube_iframe;
 $tabs_title_desk	= get_field( 'tabs_title_desktop' );
 $tabs_title_mob		= get_field( 'tabs_title_mobile' );
 $tabs				= get_field( 'hero_tabs' );
+$tab_content		= get_field( 'tab_content' );
 $active_tab			= str_replace(' ', '', strtolower( get_field( 'active_tab' ) ) );
 
 if( isset( $block['data']['preview_image_help'] )  ) :
@@ -55,10 +56,12 @@ endif;
 
 				<div class="<?php echo $block_class . '-tabs-nav-scroll'; ?>">
 					<?php foreach( $tabs as $tab ) :
-						$tab_name = $tab['tab_name'];
-						$tab_id = str_replace(' ', '', strtolower( $tab_name ) ); ?>
-						<a class="<?php echo $block_class . '-tabs-nav__item'; ?><?php echo $active_tab === $tab_id ? ' active' : '' ?>"
-						href="<?php echo '#' . str_replace(' ', '', strtolower( $tab_name ) );?>"><?php echo $tab_name ?></a>
+						$tab = $tab['tab_name'];
+						$tab_id = str_replace(' ', '', strtolower( $tab['title'] ) );
+						$active = ($tab_id === $active_tab) ? 'active' : '';
+						?>
+						<a class="<?php echo $block_class . '-tabs-nav__item'; ?> <?php echo $active; ?>"
+						href="<?php echo ($tab_id === $active_tab) ? '' : $tab['url']; ?>"><?php echo $tab['title']; ?></a>
 					<?php endforeach; ?>
 				</div>
 
@@ -116,46 +119,36 @@ endif;
 
 		</div>
 
-		<?php if( $tabs ) : ?>
+		<?php if( $tab_content ) : ?>
 			<div class="<?php echo $block_class . '-tabs-content'; ?>">
+				<div id="<?php echo $tab_id; ?>"
+					 class="<?php echo $block_class . '-tabs-content__item'; ?>">
+					<div class="<?php echo $block_class . '-tabs-content__item-container'; ?>">
+						<?php
+							foreach ( $tab_content as $content ) :
+								$tab_icon = $content['icon'];
+								$tab_title = $content['title']; ?>
 
-				<?php foreach( $tabs as $tab ) :
-					$tab_name = $tab['tab_name'];
-					$tab_id = str_replace(' ', '', strtolower( $tab_name ) );
-				?>
-					<div id="<?php echo $tab_id; ?>"
-						 class="<?php echo $block_class . '-tabs-content__item'; ?><?php echo $active_tab === $tab_id ? ' active' : '' ?>">
-						<div class="<?php echo $block_class . '-tabs-content__item-container'; ?>">
-							<?php
-								if( $tab['tab_content'] ) :
-									foreach ( $tab['tab_content'] as $tab_content ) :
-										$tab_icon = $tab_content['icon'];
-										$tab_title = $tab_content['title']; ?>
+								<div class="<?php echo $block_class . '-tab-content'; ?>">
 
-										<div class="<?php echo $block_class . '-tab-content'; ?>">
-
-											<?php if( $tab_icon ) : ?>
-												<div class="<?php echo $block_class . '-tab-content__icon'; ?>">
-													<img src="<?php echo $tab_icon['url']; ?>"
-														 alt="<?php echo $tab_icon['alt']; ?>">
-												</div>
-											<?php endif; ?>
-
-											<?php if( $tab_title ) : ?>
-												<h2 class="<?php echo $block_class . '-tab-content__title'; ?>">
-													<?php echo $tab_title; ?>
-												</h2>
-											<?php endif; ?>
-
+									<?php if( $tab_icon ) : ?>
+										<div class="<?php echo $block_class . '-tab-content__icon'; ?>">
+											<img src="<?php echo $tab_icon['url']; ?>"
+												 alt="<?php echo $tab_icon['alt']; ?>">
 										</div>
+									<?php endif; ?>
+
+									<?php if( $tab_title ) : ?>
+										<h2 class="<?php echo $block_class . '-tab-content__title'; ?>">
+											<?php echo $tab_title; ?>
+										</h2>
+									<?php endif; ?>
+
+								</div>
 							<?php
-									endforeach;
-								endif; ?>
-						</div>
-
+							endforeach; ?>
 					</div>
-				<?php endforeach; ?>
-
+				</div>
 			</div>
 		<?php endif; ?>
 	</div>
