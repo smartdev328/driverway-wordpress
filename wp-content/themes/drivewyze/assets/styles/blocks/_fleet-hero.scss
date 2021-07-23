@@ -42,12 +42,7 @@
 
     .fleet-hero__slide {
       position: relative;
-      display: none;
       padding: 0 15px;
-
-      &.active {
-        display: block;
-      }
 
       @media (min-width: $bp-M) {
         padding: 20px 30px 25px;
