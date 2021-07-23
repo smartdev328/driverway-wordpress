@@ -2,10 +2,16 @@
   overflow: hidden;
 
   .page-breadcrumbs {
-    padding-top: 60px;
+    &_multiple {
+      padding-top: 65px;
 
-    @media (min-width: $bp-M) {
-      padding-top: 70px;
+      @media (min-width: $bp-M) {
+        padding-top: 70px;
+      }
+
+      @media (min-width: $bp-L) {
+        padding-top: 20px;
+      }
     }
   }
 
