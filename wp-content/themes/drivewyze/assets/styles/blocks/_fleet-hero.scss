@@ -439,16 +439,18 @@
       }
 
       &-scroll {
-        display: flex;
+        display: -webkit-box;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-start;
         max-width: 100%;
         width: 100%;
-        overflow-x: hidden;
+        overflow-x: scroll;
         overflow-y: hidden;
 
-        @media (min-width: $bp-L) {
-          overflow: visible;
+        @media (min-width: 440px) {
+          overflow-x: hidden;
+          display: flex;
+          justify-content: space-between;
         }
 
         &__item {
@@ -462,7 +464,12 @@
           color: $color-6;
           text-transform: uppercase;
           padding: 11px 8px 14px;
-          width: 100%;
+          min-width: 25%;
+
+          @media (min-width: 440px) {
+            min-width: auto;
+            width: 100%;
+          }
 
           @media (min-width: $bp-M) {
             padding: 10px 8px 14px;
