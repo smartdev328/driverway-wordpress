@@ -7,8 +7,9 @@
 
 ?>
 <?php
-$position   = get_field( 'position' );
-$prefix   = get_field( 'page_prefix', 'options' );
+$author    = get_field( 'author' );
+$position  = get_field( 'position' );
+$prefix    = get_field( 'page_prefix', 'options' );
 ?>
 
 <div  class="post-block">
@@ -18,9 +19,12 @@ $prefix   = get_field( 'page_prefix', 'options' );
 
     <div class="post-content">
         <h3 class="post-content__excerpt"><?php echo get_the_excerpt(); ?></h3>
-        <h4 class="post-content__title"><?php echo the_title(); ?></h4>
 
-        <?php if ( $position ) : ?>
+        <?php if ( $author ) : ?>
+			<h4 class="post-content__title"><?php echo $author; ?></h4>
+        <?php endif; ?>
+
+		<?php if ( $position ) : ?>
             <h4 class="post-content__position"><?php echo $position; ?></h4>
         <?php endif; ?>
     </div>
