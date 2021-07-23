@@ -18,6 +18,10 @@ get_header(); ?>
 
 			get_template_part( 'template-parts/content', 'post' );
 
+		elseif (is_singular('testimonials')) :
+
+			get_template_part( 'template-parts/content', 'testimonials' );
+
 		else :
 
 			get_template_part( 'template-parts/content', get_post_format() );
