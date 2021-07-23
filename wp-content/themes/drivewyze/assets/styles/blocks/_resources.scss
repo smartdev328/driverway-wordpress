@@ -306,8 +306,8 @@
       box-shadow: 2px 2px 15px rgba($color-1, 0.1);
       border-radius: 100%;
       position: absolute;
-      top: 85.5%;
-      bottom: -50px;
+      top: inherit;
+      bottom: -80px;
       transition: $transition-ease;
 
       @media (min-width: $bp-M) {
