@@ -107,7 +107,7 @@ $active_nav				= str_replace(' ', '', strtolower( get_field( 'active_nav' ) ) );
 
 								?>
 									<a class="fleet-hero-nav-scroll__item <?php echo $active; ?>"
-									   href="<?php echo  $nav_name['url']; ?>"><?php echo $nav_name['title']; ?></a>
+									   href="<?php echo ($nav_id === $active_nav ) ? '' : $nav_name['url']; ?>"><?php echo $nav_name['title']; ?></a>
 								<?php endforeach; ?>
 							</div>
 

@@ -3,18 +3,10 @@ jQuery(document).ready(() => {
 	const videoIframe = $('.hero-product-section-hero-video iframe')
 	const previewImg = $('.hero-product-section-hero-video__preview')
 	const previewOverlay = $('.hero-product-section-hero-video__overlay')
-	const tabNavs = $('.hero-product-section-tabs-nav__item')
-	const tabContents = $('.hero-product-section-tabs-content__item')
+	const tabNav = $('.hero-product-section-tabs-nav__item.active')
 
-	tabNavs.click((e)=>{
-		e.preventDefault()
-		const contentId = $(e.target).attr('href')
-
-		tabNavs.removeClass('active')
-		tabContents.removeClass('active')
-
-		$(e.target).addClass('active')
-		$(contentId).addClass('active')
+	tabNav.click((event)=>{
+		event.preventDefault()
 	})
 
 	playVideoBtn.click((e)=>{
