@@ -5,7 +5,7 @@
   margin: 0 auto;
 
   @media (min-width: $bp-M) {
-    padding: 30px;
+    padding: 30px 30px 0;
   }
 
   &_left {
@@ -82,6 +82,17 @@
 
       @media (min-width: $bp-5XL) {
         padding: 0 164px 0 176px;
+      }
+
+      h3 {
+        color: $color-6;
+        font-weight: 300;
+        margin-bottom: 25px;
+      }
+
+      p {
+        font-size: rem(15);
+        line-height: rem(25);
       }
 
       a {

@@ -375,6 +375,7 @@
   &.fleet-multiple {
     .fleet-hero-nav {
       order: 1;
+      z-index: 2;
       display: flex;
       justify-content: flex-start;
       flex-basis: 100%;
@@ -479,6 +480,7 @@
 
           @media (min-width: $bp-M) {
             padding: 10px 8px 14px;
+            border-right: 1px solid $color-15;
           }
 
           @media (min-width: $bp-L) {

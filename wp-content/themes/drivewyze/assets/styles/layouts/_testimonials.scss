@@ -78,7 +78,10 @@
       }
     }
   }
+}
 
+.single-testimonials,
+.page-template-testimonials-archive {
   .testimonials-posts {
     background: $color-15;
     margin-top: -10px;
@@ -109,7 +112,7 @@
       }
 
       @media (min-width: $bp-5XL) {
-        max-width: 1295px;
+        max-width: 1920px;
       }
     }
 
@@ -122,7 +125,7 @@
       @media (min-width: $bp-M) {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: flex-start;
         padding: 0 15px 50px;
       }
 

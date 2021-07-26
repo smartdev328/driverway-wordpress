@@ -67,7 +67,7 @@ $active_nav				= str_replace(' ', '', strtolower( get_field( 'active_nav' ) ) );
 									<?php endif; ?>
 
 									<?php if( $customer_name ) : ?>
-										<p><?php echo $customer_name; ?></p>
+										<p class="bold"><?php echo $customer_name; ?></p>
 									<?php endif; ?>
 
 									<?php if( $customer_desc ) : ?>
