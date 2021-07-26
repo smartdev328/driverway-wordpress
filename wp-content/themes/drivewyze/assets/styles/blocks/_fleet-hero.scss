@@ -60,6 +60,9 @@
 
       @media (min-width: $bp-5XL) {
         padding-bottom: 75px;
+        min-height: 781px;
+        display: flex;
+        flex-direction: column;
       }
 
       & > span {
@@ -182,12 +185,14 @@
       .customer-group {
         &.customer-group-text {
           background-color: $color-2;
-          padding: 25px;
+          padding: 25px 30px;
           max-width: 100%;
           width: 100%;
 
           @media (min-width: $bp-M) {
             padding: 14px 20px;
+            z-index: 1;
+            position: relative;
           }
 
           @media (min-width: $bp-L) {
@@ -204,12 +209,14 @@
             flex-direction: column;
             justify-content: center;
             max-width: 913px;
-            padding: 20px 50px;
+            padding: 30px 50px;
           }
 
           @media (min-width: $bp-5XL) {
             max-width: 1297px;
             margin-left: 96px;
+            margin-top: auto;
+            padding: 50px 50px 41px 65px;
           }
 
           h3 {
@@ -220,6 +227,10 @@
             letter-spacing: 0.01em;
             margin-bottom: 7px;
 
+            &::first-letter {
+              margin-left: -10px;
+            }
+
             @media (min-width: $bp-M) {
               max-width: 355px;
             }
@@ -227,8 +238,13 @@
             @media (min-width: $bp-2XL) {
               max-width: 555px;
               font-size: rem(36);
-              line-height: rem(48);
+              line-height: rem(42);
+              letter-spacing: 0.01em;
               margin-bottom: 25px;
+
+              &::first-letter {
+                margin-left: -14px;
+              }
             }
           }
 
@@ -262,14 +278,16 @@
             right: 40px;
             max-width: 330px;
             width: 100%;
-            height: auto;
+            height: 100%;
           }
 
           @media (min-width: $bp-L) {
             max-width: 365px;
             bottom: 0;
-            right: 76px;
-            max-height: 116%;
+            right: 80px;
+            max-height: 100%;
+            height: 100%;
+            width: auto;
           }
 
           @media (min-width: $bp-2XL) {
@@ -281,10 +299,13 @@
 
           @media (min-width: $bp-5XL) {
             max-width: 733px;
-            height: auto;
             right: 190px;
             bottom: 0;
-            max-height: 116%;
+            min-width: 733px;
+            max-height: 110%;
+            height: 110%;
+            display: flex;
+            justify-content: flex-end;
           }
 
           img {
@@ -295,6 +316,11 @@
             height: 100%;
             object-fit: contain;
             object-position: bottom;
+
+            @media (min-width: $bp-5XL) {
+              width: auto;
+              height: 100%;
+            }
           }
 
           &::before {
@@ -331,7 +357,7 @@
               width: 184px;
               height: 385px;
               top: 203px;
-              right: -79px;
+              right: -95px;
             }
           }
 
@@ -351,7 +377,7 @@
             }
 
             @media (min-width: $bp-L) {
-              top: 245px;
+              top: 227px;
               left: -84px;
             }
 
@@ -364,7 +390,7 @@
               width: 184px;
               height: 81px;
               top: 447px;
-              left: -99px;
+              left: 123px;
             }
           }
         }
@@ -531,6 +557,19 @@
 
       @media (min-width: $bp-L) {
         order: 2;
+      }
+    }
+  }
+
+  &.fleet-single {
+    .fleet-hero {
+      .fleet-hero__slide {
+        & > h2 {
+          @media (min-width: $bp-5XL) {
+            font-size: rem(65);
+            line-height: rem(72);
+          }
+        }
       }
     }
   }
