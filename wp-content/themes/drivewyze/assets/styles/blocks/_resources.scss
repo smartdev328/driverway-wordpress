@@ -549,14 +549,10 @@
       }
 
       @media (min-width: $bp-5XL) {
-        width: 1260px;
+        width: 1295px;
       }
 
       .swiper-wrapper {
-        @media (min-width: $bp-5XL) {
-          flex-wrap: wrap;
-        }
-
         .swiper-slide {
           background-color: $color-2;
           padding: 20px 20px 0;
@@ -577,6 +573,7 @@
           @media (min-width: $bp-5XL) {
             flex-basis: calc(25% - 30px);
             margin: 0 15px;
+            max-width: 285px;
           }
 
           .file-subtitle {

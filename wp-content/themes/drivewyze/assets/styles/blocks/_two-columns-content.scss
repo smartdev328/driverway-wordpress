@@ -52,10 +52,10 @@
     }
 
     &__image {
-      margin-bottom: 15px;
+      margin-bottom: 30px;
 
       @media (min-width: $bp-M) {
-        margin-bottom: 40px;
+        margin-bottom: 45px;
       }
 
       @media (min-width: $bp-2XL) {
@@ -118,10 +118,6 @@
 
     &:last-of-type {
       .column-item__info {
-        margin-bottom: 0;
-      }
-
-      .column-item__image {
         margin-bottom: 0;
       }
     }
