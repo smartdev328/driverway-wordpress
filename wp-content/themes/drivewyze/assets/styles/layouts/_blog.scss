@@ -123,7 +123,6 @@
         border: none;
         font-weight: bold;
         border-radius: 0;
-        font-size: rem(11.5);
         line-height: rem(16);
         letter-spacing: 0.08em;
         text-transform: uppercase;
@@ -132,6 +131,9 @@
         background-image: url('../../images/arrow-down.svg');
         background-repeat: no-repeat;
         background-position: 97%;
+        font-size: rem(16);
+        transform: scale(0.7);
+        transform-origin: left;
 
         @media (min-width: $bp-S) {
           width: auto;
@@ -143,6 +145,7 @@
           margin-left: 21px;
           font-size: rem(16);
           line-height: rem(26);
+          transform: scale(1);
         }
 
         option {

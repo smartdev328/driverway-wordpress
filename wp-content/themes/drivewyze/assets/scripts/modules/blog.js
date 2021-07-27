@@ -1,11 +1,7 @@
 const posts = {
     select: function () {
-        $(".blog-select").click(function() {
-            let open = $(this).data("isopen");
-            if(open === 'true') {
-                window.location.href = $(this).val()
-            }
-            $(this).data("isopen", !open);
+        $(".blog-select").change(function() {
+            window.location.href = $(this).val()
         });
     },
 

@@ -63,6 +63,8 @@
         min-height: 781px;
         display: flex;
         flex-direction: column;
+        max-width: 1920px;
+        margin: 0 auto;
       }
 
       & > span {
@@ -557,19 +559,6 @@
 
       @media (min-width: $bp-L) {
         order: 2;
-      }
-    }
-  }
-
-  &.fleet-single {
-    .fleet-hero {
-      .fleet-hero__slide {
-        & > h2 {
-          @media (min-width: $bp-5XL) {
-            font-size: rem(65);
-            line-height: rem(72);
-          }
-        }
       }
     }
   }

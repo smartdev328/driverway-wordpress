@@ -174,10 +174,12 @@ function save_partners_parent_id($post_id) {
 	global $post;
 
 // make sure data came from our meta box
-	if (!wp_verify_nonce($_POST['parent_id_noncename'],__FILE__)) return $post_id;
-	if(isset($_POST['parent_id']) && ($_POST['post_type'] == "partners")) {
-		$data = $_POST['parent_id'];
-		update_post_meta($post_id, 'parent_id', $data);
-	}
+	if (isset($_POST['parent_id_noncename'])) {
+        if (!wp_verify_nonce($_POST['parent_id_noncename'],__FILE__)) return $post_id;
+        if(isset($_POST['parent_id']) && ($_POST['post_type'] == "partners")) {
+            $data = $_POST['parent_id'];
+            update_post_meta($post_id, 'parent_id', $data);
+        }
+    }
 }
 add_action("save_post", "save_partners_parent_id");
