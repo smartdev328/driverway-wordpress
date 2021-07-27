@@ -23,9 +23,10 @@ $custom_class   = isset( $block['className'] ) ? $block['className'] : '';
 $block_title    = get_field('block_title');
 $block_desc     = get_field('block_desc');
 $icon_title     = get_field('icon_text');
+$learn_link     = get_field('learn_more_link');
 ?>
 <section id="<?php echo $block_id; ?>" class="device <?php echo $slug; ?> <?php echo $align_class; ?> <?php echo $custom_class; ?>">
-	<div class="device__container" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
+	<div class="device__container">
 		<?php
 			$args  = array(
 				'post_type'      => 'partners',
@@ -41,8 +42,8 @@ $icon_title     = get_field('icon_text');
 					$post_icon  = get_field( 'icon', $id );
 					$post_title = get_field( 'secondary_title', $id );
 					$post_desc  = get_field( 'description', $id );
-					$title 		= $post_title ?? $block_title;
-					$desc       = $post_desc ?? $block_desc;
+					$title 		= $post_title ?: $block_title;
+					$desc       = $post_desc ?: $block_desc;
 				?>
 					<div class="device-item">
 						<div class="device-item__media">
@@ -68,7 +69,13 @@ $icon_title     = get_field('icon_text');
 							<?php if ($desc) : ?>
 								<p><?php echo $desc; ?></p>
 							<?php endif; ?>
-							<a class="read-more" href="<?php echo get_permalink(); ?>"><?php esc_html_e( 'Learn More', 'drivewyze' ); ?> </a>
+
+                            <?php if( $learn_link ) : ?>
+                                <a class="read-more" href="<?php echo $learn_link['url']; ?>"
+                                   target="<?php echo $learn_link['target'] ? '_blank' : '_self'; ?>"
+                                   title="<?php echo $learn_link['title']; ?>"><?php echo $learn_link['title']; ?>
+                                </a>
+                            <?php endif; ?>
 						</div>
 					</div>
 				<?php endwhile;
