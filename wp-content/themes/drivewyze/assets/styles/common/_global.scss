@@ -1,1 +1,71 @@
 //global styles
+
+html,
+body {
+  height: 100%;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+main {
+  margin-top: 50px;
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
+input,
+textarea,
+select,
+button {
+  outline: none;
+}
+
+input:active,
+textarea:active,
+select:active,
+button:active {
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  outline: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+::selection {
+  background: $color-7;
+  color: $color-2;
+  text-shadow: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+
+  &.logged-in.admin-bar {
+    main {
+      margin-top: 0;
+
+      @media (min-width: 601px) {
+        margin-top: 50px;
+      }
+    }
+  }
+}

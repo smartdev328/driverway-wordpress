@@ -12,6 +12,7 @@
   "stylelint": {
     "extends": "stylelint-config-standard",
     "rules": {
+      "no-descending-specificity": null,
       "no-empty-source": null,
       "max-line-length": [
         120,
@@ -126,11 +127,13 @@
     "yargs": "~11.0.0"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "bootstrap": "^4.3.1",
     "font-awesome": "~4.7",
     "foundation-sites": "^6.5.3",
-    "motion-ui": "~2.0.3",
     "jquery": "^3.3.1",
-    "popper.js": "^1.15.0"
+    "motion-ui": "~2.0.3",
+    "popper.js": "^1.15.0",
+    "swiper": "^6.7.5"
   }
 }

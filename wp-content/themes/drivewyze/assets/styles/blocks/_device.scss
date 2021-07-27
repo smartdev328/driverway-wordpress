@@ -1,0 +1,239 @@
+.device {
+  padding-top: 180px;
+  background-color: $color-15;
+
+  @media (min-width: $bp-M) {
+    padding: 106px 30px 80px 30px;
+  }
+
+  @media (min-width: $bp-L) {
+    padding-right: 70px;
+  }
+
+  @media (min-width: $bp-2XL) {
+    padding-top: 134px;
+    padding-right: 75px;
+  }
+
+  @media (min-width: $bp-5XL) {
+    padding-bottom: 150px;
+    padding-top: 200px;
+    padding-right: 110px;
+  }
+
+  &__container {
+    margin: 0 auto;
+    max-width: 708px;
+    position: relative;
+
+    @media (min-width: $bp-2XL) {
+      max-width: 969px;
+    }
+
+    @media (min-width: $bp-5XL) {
+      max-width: 1376px;
+    }
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-color: $color-2;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      @media (min-width: $bp-M) {
+        width: calc(100% - 64px);
+        left: auto;
+        right: 0;
+      }
+
+      @media (min-width: $bp-2XL) {
+        width: calc(100% - 79px);
+      }
+    }
+
+    &::after {
+      @media (min-width: $bp-M) {
+        content: '';
+        width: 176px;
+        height: 95px;
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-image: url("../../images/dot-pattern-device.svg");
+        position: absolute;
+        right: -20px;
+        bottom: 0;
+        transform: translateY(56px);
+      }
+
+      @media (min-width: $bp-L) {
+        width: 269px;
+        right: 0;
+        transform: translateX(108px) translateY(45px);
+      }
+
+      @media (min-width: $bp-2XL) {
+        width: 368px;
+        height: 163px;
+        transform: translateX(144px) translateY(43px);
+      }
+
+      @media (min-width: $bp-5XL) {
+        transform: translateX(66px) translateY(38px);
+      }
+    }
+  }
+
+  &-item {
+    margin-bottom: -130px;
+    padding: 25px 15px;
+    position: relative;
+    top: -130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: $bp-M) {
+      padding-left: 0;
+      margin-bottom: 0;
+      top: 0;
+      flex-direction: row;
+    }
+
+    @media (min-width: $bp-2XL) {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    @media (min-width: $bp-5XL) {
+      padding-top: 40px;
+      padding-bottom: 34px;
+    }
+
+    &__media {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @media (min-width: $bp-M) {
+        width: 50%;
+      }
+    }
+
+    &__img {
+      margin-bottom: 28px;
+      width: 100%;
+      height: 205px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @media (min-width: $bp-M) {
+        margin-bottom: 23px;
+        height: 275px;
+      }
+
+      @media (min-width: $bp-2XL) {
+        height: 371px;
+      }
+
+      @media (min-width: $bp-5XL) {
+        height: 518px;
+      }
+    }
+
+    &__icon {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      @media (min-width: $bp-M) {
+        width: 100%;
+        padding-left: 30px;
+        justify-content: center;
+      }
+
+      span {
+        margin-right: 14px;
+      }
+
+      img {
+        width: auto;
+        max-height: 28px;
+        object-fit: contain;
+
+        @media (min-width: $bp-M) {
+          max-height: 30px;
+          max-width: 115px;
+        }
+
+        @media (min-width: $bp-2XL) {
+          width: 100%;
+          max-width: 160px;
+          max-height: 45px;
+        }
+      }
+    }
+
+    &__content {
+      padding: 40px 0;
+
+      @media (min-width: $bp-M) {
+        padding-left: 38px;
+        width: 50%;
+      }
+
+      @media (min-width: $bp-2XL) {
+        padding-left: 46px;
+        padding-right: 30px;
+      }
+
+      @media (min-width: $bp-5XL) {
+        padding-left: 65px;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+        color: $color-6;
+
+        @media (min-width: $bp-M) {
+          margin-bottom: 10px;
+        }
+
+        @media (min-width: $bp-2XL) {
+          margin-bottom: 18px;
+        }
+      }
+
+      p {
+        margin-bottom: 20px;
+
+        @media (min-width: $bp-M) {
+          font-size: rem(18);
+          letter-spacing: 0.4px;
+        }
+
+        @media (min-width: $bp-2XL) {
+          margin-bottom: 28px;
+          font-size: rem(22);
+          line-height: rem(34);
+          letter-spacing: 0.65px;
+        }
+
+        @media (min-width: $bp-5XL) {
+          margin-bottom: 24px;
+        }
+      }
+
+      a {
+        @include primary-btn-arrow($color-2, $color-11, $color-6);
+
+        padding-right: 40px;
+        padding-left: 15px;
+      }
+    }
+  }
+}

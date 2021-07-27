@@ -1,0 +1,80 @@
+/* stylelint-disable */
+.socials {
+  padding-left: 14px;
+  padding-bottom: 14px;
+
+  a {
+    margin-right: 7px;
+    padding: 6px;
+    font-family: "FontAwesome";
+    font-size: 15px;
+    display: inline-block;
+    position: relative;
+    background: transparent;
+    line-height: 22px;
+    min-width: 34px;
+    color: $color-6;
+    text-align: center;
+    border-radius: 50%;
+    transition: $transition-ease;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &::before {
+      content: '';
+      width: 34px;
+      height: 34px;
+      border: 1px solid $color-6;
+      display: block;
+      position: absolute;
+      left: 0;
+      border-radius: 50%;
+      top: 0;
+      transition: $transition-ease;
+    }
+
+    i {
+      font-style: normal;
+    }
+
+    &:hover {
+      color: $color-2;
+      background-color: $color-6;
+      text-decoration: none;
+
+      &::before {
+        border-color: $color-6;
+      }
+    }
+  }
+}
+
+.footer {
+  .socials {
+    padding: 0;
+
+    a {
+      color: $color-2;
+
+      &::before {
+        border-color: $color-2;
+      }
+
+      i {
+        font-style: normal;
+      }
+
+      &:hover {
+        color: $color-6;
+        background-color: $color-2;
+
+        &::before {
+          border-color: $color-2;
+        }
+      }
+    }
+  }
+}
+/* stylelint-enable */

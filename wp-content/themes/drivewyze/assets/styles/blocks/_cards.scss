@@ -1,0 +1,151 @@
+.cards {
+  position: relative;
+  z-index: 1;
+  background-color: $color-15;
+
+  @media (min-width: $bp-M) {
+    padding-bottom: 4px;
+  }
+
+  @media (min-width: $bp-L) {
+    padding-bottom: 20px;
+  }
+
+  @media (min-width: $bp-2XL) {
+    padding-bottom: 44px;
+  }
+
+  @media (min-width: $bp-5XL) {
+    padding-bottom: 40px;
+  }
+
+  &__container {
+    padding: 0 15px;
+    position: relative;
+    top: -20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @media (min-width: $bp-M) {
+      margin: 0 auto;
+      padding-left: 29px;
+      padding-right: 29px;
+      width: 100%;
+      max-width: 766px;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: stretch;
+      top: -33px;
+    }
+
+    @media (min-width: $bp-L) {
+      max-width: 834px;
+    }
+
+    @media (min-width: $bp-2XL) {
+      max-width: 81%;
+      padding: 0 12px;
+      top: -40px;
+    }
+
+    @media (min-width: $bp-5XL) {
+      max-width: 1256px;
+      top: -50px;
+    }
+
+    &::before {
+      z-index: -1;
+
+      @media (min-width: $bp-M) {
+        content: '';
+        width: 223px;
+        height: 233px;
+        position: absolute;
+        left: 0;
+        top: -72px;
+        margin: auto;
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-image: url("../../images/hero-right.svg");
+      }
+
+      @media (min-width: $bp-L) {
+        transform: translateX(-76px);
+      }
+
+      @media (min-width: $bp-2XL) {
+        top: -66px;
+        transform: translateX(-130px);
+      }
+
+      @media (min-width: $bp-5XL) {
+        top: -50px;
+        transform: translateX(-255px);
+        width: 352px;
+      }
+    }
+  }
+
+  .card {
+    margin-bottom: 15px;
+    max-width: 300px;
+    background-color: $color-2;
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $bp-M) {
+      max-width: calc(33.33% - 20px);
+    }
+
+    &-info {
+      padding: 13px 11px;
+      flex-grow: 1;
+      border-bottom: 1px solid $color-5;
+
+      @media (min-width: $bp-M) {
+        padding-left: 13px;
+        padding-right: 13px;
+        padding-bottom: 0;
+      }
+
+      @media (min-width: $bp-2XL) {
+        padding: 18px 16px 30px;
+      }
+
+      @media (min-width: $bp-5XL) {
+        padding: 18px 21px 50px;
+      }
+    }
+
+    h3 {
+      margin-bottom: 15px;
+      color: $color-6;
+
+      @media (min-width: $bp-M) {
+        margin-bottom: 6px;
+      }
+
+      @media (min-width: $bp-5XL) {
+        margin-bottom: 16px;
+      }
+    }
+
+    a {
+      @include btn-arrow($color-11, $color-6, $color-2);
+
+      padding-top: 13px;
+      padding-bottom: 13px;
+
+      @media (min-width: $bp-2XL) {
+        padding: 12px 41px 12px 20px;
+      }
+
+      @media (min-width: $bp-5XL) {
+        padding-top: 14px;
+        padding-bottom: 14px;
+      }
+    }
+  }
+}

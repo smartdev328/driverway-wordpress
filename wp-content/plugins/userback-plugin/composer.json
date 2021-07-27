@@ -1,0 +1,17 @@
+{
+    "name": "userback-plugin",
+    "description": "Userback integration plugin",
+    "type": "project",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "wp-dev.space developer",
+            "email": "developer@wp-dev.space"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {"Inc\\": "./inc"}
+    }
+}

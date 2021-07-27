@@ -1,0 +1,440 @@
+.interior-hero {
+  min-height: 300px;
+  overflow: hidden;
+  position: relative;
+
+  &__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(0deg, rgba(0, 78, 125, 0.6), rgba(0, 78, 125, 0.6));
+    }
+  }
+
+  #breadcrumbs {
+    padding: 12px 14px 0;
+    z-index: 2;
+    position: relative;
+
+    @media (min-width: $bp-M) {
+      padding: 21px 32px 9px;
+    }
+
+    @media (min-width: $bp-2XL) {
+      padding: 23px 30px 0;
+    }
+
+    @media (min-width: $bp-5XL) {
+      padding: 26px 30px 0;
+    }
+
+    a,
+    i,
+    span {
+      color: $color-2;
+    }
+  }
+
+  &__block {
+    @media (min-width: $bp-L) {
+      display: flex;
+      justify-content: space-between;
+      padding: 32px 0 64px;
+    }
+
+    @media (min-width: $bp-2XL) {
+      padding: 66px 0 112px;
+    }
+
+    @media (min-width: $bp-5XL) {
+      max-width: 1550px;
+      margin: 0 auto;
+      padding: 90px 0 112px;
+    }
+
+    &_image {
+      position: relative;
+
+      @media (min-width: $bp-L) {
+        padding: 0 0 50px;
+      }
+
+      @media (min-width: $bp-2XL) {
+        padding: 28px 0 122px;
+      }
+
+      @media (min-width: $bp-5XL) {
+        padding: 200px 0 190px;
+      }
+
+      &::before {
+        position: absolute;
+        content: '';
+        width: 233px;
+        height: 352px;
+        background-image: url("../../images/dot-pattern.png");
+        display: none;
+
+        @media (min-width: $bp-M) {
+          display: block;
+          width: 153px;
+          height: 24px;
+          top: -33px;
+          right: 1px;
+        }
+
+        @media (min-width: $bp-L) {
+          width: 153px;
+          height: 24px;
+          top: -45px;
+          right: 61px;
+        }
+
+        @media (min-width: $bp-2XL) {
+          width: 213px;
+          height: 44px;
+          top: -34px;
+          right: 108px;
+        }
+
+        @media (min-width: $bp-5XL) {
+          width: 315px;
+          height: 224px;
+          top: -37px;
+          right: -106px;
+        }
+      }
+
+      &::after {
+        position: absolute;
+        content: '';
+        width: 185px;
+        height: 181px;
+        bottom: -259px;
+        left: -96px;
+        background-image: url("../../images/dot-pattern.png");
+
+        @media (min-width: $bp-M) {
+          width: 104px;
+          height: 46px;
+          bottom: -164px;
+          left: 11px;
+        }
+
+        @media (min-width: $bp-L) {
+          width: 104px;
+          height: 46px;
+          bottom: 4px;
+          left: 7px;
+        }
+
+        @media (min-width: $bp-2XL) {
+          width: 137px;
+          height: 75px;
+          bottom: 2px;
+          left: 9px;
+        }
+
+        @media (min-width: $bp-5XL) {
+          width: 174px;
+          height: 173px;
+          bottom: -2px;
+          left: -170px;
+        }
+      }
+
+      .interior-hero__left {
+        @media (min-width: $bp-5XL) {
+          padding-left: 0;
+          padding-right: 165px;
+        }
+      }
+    }
+  }
+
+  &__left {
+    z-index: 2;
+    position: relative;
+    color: $color-2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    @media (min-width: $bp-M) {
+      padding-left: 17px;
+    }
+
+    @media (min-width: $bp-L) {
+      padding-left: 110px;
+      padding-right: 46px;
+    }
+
+    @media (min-width: $bp-2XL) {
+      padding-left: 127px;
+      padding-right: 6px;
+    }
+
+    @media (min-width: $bp-5XL) {
+      padding-left: 0;
+      padding-right: 260px;
+    }
+
+    .left-prefix {
+      color: $color-11;
+      padding-left: 8px;
+      margin-top: 18px;
+      margin-bottom: 12px;
+      list-style: none;
+      position: relative;
+
+      @media (min-width: $bp-5XL) {
+        margin-top: -52px;
+        margin-bottom: 60px;
+      }
+
+      li {
+        color: $color-11;
+        font-weight: bold;
+        font-size: rem(11.5);
+        line-height: rem(16);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding-left: 21px;
+        margin-bottom: 12px;
+
+        &::before {
+          position: absolute;
+          content: '';
+          background-color: $color-11;
+          width: 9px;
+          height: 9px;
+          top: 3px;
+          left: 14px;
+        }
+      }
+
+      @media (min-width: $bp-2XL) {
+        li {
+          font-size: rem(16);
+          line-height: rem(26);
+          margin-bottom: 0;
+
+          &::before {
+            top: 8px;
+            width: 11px;
+            height: 11px;
+          }
+        }
+      }
+    }
+
+    .left-title {
+      padding: 0 15px;
+      margin-bottom: 14px;
+
+      @media (min-width: $bp-5XL) {
+        margin-bottom: 4px;
+      }
+    }
+
+    .left-info {
+      padding: 0 15px;
+      margin-bottom: 14px;
+      font-size: rem(18);
+      line-height: rem(24);
+      letter-spacing: 0.25px;
+
+      @media (min-width: $bp-2XL) {
+        font-size: rem(22);
+        line-height: rem(34);
+        letter-spacing: 0.025em;
+      }
+    }
+
+    .left-link {
+      @include primary-btn-arrow($color-2, $color-11, $color-6);
+
+      margin-left: 15px;
+      margin-top: 30px;
+
+      @media (min-width: $bp-L) {
+        margin-top: 10px;
+        padding: 12px 45px 13px 20px;
+      }
+    }
+  }
+
+  &__right {
+    &_info {
+      background: $color-11;
+      margin: 18px 15px 48px;
+      padding: 28px 23px 33px;
+
+      @media (min-width: $bp-L) {
+        width: 400px;
+        min-width: 400px;
+        margin: 0 30px;
+      }
+
+      @media (min-width: $bp-2XL) {
+        width: 500px;
+        min-width: 500px;
+        margin: 0 90px 0 30px;
+      }
+
+      @media (min-width: $bp-5XL) {
+        width: 600px;
+        min-width: 600px;
+        margin: 0 0 0 30px;
+        padding: 83px 54px 85px;
+        position: relative;
+
+        &::before {
+          position: absolute;
+          content: '';
+          width: 174px;
+          height: 370px;
+          right: -56px;
+          bottom: -63px;
+          background-image: url("../../images/dot-pattern.png");
+          z-index: -1;
+        }
+      }
+
+      & > * {
+        color: $color-2;
+      }
+
+      h2 {
+        margin-bottom: 12px;
+
+        @media (min-width: $bp-5XL) {
+          margin-bottom: 25px;
+        }
+      }
+
+      p {
+        font-size: rem(18);
+        line-height: rem(24);
+        letter-spacing: 0.25px;
+        margin-bottom: 0;
+
+        @media (min-width: $bp-5XL) {
+          font-size: rem(22);
+          line-height: rem(34);
+        }
+      }
+
+      h4 {
+        padding-top: 41px;
+        font-size: rem(11.5);
+        line-height: rem(16);
+        font-weight: bold;
+        color: $color-6;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+
+        @media (min-width: $bp-5XL) {
+          padding-top: 48px;
+          font-size: rem(16);
+          line-height: rem(26);
+          letter-spacing: 0.08em;
+        }
+      }
+    }
+
+    &_image {
+      position: relative;
+      width: 320px;
+      margin: 164px auto 186px;
+      text-align: center;
+
+      @media (min-width: $bp-M) {
+        margin: 128px auto 184px;
+      }
+
+      @media (min-width: $bp-L) {
+        width: 406px;
+        min-width: 406px;
+        margin: 129px 30px 120px 0;
+      }
+
+      @media (min-width: $bp-2XL) {
+        width: 493px;
+        min-width: 493px;
+        margin: 95px 89px 150px 0;
+      }
+
+      @media (min-width: $bp-5XL) {
+        width: 633px;
+        min-width: 633px;
+        margin: -20px 133px 200px 0;
+      }
+
+      &::before {
+        position: absolute;
+        content: '';
+        top: -263px;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        width: 463px;
+        height: 474px;
+        z-index: 1;
+        background-size: cover;
+        background-image: url("../../images/inrerior-image.svg");
+
+        @media (min-width: $bp-2XL) {
+          min-width: 493px;
+          max-width: 493px;
+          height: 506px;
+        }
+
+        @media (min-width: $bp-5XL) {
+          min-width: 633px;
+          max-width: 633px;
+          height: 648px;
+        }
+      }
+
+      p {
+        position: relative;
+        font-size: rem(15);
+        line-height: rem(25);
+        text-align: center;
+        letter-spacing: 0.01em;
+        color: $color-2;
+        z-index: 2;
+
+        @media (min-width: $bp-M) {
+          margin: -10px auto;
+          max-width: 71%;
+        }
+
+        @media (min-width: $bp-L) {
+          max-width: 45%;
+        }
+
+        @media (min-width: $bp-2XL) {
+          max-width: 45%;
+          margin: 40px auto -20px;
+        }
+
+        @media (min-width: $bp-5XL) {
+          max-width: 45%;
+          margin: 122px auto -35px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,130 @@
+/** Search form */
+@mixin placeholder($color) {
+  &::-webkit-input-placeholder,
+  &::-moz-placeholder,
+  &:-moz-placeholder,
+  &:-ms-input-placeholder {
+    color: $color;
+    transition: color 0.3s ease-out;
+  }
+
+  &::placeholder {
+    @content;
+
+    color: $color;
+    transition: color 0.3s ease-out;
+  }
+}
+
+.search-form {
+  &-wrap {
+    width: 100%;
+    height: 51px;
+    max-height: 0;
+    background-color: $color-2;
+    overflow: hidden;
+    transition: $transition-ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    display: flex;
+    justify-content: space-between;
+    visibility: hidden;
+
+    @media (min-width: $bp-L) {
+      max-width: 0;
+      max-height: 51px;
+      left: auto;
+      right: 0;
+      border-left: 1px solid $color-5;
+    }
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 2px;
+      background-color: $color-6;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+
+    &.open {
+      max-height: 51px;
+      visibility: visible;
+
+      @media (min-width: $bp-L) {
+        max-width: 250px;
+      }
+    }
+
+    form {
+      margin: 0;
+      max-width: $c-width;
+      flex-grow: 1;
+    }
+
+    label {
+      margin: 0;
+      width: 100%;
+    }
+
+    input {
+      padding: 0 0 0 15px;
+      width: 100%;
+      line-height: 51px;
+      height: 51px;
+      background-color: transparent;
+      color: $color-4;
+      font-size: rem(14);
+      font-family: $f-base;
+      font-weight: 400;
+      letter-spacing: 0.25px;
+      text-align: left;
+      border: none;
+      transition: $transition-ease;
+
+      @media (min-width: $bp-L) {
+        padding-left: 25px;
+      }
+
+      &:hover,
+      &:focus {
+        box-shadow: none;
+        cursor: pointer;
+        outline: none;
+      }
+
+      &.search-submit {
+        display: none;
+      }
+    }
+  }
+
+  &-open,
+  &-close {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-open {
+    @media (min-width: $bp-L) {
+      width: 50px;
+      height: 48px;
+      background-color: $color-2;
+      position: relative;
+      z-index: 9;
+    }
+  }
+
+  &-close {
+    @media (min-width: $bp-L) {
+      display: none;
+    }
+  }
+}

@@ -1,10 +1,22 @@
 @import "common/variables";
+@import "common/calc-em-rem";
 
 /** Import everything from autoload */
 @import "./autoload/**/*";
+@import "common/font";
+@import "common/mixins";
+@import "common/typo";
 @import "common/global";
-@import "layouts/header";
-@import "layouts/footer";
+@import "layouts/*";
+@import "components/nav";
+@import "components/forms";
+@import "components/socials";
+@import "components/fancybox";
+@import "components/breadcrumbs";
+@import "components/share-buttons";
+
+/** Import styles for ACF blocks */
+@import "blocks/*";
 
 /**
  * Import npm dependencies
@@ -13,3 +25,6 @@
  * @see https://github.com/webpack-contrib/sass-loader#imports
  */
 // @import "~some-node-module";
+
+@import "~swiper/swiper-bundle.min.css";
+@import "~aos/dist/aos.css";

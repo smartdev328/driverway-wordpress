@@ -1,0 +1,395 @@
+.hero-lightbox {
+  position: relative;
+  z-index: 1;
+
+  &__container {
+    padding: 90px 15px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 632px;
+    min-height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+
+    @media (min-width: $bp-M) {
+      padding-left: 30px;
+      padding-right: 30px;
+      max-width: 646px;
+    }
+
+    @media (min-width: $bp-L) {
+      width: 100%;
+      max-width: calc(80% + 35px);
+    }
+
+    @media (min-width: $bp-2XL) {
+      padding-left: 22px;
+      padding-right: 22px;
+    }
+
+    @media (min-width: $bp-5XL) {
+      padding-left: 192px;
+      max-width: 1920px;
+    }
+
+    .header-content {
+      color: $color-2;
+
+      @media (min-width: $bp-M) {
+        max-width: 80%;
+      }
+
+      @media (min-width: $bp-L) {
+        max-width: 500px;
+        text-align: left;
+      }
+
+      @media (min-width: $bp-2XL) {
+        margin-bottom: 50px;
+        max-width: 80%;
+      }
+
+      @media (min-width: $bp-5XL) {
+        max-width: 60%;
+      }
+
+      h1 {
+        @media (min-width: $bp-2XL) {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &.front {
+      @media (min-width: $bp-5XL) {
+        padding-top: 170px;
+      }
+
+      &::before {
+        content: '';
+        width: 320px;
+        height: 64px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 10px;
+        margin: auto;
+        background-size: 120%;
+        background-repeat: no-repeat;
+        background-image: url("../../images/hero-right.svg");
+
+        @media (min-width: $bp-M) {
+          display: none;
+        }
+      }
+
+      &::after {
+        @media (min-width: $bp-L) {
+          content: '';
+          width: 111px;
+          height: 302px;
+          position: absolute;
+          right: 0;
+          top: 0;
+          margin: auto;
+          background-size: auto;
+          background-repeat: no-repeat;
+          background-image: url("../../images/hero-left.svg");
+          transform: translateX(82px);
+        }
+
+        @media (min-width: $bp-L) {
+          width: 111px;
+          height: 302px;
+          transform: translateX(80px);
+        }
+
+        @media (min-width: $bp-2XL) {
+          width: 185px;
+          height: 461px;
+          transform: translateX(160px);
+        }
+
+        @media (min-width: $bp-5XL) {
+          transform: translateX(0);
+        }
+      }
+    }
+
+    &.interior {
+      padding-bottom: 24px;
+      min-height: 100%;
+
+      @media (min-width: $bp-M) {
+        padding-bottom: 40px;
+      }
+
+      @media (min-width: $bp-L) {
+        padding-bottom: 70px;
+      }
+
+      @media (min-width: $bp-5XL) {
+        padding-top: 210px;
+        padding-bottom: 174px;
+      }
+
+      &::before {
+        content: '';
+        width: 100px;
+        height: 130px;
+        position: absolute;
+        right: -18px;
+        top: 0;
+        background-size: 180%;
+        background-repeat: repeat;
+        background-image: url("../../images/hero-right.svg");
+        z-index: -1;
+
+        @media (min-width: $bp-2XL) {
+          width: 352px;
+          height: 233px;
+          right: 72px;
+          background-size: auto;
+        }
+      }
+
+      &::after {
+        content: '';
+        width: 103px;
+        height: 106px;
+        position: absolute;
+        left: 0;
+        bottom: 20px;
+        margin: auto;
+        background-size: 110px;
+        background-repeat: repeat;
+        background-image: url("../../images/hero-left.svg");
+        transform: translateY(-100%);
+        z-index: -1;
+
+        @media (min-width: $bp-2XL) {
+          width: 185px;
+          height: 181px;
+          left: 0;
+          bottom: 0;
+          background-size: auto;
+          transform: translateX(-150px);
+        }
+
+        @media (min-width: $bp-5XL) {
+          transform: none;
+        }
+      }
+
+      h5 {
+        @media (min-width: $bp-5XL) {
+          margin-bottom: 23px;
+        }
+      }
+
+      .header-content {
+        margin-bottom: 16px;
+
+        @media (min-width: $bp-2XL) {
+          max-width: 800px;
+        }
+
+        @media (min-width: $bp-5XL) {
+          margin-bottom: 40px;
+        }
+
+        h1 {
+          margin-bottom: 16px;
+
+          @media (min-width: $bp-5XL) {
+            margin-bottom: 36px;
+          }
+        }
+
+        p {
+          margin-bottom: 12px;
+          font-family: $f-base;
+          font-size: rem(18);
+          font-weight: 400;
+          line-height: rem(24);
+          letter-spacing: 0.25px;
+
+          @media (min-width: $bp-5XL) {
+            font-size: rem(22);
+            line-height: rem(30);
+            letter-spacing: 0.65px;
+          }
+        }
+      }
+
+      .hero-lightbox__btns {
+        margin-bottom: 0;
+
+        a {
+          margin-bottom: 23px;
+          padding-right: 31px;
+          max-width: 240px;
+
+          @media (min-width: $bp-5XL) {
+            margin-right: 31px;
+            padding-right: 39px;
+            padding-left: 17px;
+          }
+
+          @media (min-width: $bp-L) {
+            max-width: 100%;
+          }
+
+          &:last-of-type {
+            margin-bottom: 0;
+
+            @media (min-width: $bp-5XL) {
+              margin-bottom: 23px;
+            }
+          }
+
+          &::after {
+            right: 8px;
+
+            @media (min-width: $bp-5XL) {
+              right: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      background-color: rgba($color-14, 0.6);
+      z-index: -1;
+    }
+  }
+
+  .video-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  &-video-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+
+    video {
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+    }
+  }
+
+  &__btns {
+    margin-bottom: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @media (min-width: $bp-M) {
+      margin-bottom: 55px;
+    }
+
+    @media (min-width: $bp-L) {
+      margin-bottom: 80px;
+    }
+
+    @media (min-width: $bp-2XL) {
+      margin-bottom: 20px;
+    }
+
+    @media (min-width: $bp-5XL) {
+      margin-bottom: 0;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &__btn {
+    @include primary-btn-arrow($color-11, $color-2, $color-2);
+
+    margin-bottom: 23px;
+
+    @media (min-width: $bp-M) {
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $bp-5XL) {
+      margin-bottom: 0;
+      margin-right: 48px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__play {
+    margin-top: 15px;
+
+    @media (min-width: $bp-2XL) {
+      margin-top: 30px;
+    }
+
+    @media (min-width: $bp-5XL) {
+      margin-top: 0;
+    }
+  }
+
+  &__scroll {
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    @media (min-width: $bp-L) {
+      bottom: 102px;
+    }
+
+    a {
+      width: 30px;
+      text-align: center;
+    }
+  }
+
+  h5 {
+    @include square-el($color-11);
+
+    @media (min-width: $bp-M) {
+      margin-bottom: 24px;
+    }
+
+    @media (min-width: $bp-2XL) {
+      margin-bottom: 30px;
+    }
+  }
+}

@@ -1,0 +1,369 @@
+.page-template-testimonials-archive {
+  #breadcrumbs {
+    padding: 7px 10px;
+
+    @media (min-width: $bp-M) {
+      padding: 17px 30px;
+    }
+  }
+
+  .content-title {
+    padding: 0 15px;
+    color: $color-6;
+
+    @media (min-width: $bp-M) {
+      padding: 0 30px 28px;
+    }
+
+    @media (min-width: $bp-2XL) {
+      padding: 0 30px 46px;
+    }
+  }
+
+  .testimonials-prefix {
+    color: $color-11;
+    padding-left: 8px;
+    margin-top: 18px;
+    margin-bottom: 12px;
+
+    @media (min-width: $bp-M) {
+      margin-top: 9px;
+    }
+
+    li {
+      color: $color-11;
+      font-weight: bold;
+      font-size: rem(11.5);
+      line-height: rem(16);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding-left: 21px;
+      margin-bottom: 12px;
+
+      &::before {
+        background-color: $color-11;
+        width: 9px;
+        height: 9px;
+        top: 3px;
+        left: 7px;
+      }
+    }
+
+    @media (min-width: $bp-M) {
+      padding: 0 23px;
+
+      li {
+        margin-bottom: 28px;
+        padding-left: 28px;
+
+        &::before {
+          top: 2px;
+          width: 11px;
+          height: 11px;
+        }
+      }
+    }
+
+    @media (min-width: $bp-2XL) {
+      li {
+        font-size: rem(16);
+        line-height: rem(26);
+        margin-bottom: 26px;
+
+        &::before {
+          top: 8px;
+          width: 11px;
+          height: 11px;
+        }
+      }
+    }
+  }
+}
+
+.single-testimonials,
+.page-template-testimonials-archive {
+  .testimonials-posts {
+    background: $color-15;
+    margin-top: -10px;
+
+    @media (min-width: $bp-M) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    @media (min-width: $bp-5XL) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__container {
+      max-width: 831px;
+      padding: 15px 15px;
+      margin: 15px auto;
+
+      @media (min-width: $bp-M) {
+        padding: 40px 30px;
+        margin: 33px auto;
+      }
+
+      @media (min-width: $bp-2XL) {
+        max-width: 1144px;
+        padding: 43px 30px;
+      }
+
+      @media (min-width: $bp-5XL) {
+        max-width: 1920px;
+      }
+    }
+
+    &__block {
+      position: relative;
+      max-width: 1920px;
+      margin: 0 auto;
+      padding-bottom: 50px;
+
+      @media (min-width: $bp-M) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding: 0 15px 50px;
+      }
+
+      .post-block {
+        margin: 16px 15px 0;
+        background: $color-2;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        @media (min-width: $bp-M) {
+          padding-bottom: 16px;
+          flex-basis: calc(50% - 30px);
+          margin: 30px 15px 0;
+        }
+
+        @media (min-width: $bp-L) {
+          flex-basis: calc(33.33% - 30px);
+        }
+
+        .post-content {
+          flex-basis: 100%;
+          padding: 0 15px 22px;
+
+          @media (min-width: $bp-M) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 13px 22px;
+          }
+
+          @media (min-width: $bp-2XL) {
+            padding: 0 13px 29px;
+          }
+
+          @media (min-width: $bp-5XL) {
+            padding: 0 55px 21px;
+          }
+
+          &__excerpt {
+            color: $color-6;
+            font-weight: 300;
+            font-size: rem(24);
+            line-height: rem(32);
+            text-align: center;
+            letter-spacing: 0.01em;
+            margin-top: 19px;
+
+            @media (min-width: $bp-M) {
+              margin-top: 44px;
+            }
+
+            @media (min-width: $bp-2XL) {
+              font-size: rem(36);
+              line-height: rem(42);
+              margin-top: 50px;
+            }
+
+            @media (min-width: $bp-5XL) {
+              margin-top: 31px;
+            }
+          }
+
+          &__title {
+            color: $color-3;
+            font-weight: bold;
+            font-size: rem(15);
+            line-height: rem(26);
+            text-align: center;
+            letter-spacing: 0.01em;
+            padding-top: 4px;
+            margin-bottom: 0;
+
+            @media (min-width: $bp-M) {
+              margin-top: 19px;
+            }
+
+            @media (min-width: $bp-2XL) {
+              margin-top: 24px;
+            }
+
+            @media (min-width: $bp-5XL) {
+              margin-top: 4px;
+            }
+          }
+
+          &__position {
+            color: $color-3;
+            font-size: rem(15);
+            line-height: rem(25);
+            text-align: center;
+            letter-spacing: 0.01em;
+          }
+        }
+
+        .post-image {
+          margin-bottom: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+
+          .btn-play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%, -50%, 0);
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            display: flex;
+            width: fit-content;
+
+            &__text {
+              margin: 0;
+              font-size: rem(11.5);
+              line-height: rem(16);
+
+              @media (min-width: $bp-2XL) {
+                font-size: rem(16);
+                line-height: rem(20);
+              }
+            }
+          }
+        }
+
+        .more-block {
+          margin-top: auto;
+          border-top: 1px solid $color-15;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .read-more {
+          font-weight: 900;
+          font-size: rem(11.5);
+          line-height: rem(16);
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: $color-11;
+          position: relative;
+          margin-bottom: 10px;
+          margin-top: 10px;
+          margin-left: -27px;
+          display: inline-block;
+
+          @media (min-width: $bp-M) {
+            margin-bottom: -2px;
+            margin-top: 11px;
+          }
+
+          @media (min-width: $bp-L) {
+            @include btn-arrow($color-11, $color-6, $color-2);
+
+            padding: 0 0 3px 0 !important;
+            margin-top: 15px;
+
+            &::before {
+              width: 100%;
+            }
+          }
+
+          @media (min-width: $bp-2XL) {
+            font-size: rem(16);
+            line-height: rem(26);
+            margin-bottom: -7px;
+            margin-top: 1px;
+            padding: 10px 0 3px 0 !important;
+          }
+
+          @media (min-width: $bp-5XL) {
+            margin-bottom: -6px;
+            margin-top: 7px;
+          }
+
+          &::after {
+            position: absolute;
+            content: '';
+            width: 15px;
+            height: 12px;
+            right: -26px;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+  }
+
+  .load-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: $bp-M) {
+      margin: 0 auto;
+    }
+
+    #load-post {
+      border: 1px solid $color-11;
+      background: transparent;
+      text-transform: uppercase;
+      color: $color-11;
+      font-family: $f-stevie-sans;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 13px;
+      line-height: rem(28);
+      letter-spacing: 0.05em;
+      padding: 10px 32px;
+      margin-top: 11px;
+      margin-bottom: 58px;
+      transition: $transition-ease;
+
+      @media (min-width: $bp-M) {
+        padding: 4px 30px;
+        margin-top: 22px;
+        margin-bottom: 54px;
+      }
+
+      @media (min-width: $bp-L) {
+        &:hover {
+          color: $color-2;
+          background: $color-11;
+        }
+      }
+
+      @media (min-width: $bp-2XL) {
+        padding: 9px 35px;
+        margin-top: 27px;
+        margin-bottom: 79px;
+      }
+
+      @media (min-width: $bp-5XL) {
+        margin-top: 3px;
+        margin-bottom: 100px;
+      }
+    }
+  }
+}

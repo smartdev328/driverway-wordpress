@@ -8,42 +8,47 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<section id="main" class="site-main" role="main">
+    <section id="primary" class="content-area search-page">
+        <?php if ( function_exists('yoast_breadcrumb') ) {
+            yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+        } ?>
 
-		<?php
-		if ( have_posts() ) :
-			?>
+        <section id="main" class="site-main" role="main">
 
-			<header class="page-header">
-				<?php /* translators: %s: search term */ ?>
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'wp_dev' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
+            <?php get_search_form(); ?>
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+            <?php
+            if ( have_posts() ) :
+                ?>
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
+                <header class="page-header">
+                    <?php /* translators: %s: search term */ ?>
+                    <h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'wp_dev' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+                </header><!-- .page-header -->
 
-			endwhile;
+                <?php
+                /* Start the Loop */
+                while ( have_posts() ) : the_post();
 
-			the_posts_navigation();
+                    /**
+                     * Run the loop for the search to output the results.
+                     * If you want to overload this in a child theme then include a file
+                     * called content-search.php and that will be used instead.
+                     */
 
-			else :
+                    get_template_part( 'template-parts/content', 'search' );
 
-				get_template_part( 'template-parts/content', 'none' );
+                endwhile;
 
-		endif;
-			?>
+            else :
 
-		</section><!-- #main -->
-	</section><!-- #primary -->
+                get_template_part( 'template-parts/content', 'none' );
+
+            endif;
+            ?>
+
+        </section><!-- #main -->
+    </section><!-- #primary -->
 
 <?php
 get_sidebar();

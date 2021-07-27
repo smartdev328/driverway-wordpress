@@ -1,0 +1,141 @@
+/* stylelint-disable */
+.share-buttons {
+  padding-left: 20px;
+  min-width: 200px;
+  position: relative;
+
+  @media (min-width: $bp-M) {
+    padding-left: 25px;
+  }
+
+  .a2a_kit {
+    display: flex;
+    flex-direction: row;
+
+    span {
+      text-transform: capitalize;
+      color: $color-11;
+    }
+
+    a[class^= "a2a_button"],
+    a.button_close {
+      padding: 0;
+      font-family: "FontAwesome";
+      font-size: 12px;
+      display: inline-block;
+      position: relative;
+      background: transparent;
+      line-height: 22px;
+      color: $color-11;
+      text-align: center;
+      transition: $transition-ease;
+
+      @media (min-width: $bp-L) {
+        margin-left: 9px;
+        font-size: rem(12);
+        display: inline-block;
+        position: relative;
+        background: transparent;
+        line-height: rem(22);
+        min-width: 21px;
+        width: 21px;
+        height: 21px;
+      }
+
+      i {
+        font-style: normal;
+
+        &.fa-link {
+          transform: rotate(-90deg);
+        }
+      }
+
+      &:hover {
+        color: $color-4;
+        cursor: pointer;
+        text-decoration: none;
+
+        span {
+          color: $color-4;
+        }
+      }
+    }
+
+    a[class^= "a2a_button"] {
+      span {
+        margin-bottom: 20px;
+        font-family: $f-base;
+        font-weight: 600;
+        font-size: rem(14);
+        display: inline-block;
+
+        @media (min-width: $bp-L) {
+          display: none;
+        }
+      }
+
+      i {
+        display: none;
+
+        @media (min-width: $bp-L) {
+          display: inline-block;
+        }
+      }
+    }
+
+    .add_nav {
+      display: none;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: $color-15;
+      z-index: 9;
+
+      @media (min-width: $bp-L) {
+        position: absolute;
+        left: 10px;
+        top: 0;
+      }
+
+      &__wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+
+        @media (min-width: $bp-L) {
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: flex-start;
+          position: relative;
+        }
+      }
+    }
+
+    a.button_close {
+      position: absolute;
+      right: 20px;
+      top: 60px;
+    }
+
+    span.add_nav__title {
+      margin-bottom: 30px;
+      font-size: rem(14);
+      font-weight: 600;
+      color: $color-4;
+    }
+
+    a.button_close,
+    span.add_nav__title {
+      @media (min-width: $bp-L) {
+        display: none;
+      }
+    }
+  }
+}
+/* stylelint-enable */
