@@ -19,7 +19,7 @@ deploy_develop:
 deploy_master:
   stage: deploy
   script:
-    - sudo -u www-data reporobot --repository-url=$CI_REPOSITORY_URL --branch=master --client=$CLIENT_NAME --project=$PROJECT_NAME --database=$DB_NAME --deploy-mode=$DEPLOY_MODE --backup-database --keep-uploads --npm-run="build"
+    - sudo -u www-data reporobot --repository-url=$CI_REPOSITORY_URL --branch=master --client=$CLIENT_NAME --project=$PROJECT_NAME --database=$DB_NAME --deploy-mode=$DEPLOY_MODE --import-database --backup-database --keep-uploads --npm-run="build"
   only:
   - master
   tags:
