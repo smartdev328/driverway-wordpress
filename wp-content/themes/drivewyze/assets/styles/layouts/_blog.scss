@@ -200,6 +200,8 @@
       }
 
       .post-block {
+        flex-basis: 100%;
+
         @media (min-width: $bp-M) {
           display: flex;
           flex-direction: row-reverse;
@@ -320,6 +322,7 @@
                 font-size: rem(16);
                 line-height: rem(20);
                 letter-spacing: 1.25px;
+                margin-bottom: 45px;
               }
 
               &::after {

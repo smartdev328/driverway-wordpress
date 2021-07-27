@@ -60,6 +60,7 @@ get_header(); ?>
 					<?php
 					$args  = array(
 						'post_type'      => 'post',
+                        'orderby'        => 'menu_order',
 						'posts_per_page' => $posts_per_page,
 						'category_name' => get_queried_object()->slug,
 					);

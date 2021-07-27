@@ -30,6 +30,7 @@ get_header(); ?>
                 <?php
                 $args  = array(
                     'post_type'      => 'testimonials',
+                    'orderby'        => 'menu_order',
                     'posts_per_page' => $posts_per_page,
                 );
                 $posts = new WP_Query( $args );
