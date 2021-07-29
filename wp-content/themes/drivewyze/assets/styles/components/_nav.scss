@@ -355,7 +355,7 @@
         & > a {
           @media (min-width: $bp-L) {
             color: $color-6;
-            font-weight: 600;
+            text-shadow: 0 0 1px $color-6;
           }
 
           & + .caret {

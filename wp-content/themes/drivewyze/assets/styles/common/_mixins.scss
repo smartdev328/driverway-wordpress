@@ -119,15 +119,17 @@
     }
   }
 
-  &:hover {
-    color: $hover;
+  @media (min-width: $bp-L) {
+    &:hover {
+      color: $hover;
 
-    &::before {
-      max-width: 100%;
-    }
+      &::before {
+        max-width: 100%;
+      }
 
-    &::after {
-      background-color: $hover;
+      &::after {
+        background-color: $hover;
+      }
     }
   }
 }
@@ -165,13 +167,15 @@
     }
   }
 
-  &:hover {
-    color: $hover;
-    background-color: $color;
-    border: 2px solid $hover;
+  @media (min-width: $bp-L) {
+    &:hover {
+      color: $hover;
+      background-color: $color;
+      border: 2px solid $hover;
 
-    &::after {
-      background-color: $hover;
+      &::after {
+        background-color: $hover;
+      }
     }
   }
 }
