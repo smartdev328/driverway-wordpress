@@ -13,11 +13,16 @@ $external_link = ( !empty($external) && is_array($external) ) ? $external['link'
 $select_nav    = get_field('select_nav');
 $selected      = $select_nav ?? 'primary';
 $nav_area      = is_singular('partners') ? 'partners' : $selected;
+$gtm_script    = get_field('gtm_script', 'options');
+$gtm_noscript  = get_field('gtm_noscript', 'options');
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
 <head>
+    <?php if ($gtm_script) :
+        echo $gtm_script;
+    endif; ?>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,6 +30,9 @@ $nav_area      = is_singular('partners') ? 'partners' : $selected;
 </head>
 
 <body <?php body_class(); ?>>
+<?php if ($gtm_noscript) :
+    echo $gtm_noscript;
+endif; ?>
 <header class="header">
 	<div class="header__top">
 		<div class="header__container header__container--mobile">
