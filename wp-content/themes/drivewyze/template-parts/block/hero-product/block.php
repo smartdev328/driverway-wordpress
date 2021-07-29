@@ -47,10 +47,10 @@ endif;
 
 				<?php if( $tabs_title_desk && $tabs_title_mob ) : ?>
 					<span class="<?php echo $block_class . '-tabs-nav__title'; ?>">
-						<?php echo $tabs_title_desk . ':'; ?>
+						<?php echo $tabs_title_desk; ?>
 					</span>
 					<span class="<?php echo $block_class . '-tabs-nav__title ' . $block_class . '-tabs-nav__title_mob'; ?>">
-						<?php echo $tabs_title_mob . ':'; ?>
+						<?php echo $tabs_title_mob; ?>
 					</span>
 				<?php endif; ?>
 

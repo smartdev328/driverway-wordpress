@@ -12,6 +12,10 @@
  * @var array $block
  */
 
+if( isset( $block['data']['preview_image_help'] )  ) :
+    echo '<img src="'. $block['data']['preview_image_help'] .'" style="width:100%; height:auto;">';
+endif;
+
 $slug         = str_replace( 'acf/', '', $block['name'] );
 $block_id     = !empty($block['anchor']) ? $block['anchor'] : $slug . '-' . $block['id'];
 $align_class  = $block['align'] ? 'align' . $block['align'] : '';
