@@ -21,7 +21,6 @@ $category = get_the_category()[0]->name;
 
 				<?php if ( $category ) : ?>
 					<p class="post-category">
-						<?php echo $prefix ? ''. $prefix .' /' : '' ?>
 						<?php echo $category; ?>
 					</p>
 				<?php endif; ?>
