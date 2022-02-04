@@ -11,6 +11,7 @@
  */
 defined( 'THEME_TD' ) ? THEME_TD : define( 'THEME_TD', 'drivewyze' );
 
+
 // Load modules
 $theme_includes = [
 	'/lib/helpers.php',
@@ -183,3 +184,5 @@ function save_partners_parent_id($post_id) {
     }
 }
 add_action("save_post", "save_partners_parent_id");
+
+add_action( 'send_headers', 'send_frame_options_header', 10, 0 );
