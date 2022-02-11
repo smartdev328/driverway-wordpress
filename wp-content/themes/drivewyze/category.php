@@ -45,7 +45,7 @@ get_header(); ?>
                         ?>
                         <option value="<?php echo get_category_link($cat->cat_ID); ?>" <?php echo $selected; ?>
                         <?php echo $cat->name == get_queried_object()->name ? 'selected' : '' ?>>
-                            <?php echo $prefix ? ''. $prefix .' /' : '' ?> <?php echo $cat->name; ?>
+                            <?php echo $cat->name; ?>
                         </option>
                     <?php endforeach; ?>
                 </select>

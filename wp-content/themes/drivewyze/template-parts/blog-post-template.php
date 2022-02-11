@@ -17,7 +17,6 @@ $category = get_the_category()[0]->name;
 			<div class="post-info">
 				<?php if ( $category ) : ?>
 					<p class="post-info__category">
-                        <?php echo $prefix ? ''. $prefix .' /' : '' ?>
                         <?php echo $category; ?>
                     </p>
 				<?php endif; ?>
@@ -28,13 +27,13 @@ $category = get_the_category()[0]->name;
 			</div>
 		<?php endif; ?>
 
-		<a href="<?php echo get_permalink(); ?>" class="post-content__title"><?php echo get_the_title(); ?></a>
+		<a href="<?php echo get_permalink(); ?>" target="_blank" class="post-content__title"><?php echo get_the_title(); ?></a>
 
-        <a class="read-more-d" href="<?php echo get_permalink(); ?>"><?php esc_html_e( 'Read More', 'wp_dev' ); ?> </a>
+        <a class="read-more-d" href="<?php echo get_permalink(); ?>" target="_blank"><?php esc_html_e( 'Read More', 'wp_dev' ); ?> </a>
 	</div>
-    <a href="<?php echo get_permalink(); ?>" class="post-image">
+    <a href="<?php echo get_permalink(); ?>" target="_blank" class="post-image">
         <?php echo get_the_post_thumbnail(  get_the_ID(), 'full' );?>
     </a>
 
-    <a class="read-more" href="<?php echo get_permalink(); ?>"><?php esc_html_e( 'Read More', 'wp_dev' ); ?> </a>
+    <a class="read-more" href="<?php echo get_permalink(); ?>" target="_blank"><?php esc_html_e( 'Read More', 'wp_dev' ); ?> </a>
 </div>
