@@ -148,7 +148,7 @@
     }
 
     @media (min-width: $bp-L) {
-      order: 2;
+      order: 1;
     }
   }
 
@@ -161,7 +161,7 @@
     width: 100%;
 
     @media (min-width: $bp-L) {
-      order: 1;
+      order: 2;
       flex-wrap: nowrap;
     }
 
