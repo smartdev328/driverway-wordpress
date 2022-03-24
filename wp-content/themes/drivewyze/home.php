@@ -28,7 +28,7 @@ get_header(); ?>
 			</div>
 		<?php endif; ?>
 
-		<section class="blog-posts"
+		<section class="blog-posts">
 			<div class="blog-posts__categories">
 				<?php
 				$args       = array(
