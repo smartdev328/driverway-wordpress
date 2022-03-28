@@ -76,4 +76,101 @@
       }
     }
   }
+
+  &.custom-contact-info {
+    max-width: unset;
+    background: #0066a4;
+    margin: 30px;
+    padding: 0;
+    padding: 65px 110px 58px;
+
+    .contact-info__block {
+      margin: 0;
+      background: transparent;
+      padding: 0;
+
+      h2 {
+        width: 380px;
+      }
+    }
+
+    .contact-info__block:last-of-type {
+      background: #0066a4;
+      padding: 0 30px;
+      margin: 1em 0;
+      font-size: 15px;
+
+      h3 {
+        font-size: 18px;
+      }
+
+      a.button {
+        font-family: "Lato", sans-serif;
+        font-weight: 900;
+        line-height: 1rem;
+        color: #fff;
+        text-transform: uppercase;
+        position: relative;
+        display: inline-block;
+        background-color: #0099ef;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        border: 2px solid #0099ef;
+        letter-spacing: 1.4px;
+        width: auto;
+        font-size: 16px;
+        padding: 16px 47px 16px 20px;
+        height: auto;
+
+        &::after {
+          content: '';
+          background-color: #fff;
+          position: absolute;
+          margin: auto;
+          -webkit-mask: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxNSAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEgNkgxM00xMyA2TDkgMS41TTEzIDZMOSAxMC41IiBzdHJva2U9IiMwMDk5RUYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=) 0 0/16px 12px;
+          mask: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxNSAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEgNkgxM00xMyA2TDkgMS41TTEzIDZMOSAxMC41IiBzdHJva2U9IiMwMDk5RUYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=) 0 0/16px 12px;
+          -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+          right: 20px;
+          top: 0;
+          bottom: 0;
+          width: 14px;
+          height: 12px;
+          -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+        }
+
+        &:hover {
+          color: #0066a4;
+          background-color: #fff;
+          border: 2px solid #0066a4;
+
+          &::after {
+            background-color: #0066a4;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      padding: 20px 15px 30px;
+      margin: 15px;
+      min-height: unset;
+
+      .contact-info__block:last-of-type {
+        margin: 2.5em 0 0;
+        font-size: 14px;
+        padding: 0;
+
+        h3 {
+          font-size: 16px;
+        }
+
+        a.button {
+          font-size: 12px;
+          padding: 10px 46px 10px 16px;
+        }
+      }
+    }
+  }
 }

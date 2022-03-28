@@ -17,7 +17,12 @@ if( isset( $block['data']['preview_image_help'] )  ) :
 endif;
 
 $slug           = str_replace( 'acf/', '', $block['name'] );
-$block_id       = $slug . '-' . $block['id'];
+if ( !empty($block['anchor']) ) {
+    $block_id = $slug . '-' . $block['anchor'];
+} else {
+    $block_id = $slug . '-' . $block['id'];
+
+}
 $align_class    = $block['align'] ? 'align' . $block['align'] : '';
 $custom_class   = isset( $block['className'] ) ? $block['className'] : '';
 $title          = get_field( 'title' );
