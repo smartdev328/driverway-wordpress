@@ -47,8 +47,8 @@ $posts_per_page = get_field( 'posts_per_page');
 			$args  = array(
 				'post_type'      => 'partners',
 				'posts_per_page' => $posts_per_page,
-                'order'          => 'ASC',
-                'orderby'        => 'menu_order',
+				'order'          => 'ASC',
+				'orderby'        => 'menu_order',
 			);
 			$posts = new WP_Query( $args );
 			if ( $posts->have_posts() ) : ?>

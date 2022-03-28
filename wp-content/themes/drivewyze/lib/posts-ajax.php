@@ -12,20 +12,23 @@ add_action( 'wp_ajax_nopriv_filters_ajax', 'filters_ajax' );
  * Ajax filters load
  */
 function filters_ajax() {
-	$paged          = ( isset( $_POST['paged'] ) ) ? $_POST['paged'] : 0;
-	$posts_per_page = ( isset( $_POST['posts_per_page'] ) ) ? $_POST['posts_per_page'] : 0;
+	$paged          = ( isset( $_POST['paged'] ) ) ? $_POST['paged'] : 1;
+	$posts_per_page = ( isset( $_POST['posts_per_page'] ) ) ? $_POST['posts_per_page'] : 6;
 	$type           = $_POST['type'];
 	$category       = $_POST['category'];
+	$orderby           = $_POST['orderby'];
+	$order           = ( isset( $_POST['order'] ) ) ? $_POST['order'] : 'ASC';
 
 	$args = array(
 		'post_type'      => $type,
-		'orderby'        => 'menu_order',
+		'orderby'        => $orderby,
 		'post_status'    => 'publish',
 		'posts_per_page' => $posts_per_page,
 		'paged'          => $paged,
 		'category_name'  => $category,
+		'order'  => $order,
 	);
-
+	
 	$posts = new WP_Query( $args );
 
 	if ( $posts->have_posts() ) :
