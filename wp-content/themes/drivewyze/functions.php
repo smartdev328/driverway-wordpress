@@ -186,3 +186,17 @@ function save_partners_parent_id($post_id) {
 add_action("save_post", "save_partners_parent_id");
 
 add_action( 'send_headers', 'send_frame_options_header', 10, 0 );
+
+
+add_filter( 'wpseo_sitemap_index', 'add_sitemap_custom_items' );
+
+function add_sitemap_custom_items( $sitemap_custom_items ) {
+   $sitemap_custom_items .= '
+	 <sitemap>
+	 <loc>https://drivewyze.wpengine.com/sitemap-eyelash-extensions.xml</loc>
+	 <lastmod>2017-05-22T23:12:27+00:00</lastmod>
+	 </sitemap>
+';
+
+return $sitemap_custom_items;
+}

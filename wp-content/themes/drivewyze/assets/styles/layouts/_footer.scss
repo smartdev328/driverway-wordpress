@@ -35,14 +35,6 @@
   &-col {
     display: flex;
     flex-direction: column;
-
-    @media (min-width: $bp-L) {
-      min-width: 208px;
-    }
-
-    @media (min-width: $bp-5XL) {
-      min-width: 300px;
-    }
   }
 
   &-row {
@@ -75,11 +67,11 @@
     margin-bottom: 16px;
 
     @media (min-width: $bp-L) {
-      margin-right: 30px;
+      margin-right: 100px;
     }
 
     @media (min-width: $bp-2XL) {
-      margin-right: 15px;
+      margin-right: 150px;
     }
 
     &--socials,

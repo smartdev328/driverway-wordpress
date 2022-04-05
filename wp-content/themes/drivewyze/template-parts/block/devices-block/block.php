@@ -30,55 +30,55 @@ $learn_link     = get_field('learn_more_link');
 		<?php
 			$args  = array(
 				'post_type'      => 'partners',
-				'posts_per_page' => 1,
-				'orderby'        => 'rand',
+				'orderby'        => 'menu_order',
 			);
 			$posts = new WP_Query( $args );
 			if ( $posts->have_posts() ) : ?>
-				<?php
-				while ( $posts->have_posts() ) :
-					$posts->the_post();
-					$id         = get_the_ID();
-					$post_icon  = get_field( 'icon', $id );
-					$post_title = get_field( 'secondary_title', $id );
-					$post_desc  = get_field( 'description', $id );
-					$title 		= $post_title ?: $block_title;
-					$desc       = $post_desc ?: $block_desc;
-				?>
 					<div class="device-item">
-						<div class="device-item__media">
-							<?php if ( has_post_thumbnail() ) :
-								$post_thumb_url = get_the_post_thumbnail_url();
+						<div class="device-block-swiper">
+							<div class="swiper-wrapper">
+								<?php
+									while ( $posts->have_posts() ) :
+										$posts->the_post();
+										$id         = get_the_ID();
+										$post_icon  = get_field( 'icon', $id );
 								?>
-								<div class="device-item__img" style="background-image: url(<?php echo $post_thumb_url; ?>)"></div>
-							<?php endif; ?>
-							<?php if ( $post_icon && is_array($post_icon)) : ?>
-								<div class="device-item__icon">
-									<?php if ($icon_title) : ?>
-										<span><?php echo $icon_title; ?></span>
-									<?php endif; ?>
-									<?php echo wp_get_attachment_image( $post_icon['id'], 'full'); ?>
-								</div>
-							<?php endif; ?>
+									<div class="swiper-slide device-item__media">
+										<?php if ( has_post_thumbnail() ) :
+											$post_thumb_url = get_the_post_thumbnail_url();
+											?>
+											<div class="device-item__img" style="background-image: url(<?php echo $post_thumb_url; ?>)"></div>
+										<?php endif; ?>
+										<?php if ( $post_icon && is_array($post_icon)) : ?>
+											<div class="device-item__icon">
+												<?php if ($icon_title) : ?>
+													<span><?php echo $icon_title; ?></span>
+												<?php endif; ?>
+												<?php echo wp_get_attachment_image( $post_icon['id'], 'full'); ?>
+											</div>
+										<?php endif; ?>
+									</div>
+								<?php	endwhile; ?>
+							</div>
 						</div>
 						<div class="device-item__content">
-							<?php if ($title) : ?>
-								<h2><?php echo $title; ?></h2>
+							<?php if ($block_title) : ?>
+								<h2><?php echo $block_title; ?></h2>
 							<?php endif; ?>
 
-							<?php if ($desc) : ?>
-								<p><?php echo $desc; ?></p>
+							<?php if ($block_desc) : ?>
+								<p><?php echo $block_desc; ?></p>
 							<?php endif; ?>
 
-                            <?php if( $learn_link ) : ?>
-                                <a class="read-more" href="<?php echo $learn_link['url']; ?>"
-                                   target="<?php echo $learn_link['target'] ? '_blank' : '_self'; ?>"
-                                   title="<?php echo $learn_link['title']; ?>"><?php echo $learn_link['title']; ?>
-                                </a>
-                            <?php endif; ?>
+							<?php if( $learn_link ) : ?>
+								<a class="read-more" href="<?php echo $learn_link['url']; ?>"
+									target="<?php echo $learn_link['target'] ? '_blank' : '_self'; ?>"
+									title="<?php echo $learn_link['title']; ?>"><?php echo $learn_link['title']; ?>
+								</a>
+							<?php endif; ?>
 						</div>
 					</div>
-				<?php endwhile;
+				<?php
 			endif;
 			wp_reset_postdata();
 			?>

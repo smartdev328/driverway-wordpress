@@ -156,143 +156,162 @@
         width: 1550px;
       }
 
-      .swiper-wrapper {
-        .swiper-slide {
-          background-color: $color-2;
-          padding: 20px;
+      .swiper-slide {
+        background-color: $color-2;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        min-width: 239px;
+
+        @media (min-width: $bp-M) {
+          padding: 20px 17px;
+        }
+
+        @media (min-width: $bp-2XL) {
+          padding: 20px 20px;
+        }
+
+        .file-title {
+          font-weight: bold;
+          font-size: rem(11.5);
+          line-height: rem(16);
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: $color-11;
+          background-color: $color-15;
+          padding: 2px 9px;
+
+          @media (min-width: $bp-2XL) {
+            font-size: rem(16);
+            line-height: rem(26);
+            padding: 5px 9px;
+            margin-top: 6px;
+          }
+        }
+
+        .file-subtitle {
+          font-size: rem(18);
+          line-height: rem(24);
+          letter-spacing: 0.25px;
+          color: $color-6;
+
+          @media (min-width: $bp-2XL) {
+            font-size: rem(22);
+            line-height: rem(34);
+            letter-spacing: 0.025em;
+          }
+        }
+
+        .download-file {
+          position: relative;
+          margin-top: 18px;
+          margin-bottom: -7px;
+          padding: 12px 0 0;
           display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          min-width: 239px;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
 
           @media (min-width: $bp-M) {
-            padding: 20px 17px;
+            margin-top: 0;
+            padding: 14px 0 0;
+          }
+
+          @media (min-width: $bp-L) {
+            margin-top: 3px;
+            padding: 15px 0 0;
           }
 
           @media (min-width: $bp-2XL) {
-            padding: 20px 20px;
+            margin-top: 25px;
+            padding: 10px 0 0;
           }
 
-          .file-title {
+          @media (min-width: $bp-5XL) {
+            margin-top: 15px;
+          }
+
+          &__type,
+          &__size {
+            font-size: rem(13);
+            line-height: rem(22);
+            letter-spacing: 0.01em;
+            color: $color-4;
+          }
+
+          &__type {
+            margin-right: auto;
+            text-transform: uppercase;
+            margin-left: 5px;
+          }
+
+          &__size {
+            margin-left: -4px;
+          }
+
+          &__text {
             font-weight: bold;
             font-size: rem(11.5);
             line-height: rem(16);
             letter-spacing: 0.08em;
-            text-transform: uppercase;
             color: $color-11;
-            background-color: $color-15;
-            padding: 2px 9px;
+            padding-right: 18px;
+            position: relative;
+
+            @media (min-width: $bp-L) {
+              padding-right: 24px;
+            }
 
             @media (min-width: $bp-2XL) {
               font-size: rem(16);
               line-height: rem(26);
-              padding: 5px 9px;
-              margin-top: 6px;
-            }
-          }
-
-          .file-subtitle {
-            font-size: rem(18);
-            line-height: rem(24);
-            letter-spacing: 0.25px;
-            color: $color-6;
-
-            @media (min-width: $bp-2XL) {
-              font-size: rem(22);
-              line-height: rem(34);
-              letter-spacing: 0.025em;
-            }
-          }
-
-          .download-file {
-            position: relative;
-            margin-top: 18px;
-            margin-bottom: -7px;
-            padding: 12px 0 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-
-            @media (min-width: $bp-M) {
-              margin-top: 0;
-              padding: 14px 0 0;
-            }
-
-            @media (min-width: $bp-L) {
-              margin-top: 3px;
-              padding: 15px 0 0;
-            }
-
-            @media (min-width: $bp-2XL) {
-              margin-top: 25px;
-              padding: 10px 0 0;
-            }
-
-            @media (min-width: $bp-5XL) {
-              margin-top: 15px;
-            }
-
-            &__type,
-            &__size {
-              font-size: rem(13);
-              line-height: rem(22);
-              letter-spacing: 0.01em;
-              color: $color-4;
-            }
-
-            &__type {
-              margin-right: auto;
-              text-transform: uppercase;
-              margin-left: 5px;
-            }
-
-            &__size {
-              margin-left: -4px;
-            }
-
-            &__text {
-              font-weight: bold;
-              font-size: rem(11.5);
-              line-height: rem(16);
               letter-spacing: 0.08em;
-              color: $color-11;
-              padding-right: 18px;
-              position: relative;
+              padding-right: 9px;
+            }
+
+            &::after {
+              position: absolute;
+              content: '';
+              width: 10px;
+              height: 15px;
+              right: 0;
+              top: 2px;
+              background-image: url("../../images/download.svg");
 
               @media (min-width: $bp-L) {
-                padding-right: 24px;
+                top: 3px;
+                right: 4px;
               }
 
               @media (min-width: $bp-2XL) {
-                font-size: rem(16);
-                line-height: rem(26);
-                letter-spacing: 0.08em;
-                padding-right: 9px;
-              }
-
-              &::after {
-                position: absolute;
-                content: '';
-                width: 10px;
-                height: 15px;
-                right: 0;
-                top: 2px;
-                background-image: url("../../images/download.svg");
-
-                @media (min-width: $bp-L) {
-                  top: 3px;
-                  right: 4px;
-                }
-
-                @media (min-width: $bp-2XL) {
-                  background-size: cover;
-                  top: 5px;
-                  right: -8px;
-                  height: 17px;
-                }
+                background-size: cover;
+                top: 5px;
+                right: -8px;
+                height: 17px;
               }
             }
+          }
+        }
+      }
+
+      &.static-container {
+        display: flex;
+        justify-content: center;
+
+        .swiper-slide {
+          flex: 1;
+          margin: 0 15px;
+          max-width: 400px;
+        }
+
+        @media (max-width: $bp-L) {
+          flex-flow: row wrap;
+          width: auto;
+          margin: 0 5px;
+
+          .swiper-slide {
+            margin: 10px;
           }
         }
       }
@@ -410,18 +429,37 @@
 
   &_file {
     .swiper-container {
-      .swiper-wrapper {
+      .swiper-slide {
+        .download-file {
+          &::before {
+            position: absolute;
+            content: '';
+            left: -20px;
+            right: -20px;
+            top: 0;
+            height: 1px;
+            background: $color-5;
+          }
+        }
+      }
+
+      &.static-container {
+        display: flex;
+        justify-content: center;
+
         .swiper-slide {
-          .download-file {
-            &::before {
-              position: absolute;
-              content: '';
-              left: -20px;
-              right: -20px;
-              top: 0;
-              height: 1px;
-              background: $color-5;
-            }
+          flex: 1;
+          margin: 0 15px;
+          max-width: 400px;
+        }
+
+        @media (max-width: $bp-L) {
+          flex-flow: row wrap;
+          width: auto;
+          margin: 0 5px;
+
+          .swiper-slide {
+            margin: 10px;
           }
         }
       }
@@ -552,108 +590,106 @@
         width: 1295px;
       }
 
-      .swiper-wrapper {
-        .swiper-slide {
-          background-color: $color-2;
-          padding: 20px 20px 0;
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          min-height: 239px;
+      .swiper-slide {
+        background-color: $color-2;
+        padding: 20px 20px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        min-height: 239px;
 
-          @media (min-width: $bp-M) {
-            padding: 20px 17px 0;
-          }
+        @media (min-width: $bp-M) {
+          padding: 20px 17px 0;
+        }
+
+        @media (min-width: $bp-2XL) {
+          padding: 20px 20px 0;
+          min-height: 292px;
+        }
+
+        @media (min-width: $bp-5XL) {
+          flex-basis: calc(25% - 30px);
+          margin: 0 15px;
+          max-width: 285px;
+        }
+
+        .file-subtitle {
+          font-size: rem(24);
+          line-height: rem(35);
+          letter-spacing: 0.25px;
+          color: $color-6;
 
           @media (min-width: $bp-2XL) {
-            padding: 20px 20px 0;
-            min-height: 292px;
+            font-size: rem(22);
+            line-height: rem(34);
+            letter-spacing: 0.025em;
           }
 
           @media (min-width: $bp-5XL) {
-            flex-basis: calc(25% - 30px);
-            margin: 0 15px;
-            max-width: 285px;
+            font-size: rem(36);
+            line-height: rem(42);
+            letter-spacing: 0.025em;
+          }
+        }
+
+        .link-block {
+          margin-top: auto;
+          position: relative;
+          width: 100%;
+
+          &::before {
+            position: absolute;
+            content: '';
+            left: -20px;
+            right: -20px;
+            top: 0;
+            height: 1px;
+            background: $color-5;
           }
 
-          .file-subtitle {
-            font-size: rem(24);
-            line-height: rem(35);
-            letter-spacing: 0.25px;
-            color: $color-6;
+          .download-file {
+            @include btn-arrow($color-11, $color-6, $color-2);
 
-            @media (min-width: $bp-2XL) {
-              font-size: rem(22);
-              line-height: rem(34);
-              letter-spacing: 0.025em;
-            }
-
-            @media (min-width: $bp-5XL) {
-              font-size: rem(36);
-              line-height: rem(42);
-              letter-spacing: 0.025em;
-            }
-          }
-
-          .link-block {
-            margin-top: auto;
             position: relative;
-            width: 100%;
+            padding: 12px 0 0;
+            font-weight: bold;
+            font-size: rem(11.5);
+            line-height: rem(16);
+            letter-spacing: 0.08em;
+            color: $color-11;
+            text-transform: uppercase;
+            margin-bottom: 13px;
+            margin-top: 4px;
+            width: auto;
 
-            &::before {
-              position: absolute;
-              content: '';
-              left: -20px;
-              right: -20px;
-              top: 0;
-              height: 1px;
-              background: $color-5;
-            }
-
-            .download-file {
-              @include btn-arrow($color-11, $color-6, $color-2);
-
-              position: relative;
-              padding: 12px 0 0;
-              font-weight: bold;
-              font-size: rem(11.5);
-              line-height: rem(16);
-              letter-spacing: 0.08em;
-              color: $color-11;
-              text-transform: uppercase;
-              margin-bottom: 13px;
-              margin-top: 4px;
-              width: auto;
-
-              &::after {
-                top: inherit;
-                bottom: 3px;
-                right: -17px;
-
-                @media (min-width: $bp-2XL) {
-                  bottom: 5px;
-                }
-              }
-
-              &::before {
-                width: calc(100% - 10px);
-              }
-
-              @media (min-width: $bp-M) {
-                padding: 14px 0 0;
-              }
-
-              @media (min-width: $bp-L) {
-                padding: 15px 0 0;
-                padding-right: 24px;
-              }
+            &::after {
+              top: inherit;
+              bottom: 3px;
+              right: -17px;
 
               @media (min-width: $bp-2XL) {
-                padding: 10px 9px 0 0;
-                font-size: rem(16);
-                line-height: rem(20);
-                letter-spacing: 0.08em;
+                bottom: 5px;
               }
+            }
+
+            &::before {
+              width: calc(100% - 10px);
+            }
+
+            @media (min-width: $bp-M) {
+              padding: 14px 0 0;
+            }
+
+            @media (min-width: $bp-L) {
+              padding: 15px 0 0;
+              padding-right: 24px;
+            }
+
+            @media (min-width: $bp-2XL) {
+              padding: 10px 9px 0 0;
+              font-size: rem(16);
+              line-height: rem(20);
+              letter-spacing: 0.08em;
             }
           }
         }

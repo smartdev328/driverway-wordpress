@@ -7,6 +7,25 @@ const
 			let customerSlider = $('.customer-slider .swiper-container');
 			let resourcesLinkSlider = $('.resources_link .swiper-container');
 			let resourcesFileSlider = $('.resources_file .swiper-container');
+			let deviceBlockSlider = $('.device-block-swiper');
+
+			if (deviceBlockSlider.length) {
+				deviceBlockSlider.each(function () {
+					let deviceBlockSwiper = new Swiper('.device-block-swiper', {
+						loop: true,
+						slidesPerView: 1,
+						autoplay: {
+							delay: 2000,
+						},
+						effect: 'fade',
+						allowTouchMove: false,
+						fadeEffect: {
+							crossFade: true,
+						},
+					});
+					deviceBlockSwiper.init()
+				})
+			}
 
 			if (customerSlider.length) {
 				customerSlider.each(function () {
@@ -124,6 +143,16 @@ const
 									prevEl: '.swiper-button-prev',
 								},
                             },
+														1920: {
+															spaceBetween: 30,
+															slidesPerView: '4',
+															allowTouchMove: true,
+															loop: true,
+															navigation: {
+																nextEl: '.swiper-button-next',
+																prevEl: '.swiper-button-prev',
+															},
+														},
                             2350: {
                                 spaceBetween: 30,
                                 slidesPerView: '4',

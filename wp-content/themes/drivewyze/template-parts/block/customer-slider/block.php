@@ -56,7 +56,7 @@ $button				= get_field( 'testimonials_button' );
 									<?php endif; ?>
 
 									<?php if( $title ) : ?>
-										<h2><?php echo '"' . $title . '"'; ?></h2>
+										<h2><?php echo '&#8220;' . $title . '&#8221;'; ?></h2>
 									<?php endif; ?>
 
 								</div>

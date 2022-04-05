@@ -1,13 +1,18 @@
 const toggleSearch = () => {
 
 	const openBtn = $('.js-s-form');
-	const closeBtn = $('.js-s-form-close');
 	const searchFormEl = $('.search-form-wrap');
 
-	openBtn.add(closeBtn).on('click', function (e) {
-		e.preventDefault();
-		searchFormEl.toggleClass('open');
-	});
+  openBtn.on('click', function (e) {
+    e.preventDefault();
+    searchFormEl.toggleClass('open');
+    if (!$('.search-form-wrap').hasClass('open')) {
+      e.preventDefault();
+      $('#searchform').submit();
+      searchFormEl.toggleClass('open');
+      return true;
+    }
+  });
 };
 
 export default toggleSearch;
