@@ -5,6 +5,7 @@
 .category {
   #breadcrumbs {
     padding: 7px 15px;
+    max-width: unset;
 
     @media (min-width: $bp-M) {
       padding: 17px 30px;

@@ -10,6 +10,8 @@
   .content-title {
     padding: 0 15px;
     color: $color-6;
+    margin: auto;
+    max-width: 1920px;
 
     @media (min-width: $bp-M) {
       padding: 0 30px 28px;
@@ -27,6 +29,8 @@
     margin-bottom: 12px;
 
     @media (min-width: $bp-M) {
+      margin: auto;
+      max-width: 1920px;
       margin-top: 9px;
     }
 
@@ -81,6 +85,7 @@
 }
 
 .single-testimonials,
+.post-type-archive-testimonials,
 .page-template-testimonials-archive {
   .testimonials-posts {
     background: $color-15;
