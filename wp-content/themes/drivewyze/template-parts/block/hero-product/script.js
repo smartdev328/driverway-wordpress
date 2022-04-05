@@ -1,4 +1,4 @@
-jQuery(document).ready(() => {
+jQuery(document).ready(($) => {
 	const playVideoBtn = $('.hero-product-section-hero-video__play')
 	const videoIframe = $('.hero-product-section-hero-video iframe')
 	const previewImg = $('.hero-product-section-hero-video__preview')

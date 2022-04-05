@@ -1,4 +1,4 @@
-jQuery(document).ready(()=>{
+jQuery(document).ready(($)=>{
 	const formInput = $('.gfield .ginput_container input, .gfield .ginput_container select, .gfield .ginput_container textarea')
 
 	formInput.each(function (){

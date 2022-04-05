@@ -1,4 +1,4 @@
-jQuery(document).ready(() => {
+jQuery(document).ready(($) => {
 	const $tabs  = $('.tabs');
 
 	$tabs.each(function() {
