@@ -241,6 +241,7 @@
 
   &-block-swiper {
     width: 100%;
+    overflow: hidden;
 
     @media (min-width: $bp-M) {
       width: calc(100% - 350px);
@@ -248,6 +249,12 @@
 
     @media (min-width: $bp-2XL) {
       width: calc(100% - 400px);
+    }
+
+    &.swiper-container-fade {
+      .swiper-slide {
+        transition-duration: 1ms !important;
+      }
     }
   }
 }

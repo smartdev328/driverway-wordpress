@@ -15,7 +15,7 @@ const
 						loop: true,
 						slidesPerView: 1,
 						autoplay: {
-							delay: 2000,
+							delay: 5000,
 						},
 						effect: 'fade',
 						allowTouchMove: false,
