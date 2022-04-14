@@ -10,7 +10,6 @@
  * Text domain definition
  */
 defined( 'THEME_TD' ) ? THEME_TD : define( 'THEME_TD', 'drivewyze' );
-
 function acf_filter_rest_api_preload_paths( $preload_paths ) {
 	global $post;
 	$rest_path    = rest_get_route_for_post( $post );
@@ -27,6 +26,7 @@ function acf_filter_rest_api_preload_paths( $preload_paths ) {
 	);
 }
 add_filter( 'block_editor_rest_api_preload_paths', 'acf_filter_rest_api_preload_paths', 10, 1 );
+
 
 // Load modules
 $theme_includes = [
@@ -216,3 +216,9 @@ function add_sitemap_custom_items( $sitemap_custom_items ) {
 
 return $sitemap_custom_items;
 }
+
+// disable xmlrpc
+function remove_xmlrpc_methods( $methods ) {
+  return array();
+}
+add_filter( 'xmlrpc_methods', 'remove_xmlrpc_methods' );
