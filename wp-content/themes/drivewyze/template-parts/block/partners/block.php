@@ -23,6 +23,7 @@ $custom_class   = isset( $block['className'] ) ? $block['className'] : '';
 $block_title    = get_field( 'title') ?? get_the_title();
 $block_subtitle = get_field( 'subtitle');
 $posts_per_page = get_field( 'posts_per_page');
+$sort_by        = get_field( 'sort_by');
 ?>
 <section id="<?php echo $block_id; ?>" class="pt-block <?php echo $slug; ?> <?php echo $align_class; ?> <?php echo $custom_class; ?>">
 	<div class="pt-block-header post-header">
@@ -48,7 +49,7 @@ $posts_per_page = get_field( 'posts_per_page');
 				'post_type'      => 'partners',
 				'posts_per_page' => $posts_per_page,
 				'order'          => 'ASC',
-				'orderby'        => 'menu_order',
+				'orderby'        => $sort_by ? $sort_by : 'menu_order',
 			);
 			$posts = new WP_Query( $args );
 			if ( $posts->have_posts() ) : ?>
