@@ -160,6 +160,7 @@
                   select {
                     font-family: $f-base;
                     font-weight: 400;
+                    font-size: 18px;
                     padding: 15px 0 5px;
                     height: 52px;
                     border: 0;
@@ -211,7 +212,7 @@
                 label {
                   margin-bottom: 0;
                   position: absolute;
-                  font-size: rem(15);
+                  font-size: rem(18);
                   font-weight: 400;
                   letter-spacing: 0;
                   color: $color-8;

@@ -195,12 +195,13 @@
             padding: 14px 20px;
             z-index: 1;
             position: relative;
+            max-width: calc(100% - 100px);
           }
 
           @media (min-width: $bp-L) {
             position: relative;
             z-index: 1;
-            max-width: 698px;
+            max-width: calc(100% - 200px);
             width: 100%;
             margin-left: 51px;
             padding: 10px 28px;
@@ -210,7 +211,6 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            max-width: 913px;
             padding: 30px 59px;
           }
 
