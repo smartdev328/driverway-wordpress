@@ -9,7 +9,6 @@
  * @type {Array}
  */
 const customScenarios = [
-  /*
 	{
 		urlName: 'homepage',
 		options: {
@@ -25,7 +24,6 @@ const customScenarios = [
 			postInteractionWait: '.new-selector'
 		}
 	}
-	*/
 ];
 
 module.exports = customScenarios;
